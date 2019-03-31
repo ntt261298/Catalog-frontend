@@ -1,0 +1,53 @@
+/* CSS variables */
+:root {
+    --blue: #0095ff;
+    --shadow: 0px 5px 5px rgba(104, 104, 104, 0.8);
+    --easeOut: all 0.3s ease-out;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    line-height: 2rem;
+}
+/* Modal Style */
+.modal-content {
+    text-align: center;
+}
+.modal-header {
+    position: relative;
+    display: block;
+}
+.modal-header .close {
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateX(-50%);
+}
+.modal-content label {
+    width: 100px;
+}
+.modal-content input {
+    border: none;
+    border-bottom: 1px solid #444;
+}
+.modal-content p {
+    margin-top: 10px;   
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.modal-content p:hover {
+    cursor: pointer;
+    color: var(--blue);
+}
+.modal-footer {
+    display: block;
+}
+.modal-footer button {
+    padding: 5px 20px;
+}

@@ -1,0 +1,33 @@
+/* Main Home Style */
+.home {
+    padding: 1rem 10rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        'category item item'
+}
+.category {
+    grid-area: category;
+    border-right: 0.5px solid #444;
+}
+.item {
+    grid-area: item;
+}
+/* Numeric Box */
+.numeric span {
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 15px;
+    width: 24px;
+    text-align: center;
+    border: 2px solid #000;
+    display: inline-block;
+    margin: 0 4px;
+  }
+.numeric span:hover {
+    cursor: pointer;
+  }
+.numeric img:hover {
+    cursor: pointer;
+}
