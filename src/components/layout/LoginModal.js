@@ -1,11 +1,15 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+  Button, Modal, ModalHeader, ModalBody, ModalFooter,
+} from 'reactstrap';
+import { PropTypes } from 'prop-types';
+
 
 class LoginModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
     };
 
     this.toggle = this.toggle.bind(this);
@@ -13,25 +17,30 @@ class LoginModal extends React.Component {
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
     }));
   }
 
   render() {
+    const { modal } = this.state;
+    const { className } = this.props;
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={modal} toggle={this.toggle} className={className}>
           <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
             <div>
-                <label>Username: </label>
-                <input type="text"/>
+              <label htmlFor="username">
+                Username:
+                <input type="text" />
+              </label>
             </div>
             <div>
-                <label>Password: </label>
-                <input type="text"/>
-            </div>    
+              <label htmlFor="password">
+                Password:
+                <input type="text" />
+              </label>
+            </div>
             <p>Create new account?</p>
           </ModalBody>
           <ModalFooter>
@@ -42,5 +51,13 @@ class LoginModal extends React.Component {
     );
   }
 }
+
+LoginModal.propTypes = {
+  className: PropTypes.string,
+};
+
+LoginModal.defaultProps = {
+  className: 'modal',
+};
 
 export default LoginModal;

@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import '../../style/home.css';
 import Category from './Category';
-import Item from './Item';
-import LoginModal from './../layout/LoginModal';
-import SignupModal from './../layout/SignupModal';
-import { PropTypes } from 'prop-types';
+// import Item from './Item';
+import Header from '../layout/Header';
 
-class Home extends Component {
-    render() {
-        return (
-            <div className="home">
-                <LoginModal />
-                <SignupModal />
-                <Category />
-                <Item />
-            </div>
-        )
-    }
-}
+const Home = () => (
+  <div>
+    <Header />
+    <div className="home-main">
+      <Category />
+    </div>
+  </div>
+);
 
 Home.propTypes = {
-    // toggleLogin: PropTypes.func.isRequired,
-    // userLogout: PropTypes.func.isRequired,
-    // getSearchResults: PropTypes.func.isRequired
-  }
-  
-  const mapStateToProps = state => ({
+  // toggleLogin: PropTypes.func.isRequired,
+  // userLogout: PropTypes.func.isRequired,
+  // getSearchResults: PropTypes.func.isRequired
+};
 
-  })
-  export default connect(null, null)(Home);
+export default connect(null, null)(Home);

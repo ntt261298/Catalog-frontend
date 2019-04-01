@@ -1,8 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducers';
 import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+import { loadState } from './helper/localStorage';
 
-const initialState = [];
+const initialState = {
+  token: loadState(),
+};
 
 const middleware = [thunk];
 
@@ -12,7 +15,8 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(...middleware),
-    devTools
-  ));
+    devTools,
+  ),
+);
 
 export default store;

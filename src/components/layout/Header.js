@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import '../../style/layout.css';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 import LoginButton from './LoginButton';
+import LoginModal from './LoginModal';
 import SignupButton from './SignupButton';
-import UserDropdown from './UserDropdown';
+import SignupModal from './SignupModal';
 
-class Header extends Component {
-    render() {
-        return (
-            <div className="header">
-                <div className="header-logo">
-                    Catalog App
-                </div>
-                <div className="header-menu">
-                    <LoginButton />
-                    <SignupButton />
-                </div>
-            </div>
-        )
-    }
-}
+// import UserDropdown from './UserDropdown';
+
+const Header = () => (
+  <div className="header">
+    <div className="header-logo">
+        Catalog App
+    </div>
+    <div className="header-menu">
+      <LoginButton />
+      <SignupButton />
+      <LoginModal />
+      <SignupModal />
+    </div>
+  </div>
+);
 
 Header.propTypes = {
-    // toggleLogin: PropTypes.func.isRequired,
-    // userLogout: PropTypes.func.isRequired,
-    // getSearchResults: PropTypes.func.isRequired
-  }
-  
-  const mapStateToProps = state => ({
+  // toggleLogin: PropTypes.func.isRequired,
+  // userLogout: PropTypes.func.isRequired,
+  // getSearchResults: PropTypes.func.isRequired
+};
 
-  })
-  export default connect(null, null)(Header);
+export default connect(null, null)(Header);

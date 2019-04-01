@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import getCategories from '../../actions/category';
 
 class Category extends Component {
-    render() {
-        return (
-            <div className="category">
-                <h2>Catagories</h2>
-                <ul>
-                    <li><a href=""></a>Sport</li>
-                    <li><a href=""></a>Book</li>
-                    <li><a href=""></a>Furniture</li>
-                    <li><a href=""></a>Cloth</li>
-                    <li><a href=""></a>Technology</li>
-                    <li><a href=""></a>Food</li>
-                </ul>
-            </div>
-        )
-    }
+  componentDidMount() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.getCategories();
+  }
+
+  render() {
+    const { categories } = this.props;
+    return (
+      <div className="category">
+        <h2>Catagories</h2>
+        <ul>
+          {
+            categories.map(({ id, name }) => (
+              <li key={id}>{ name }</li>
+            ))
+          }
+        </ul>
+      </div>
+    );
+  }
 }
 
 Category.propTypes = {
-    // toggleLogin: PropTypes.func.isRequired,
-    // userLogout: PropTypes.func.isRequired,
-    // getSearchResults: PropTypes.func.isRequired
-  }
-  
-  const mapStateToProps = state => ({
+  getCategories: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf.isRequired,
+};
 
-  })
-  export default connect(null, null)(Category);
+const mapStateToProps = state => ({
+  categories: state.category.categories,
+});
+
+export default connect(mapStateToProps, { getCategories })(Category);

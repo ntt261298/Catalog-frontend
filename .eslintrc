@@ -1,11 +1,14 @@
 {
     "parser": "babel-eslint",
+
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": "airbnb",
     "rules": {
-        "indent": [2, "tab"]
-    }
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }     
 }

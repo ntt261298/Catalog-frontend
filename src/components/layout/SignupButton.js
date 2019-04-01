@@ -1,24 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 
-class SignupButton extends Component {
-    render() {
-        return (
-            <Fragment>
-                <button className="btn-signup">Signup</button> 
-            </Fragment>
-        )
-    }
-}
+const SignupButton = () => (
+  <button type="button" className="btn-signup">Signup</button>
+);
 
 SignupButton.propTypes = {
-    // toggleLogin: PropTypes.func.isRequired,
-    // userLogout: PropTypes.func.isRequired,
-    // getSearchResults: PropTypes.func.isRequired
-  }
-  
-  const mapStateToProps = state => ({
+  // toggleLogin: PropTypes.func.isRequired,
+  // userLogout: PropTypes.func.isRequired,
+  // getSearchResults: PropTypes.func.isRequired
+};
 
-  })
-  export default connect(null, null)(SignupButton);
+export default connect(null, null)(SignupButton);
