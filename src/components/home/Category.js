@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import getCategories from '../../actions/category';
 
-class Category extends Component {
+export class Category extends Component {
   componentDidMount() {
     // eslint-disable-next-line react/destructuring-assignment
     this.props.getCategories();
@@ -28,7 +28,7 @@ class Category extends Component {
 
 Category.propTypes = {
   getCategories: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf.isRequired,
+  categories: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({

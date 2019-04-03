@@ -29,8 +29,8 @@ ul {
     right: 20px;
     transform: translateX(-50%);
 }
-.modal-content label {
-    width: 100px;
+.modal-content label input {
+    margin-left: 10px;
 }
 .modal-content input {
     border: none;

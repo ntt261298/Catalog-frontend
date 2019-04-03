@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../../style/home.css';
 import Category from './Category';
-// import Item from './Item';
+import Item from './Item';
 import Header from '../layout/Header';
 
 const Home = () => (
@@ -10,6 +10,7 @@ const Home = () => (
     <Header />
     <div className="home-main">
       <Category />
+      <Item />
     </div>
   </div>
 );

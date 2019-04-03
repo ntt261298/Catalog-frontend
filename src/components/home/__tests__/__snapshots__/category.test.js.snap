@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category tests renders list-categories 1`] = `
+<div
+  className="category"
+>
+  <h2>
+    Catagories
+  </h2>
+  <ul>
+    <li
+      key="1"
+    >
+      One
+    </li>
+    <li
+      key="1"
+    >
+      Two
+    </li>
+    <li
+      key="1"
+    >
+      Three
+    </li>
+  </ul>
+</div>
+`;

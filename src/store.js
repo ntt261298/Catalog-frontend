@@ -1,11 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import { loadState } from './helper/localStorage';
 
-const initialState = {
-  token: loadState(),
-};
+const initialState = {};
 
 const middleware = [thunk];
 

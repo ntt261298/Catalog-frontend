@@ -1,50 +1,58 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
 import { PropTypes } from 'prop-types';
+import { toggleLogin, toggleSignup } from '../../actions/app';
+import { onLogin } from '../../actions/user';
 
 
 class LoginModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-    };
-
-    this.toggle = this.toggle.bind(this);
+  state = {
+    username: '',
+    password: '',
   }
 
-  toggle() {
-    this.setState(prevState => ({
-      modal: !prevState.modal,
-    }));
+  onChangeInput = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  moveToSignup = () => {
+    this.props.toggleLogin();
+    this.props.toggleSignup();
+  }
+
+  onLogin = (e) => {
+    e.preventDefault();
+    this.props.onLogin(this.state.username, this.state.password);
   }
 
   render() {
-    const { modal } = this.state;
-    const { className } = this.props;
+    const { loginModal, toggleLogin } = this.props;
     return (
       <div>
-        <Modal isOpen={modal} toggle={this.toggle} className={className}>
-          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
+        <Modal isOpen={loginModal} toggle={toggleLogin}>
+          <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
           <ModalBody>
             <div>
               <label htmlFor="username">
                 Username:
-                <input type="text" />
+                <input type="text" name="username" onChange={this.onChangeInput} />
               </label>
             </div>
             <div>
               <label htmlFor="password">
                 Password:
-                <input type="text" />
+                <input type="password" name="password" onChange={this.onChangeInput} />
               </label>
             </div>
-            <p>Create new account?</p>
+            <p onClick={this.moveToSignup}>Create new account?</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Login</Button>
+            <Button color="primary" onClick={this.onLogin}>Login</Button>
           </ModalFooter>
         </Modal>
       </div>
@@ -53,11 +61,14 @@ class LoginModal extends React.Component {
 }
 
 LoginModal.propTypes = {
-  className: PropTypes.string,
+  loginModal: PropTypes.bool.isRequired,
+  toggleLogin: PropTypes.func.isRequired,
+  toggleSignup: PropTypes.func.isRequired,
+  onLogin: PropTypes.func.isRequired,
 };
 
-LoginModal.defaultProps = {
-  className: 'modal',
-};
+const mapStateToProps = state => ({
+  loginModal: state.app.loginModal,
+});
 
-export default LoginModal;
+export default connect(mapStateToProps, { toggleLogin, toggleSignup, onLogin })(LoginModal);
