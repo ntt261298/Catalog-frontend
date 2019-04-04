@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-// import { getCategoryItems } from '../../actions/item';
-import { getCategoryItems } from '../../actions/item';
+import { getUserItems } from '../../actions/item';
 import lastPage from '../../assets/images/page-last.svg';
 import firstPage from '../../assets/images/page-first.svg';
 import left from '../../assets/images/left.svg';
@@ -16,13 +15,13 @@ const activeStyle = {
 
 const itemsPerPage = 1;
 
-class Item extends Component {
+export class Item extends Component {
     state = {
       page: 1,
     }
 
     componentDidMount() {
-      this.props.getCategoryItems(this.props.id);
+      this.props.getUserItems(this.props.token);
     }
 
     setPage(page) {
@@ -68,21 +67,20 @@ class Item extends Component {
       const { items } = this.props;
       const { page } = this.state;
       const totalPages = Math.ceil(items.length / itemsPerPage);
-      if (items.length === 0) {
-        return <h2>This category has no item.</h2>;
-      }
       return (
         <div className="item">
-          <h2>Items</h2>
+          <h2>User's Items</h2>
           <ul>
             {
-            items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(({ id, title }) => (
-              <li key={id}>
-                <a href={`category/${id}`}>
-                  { title }
-                </a>
-              </li>
-            ))
+            items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(
+              ({ id, title, category_id }) => (
+                <li key={id}>
+                  <a href={`category/${category_id}/item/${id}`}>
+                    { title }
+                  </a>
+                </li>
+              ),
+            )
           }
           </ul>
           <div className="numeric">
@@ -104,13 +102,14 @@ class Item extends Component {
 }
 
 Item.propTypes = {
+  getUserItems: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
-  getCategoryItems: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  items: state.item.categoryItems,
+  items: state.item.items,
+  token: state.user.accessToken,
 });
 
-export default connect(mapStateToProps, { getCategoryItems })(Item);
+export default connect(mapStateToProps, { getUserItems })(Item);

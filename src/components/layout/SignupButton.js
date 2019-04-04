@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { showSignup } from '../../actions/app';
 
-const SignupButton = props => (
+export const SignupButton = props => (
   <button type="button" onClick={props.showSignup} className="btn-signup">Signup</button>
 );
 

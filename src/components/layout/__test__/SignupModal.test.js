@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from '../../../enzyme';
 import SignupModal from '../SignupModal';
 
-describe('Signup modal tests', () => {
+describe('src/components/layout/SignupModal.js', () => {
   let wrapper;
   let props;
   const setup = () => {
@@ -16,7 +16,7 @@ describe('Signup modal tests', () => {
       ...props,
       signupModal: false,
       toggleLogin() {},
-      toggleSignup() {},
+      sh() {},
       onSignup: () => { props.signupModal = true; },
     };
   });

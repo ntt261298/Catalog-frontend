@@ -8,7 +8,7 @@ import { showSignup, hideModal } from '../../actions/app';
 import { onLogin } from '../../actions/user';
 
 
-class LoginModal extends React.Component {
+export class LoginModal extends React.Component {
   state = {
     username: '',
     password: '',
@@ -22,11 +22,11 @@ class LoginModal extends React.Component {
   }
 
   moveToSignup = () => {
-    this.props.hideModal();
     this.props.showSignup();
+    this.props.hideModal();
   }
 
-  onLogin = () => {
+  onLogin = async () => {
     const { username, password } = this.state;
     if (!username) {
       this.setState({
@@ -40,12 +40,14 @@ class LoginModal extends React.Component {
       });
       return;
     }
-    this.props.hideModal();
-    this.props.onLogin(this.state.username, this.state.password);
+    await this.props.onLogin(this.state.username, this.state.password);
+    if (!this.props.errMessage) {
+      this.props.hideModal();
+    }
   }
 
   render() {
-    const { modal, hideModal } = this.props;
+    const { modal, errMessage, hideModal } = this.props;
     const { message } = this.state;
     const isLoginModal = modal === 'login';
     return (
@@ -70,6 +72,11 @@ class LoginModal extends React.Component {
                 { message }
               </div>
             ) : null}
+            { errMessage ? (
+              <div className="alert alert-danger" role="alert">
+                { errMessage }
+              </div>
+            ) : null}
             <p onClick={this.moveToSignup}>Create new account?</p>
           </ModalBody>
           <ModalFooter>
@@ -83,6 +90,7 @@ class LoginModal extends React.Component {
 
 LoginModal.propTypes = {
   modal: PropTypes.string.isRequired,
+  errMessage: PropTypes.string.isRequired,
   showSignup: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired,
@@ -90,6 +98,7 @@ LoginModal.propTypes = {
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
+  errMessage: state.user.message,
 });
 
 export default connect(mapStateToProps, {

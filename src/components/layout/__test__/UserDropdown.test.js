@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from '../../../enzyme';
 import SignupModal from '../SignupModal';
 
-describe('User dropdown tests', () => {
+describe('src/coponents/layout/UserDropdown.js', () => {
   let wrapper;
   let props;
   const setup = () => {

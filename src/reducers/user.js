@@ -25,7 +25,6 @@ export default function (state = initialState, action) {
           ...state,
           loading: false,
           accessToken: action.payload.access_token,
-          message: action.payload.message,
         };
       }
       return {
@@ -51,7 +50,6 @@ export default function (state = initialState, action) {
           ...state,
           loading: false,
           accesToken: action.payload.access_token,
-          message: action.payload.message,
         };
       }
       return {

@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup button tests renders signup button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`src/layout/SignupButton.js should render signup button 1`] = `
+<button
+  className="btn-signup"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Signup
+</button>
 `;

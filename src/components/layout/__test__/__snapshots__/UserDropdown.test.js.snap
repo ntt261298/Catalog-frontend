@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User dropdown tests renders signup modal 1`] = `
+exports[`src/coponents/layout/UserDropdown.js renders signup modal 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

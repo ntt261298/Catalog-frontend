@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from '../../../enzyme';
 import { LoginButton } from '../LoginButton';
 
-describe('Login button tests', () => {
+describe('src/components/layout/LoginButton.js', () => {
   let wrapper;
   let props;
   let loginButton;
@@ -19,7 +19,7 @@ describe('Login button tests', () => {
 
   beforeEach(() => {
     props = {
-      toggleLogin: jest.fn(),
+      showLogin: jest.fn(),
     };
   });
 
@@ -29,10 +29,9 @@ describe('Login button tests', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call toggleLogin when login button is clicked', () => {
+  it('should call showLogin when login button is clicked', () => {
     setup();
-    console.log(wrapper.debug());
     loginButton.simulate('click');
-    expect(props.toggleLogin).toHaveBeenCalled();
+    expect(props.showLogin).toHaveBeenCalled();
   });
 });

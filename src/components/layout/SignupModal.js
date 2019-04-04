@@ -26,7 +26,7 @@ class SignupModal extends React.Component {
     this.props.showLogin();
   }
 
-  onSignup = () => {
+  onSignup = async () => {
     const { username, password } = this.state;
     if (!username) {
       this.setState({
@@ -40,12 +40,14 @@ class SignupModal extends React.Component {
       });
       return;
     }
-    this.props.hideModal();
-    this.props.onSignup(this.state.username, this.state.password);
+    await this.props.onSignup(this.state.username, this.state.password);
+    if (!this.props.errMessage) {
+      this.props.hideModal();
+    }
   }
 
   render() {
-    const { modal, hideModal } = this.props;
+    const { modal, errMessage, hideModal } = this.props;
     const { message } = this.state;
     const isSignupModal = modal === 'signup';
     return (
@@ -70,6 +72,11 @@ class SignupModal extends React.Component {
                 { message }
               </div>
             ) : null}
+            { errMessage ? (
+              <div className="alert alert-danger" role="alert">
+                { errMessage }
+              </div>
+            ) : null}
             <p onClick={this.moveToLogin}>Sign in to your account?</p>
           </ModalBody>
           <ModalFooter>
@@ -83,6 +90,7 @@ class SignupModal extends React.Component {
 
 SignupModal.propTypes = {
   modal: PropTypes.string.isRequired,
+  errMessage: PropTypes.string.isRequired,
   showLogin: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   onSignup: PropTypes.func.isRequired,
@@ -90,6 +98,7 @@ SignupModal.propTypes = {
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
+  errMessage: state.user.message,
 });
 
 export default connect(mapStateToProps, { showLogin, hideModal, onSignup })(SignupModal);
