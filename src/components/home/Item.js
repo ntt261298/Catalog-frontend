@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import removeSpace from '../../helper/removeSpace';
-import getItems from '../../actions/item';
+import { getItems } from '../../actions/item';
+import lastPage from '../../assets/images/page-last.svg';
+import firstPage from '../../assets/images/page-first.svg';
+import left from '../../assets/images/left.svg';
+import right from '../../assets/images/right.svg';
+
 
 const activeStyle = {
   background: '#444',
@@ -65,29 +69,31 @@ export class Item extends Component {
       const totalPages = Math.ceil(items.length / itemsPerPage);
       return (
         <div className="item">
-          <h2>Items</h2>
+          <h2>All Items</h2>
           <ul>
             {
-            items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(({ id, title }) => (
-              <li key={id}>
-                <a href={`item/${removeSpace(title)}`}>
-                  { title }
-                </a>
-              </li>
-            ))
+            items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(
+              ({ id, title, category_id }) => (
+                <li key={id}>
+                  <a href={`category/${category_id}/item/${id}`}>
+                    { title }
+                  </a>
+                </li>
+              ),
+            )
           }
           </ul>
           <div className="numeric">
             {' '}
-            <img src="assets/images/baseline-chevron_left-24px.svg" onClick={this.decreasePage.bind(this)} alt="" />
+            <img src={left} onClick={this.decreasePage.bind(this)} alt="" />
             {' '}
-            <img src="assets/images/page-first.svg" onClick={this.setPage.bind(this, 1)} alt="" />
+            <img src={firstPage} onClick={this.setPage.bind(this, 1)} alt="" />
             {' '}
             { this.createPage(totalPages) }
             {' '}
-            <img src="assets/images/page-last.svg" onClick={this.setPage.bind(this, totalPages)} alt="" />
+            <img src={lastPage} onClick={this.setPage.bind(this, totalPages)} alt="" />
             {' '}
-            <img src="assets/images/baseline-chevron_right-24px.svg" onClick={this.increasePage.bind(this, totalPages)} alt="" />
+            <img src={right} onClick={this.increasePage.bind(this, totalPages)} alt="" />
             {' '}
           </div>
         </div>

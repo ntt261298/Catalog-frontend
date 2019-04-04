@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import removeSpace from '../../helper/removeSpace';
 import getCategories from '../../actions/category';
 
 export class Category extends Component {
   componentDidMount() {
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.getCategories();
   }
 
@@ -19,7 +17,7 @@ export class Category extends Component {
           {
             categories.map(({ id, name }) => (
               <li key={id}>
-                <a href={`category/${removeSpace(name)}`}>{ name }</a>
+                <a href={`category/${id}`}>{ name }</a>
               </li>
             ))
           }

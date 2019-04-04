@@ -1,28 +1,7 @@
 import {
-  VERIFY_TOKEN, VERIFY_TOKEN_SUCCESS, VERIFY_TOKEN_FAIL,
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
   USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
 } from './types';
-import { loadState } from '../helper/localStorage';
-
-export const verifyToken = () => async (dispatch) => {
-  const token = loadState();
-  if (token) {
-    dispatch({ type: VERIFY_TOKEN });
-    try {
-      const response = await fetch('/users/auth', {
-        method: 'POST',
-        body: JSON.stringify(token),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      dispatch({ type: VERIFY_TOKEN_SUCCESS, payload: response });
-    } catch (error) {
-      dispatch({ type: VERIFY_TOKEN_FAIL, payload: error });
-    }
-  }
-};
 
 export const onLogin = (username, password) => async (dispatch) => {
   dispatch({ type: USER_LOGIN });

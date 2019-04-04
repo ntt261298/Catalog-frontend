@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/home/index';
+import HomePage from './components/home/index';
+import CategoryPage from './components/category/index';
+import ItemPage from './components/item/index';
 
 
 // import User from './components/user';
@@ -21,7 +23,9 @@ import Home from './components/home/index';
 const App = () => (
   <Router>
     <div className="App">
-      <Route path="/" exact component={Home} />
+      <Route path="/" exact component={HomePage} />
+      <Route path="/category/:id" exact component={CategoryPage} />
+      <Route path="/category/:categoryID/item/:itemID" exact component={ItemPage} />
     </div>
   </Router>
 );

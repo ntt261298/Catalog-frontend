@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import removeSpace from '../../helper/removeSpace';
-import getItems from '../../actions/item';
+// import { getCategoryItems } from '../../actions/item';
+import { getCategoryItems } from '../../actions/item';
+import lastPage from '../../assets/images/page-last.svg';
+import firstPage from '../../assets/images/page-first.svg';
+import left from '../../assets/images/left.svg';
+import right from '../../assets/images/right.svg';
+
 
 const activeStyle = {
   background: '#444',
@@ -11,13 +16,13 @@ const activeStyle = {
 
 const itemsPerPage = 1;
 
-export class Item extends Component {
+class Item extends Component {
     state = {
       page: 1,
     }
 
     componentDidMount() {
-      this.props.getCategoryItems();
+      this.props.getCategoryItems(this.props.id);
     }
 
     setPage(page) {
@@ -33,6 +38,7 @@ export class Item extends Component {
         numeric.push(
           <span
             onClick={this.setPage.bind(this, i)}
+            key={i}
             style={page === i ? activeStyle : null}
           >
             { i }
@@ -69,7 +75,7 @@ export class Item extends Component {
             {
             items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(({ id, title }) => (
               <li key={id}>
-                <a href={`item/${removeSpace(title)}`}>
+                <a href={`category/${id}`}>
                   { title }
                 </a>
               </li>
@@ -78,15 +84,15 @@ export class Item extends Component {
           </ul>
           <div className="numeric">
             {' '}
-            <img src="assets/images/baseline-chevron_left-24px.svg" onClick={this.decreasePage.bind(this)} alt="" />
+            <img src={left} onClick={this.decreasePage.bind(this)} alt="" />
             {' '}
-            <img src="assets/images/page-first.svg" onClick={this.setPage.bind(this, 1)} alt="" />
+            <img src={firstPage} onClick={this.setPage.bind(this, 1)} alt="" />
             {' '}
             { this.createPage(totalPages) }
             {' '}
-            <img src="assets/images/page-last.svg" onClick={this.setPage.bind(this, totalPages)} alt="" />
+            <img src={lastPage} onClick={this.setPage.bind(this, totalPages)} alt="" />
             {' '}
-            <img src="assets/images/baseline-chevron_right-24px.svg" onClick={this.increasePage.bind(this, totalPages)} alt="" />
+            <img src={right} onClick={this.increasePage.bind(this, totalPages)} alt="" />
             {' '}
           </div>
         </div>
@@ -95,12 +101,13 @@ export class Item extends Component {
 }
 
 Item.propTypes = {
-  getCategoryItems: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
+  getCategoryItems: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  items: state.category.items,
+  items: state.item.categoryItems,
 });
 
-export default connect(mapStateToProps, { getItems })(Item);
+export default connect(mapStateToProps, { getCategoryItems })(Item);

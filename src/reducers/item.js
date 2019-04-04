@@ -1,8 +1,13 @@
-import { GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAIL } from '../actions/types';
+import {
+  GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAIL,
+  GET_CATEGORY_ITEMS, GET_CATEGORY_ITEMS_SUCCESS, GET_CATEGORY_ITEMS_FAIL,
+
+} from '../actions/types';
 
 const initialState = {
   loading: false,
   items: [],
+  categoryItems: [],
   error: '',
 };
 
@@ -20,6 +25,23 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case GET_ITEMS_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
+    case GET_CATEGORY_ITEMS:
+      return {
+        ...state,
+        loading: true,
+      };
+    case GET_CATEGORY_ITEMS_SUCCESS:
+      return {
+        ...state,
+        categoryItems: action.payload,
+        loading: false,
+      };
+    case GET_CATEGORY_ITEMS_FAIL:
       return {
         ...state,
         error: action.payload,

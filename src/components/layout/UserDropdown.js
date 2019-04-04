@@ -5,6 +5,7 @@ import {
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { onLogout } from '../../actions/user';
+import userImage from '../../assets/images/baseline-person-24px.svg';
 
 // import { Link } from 'react-router-dom';
 
@@ -14,7 +15,7 @@ const UserDropdown = (props) => {
     <UncontrolledDropdown>
       <DropdownToggle caret>
         <div className="user-img">
-          <img src="assets/images/baseline-person-24px.svg" alt="user" />
+          <img src={userImage} alt="user" />
         </div>
       </DropdownToggle>
       <DropdownMenu>
