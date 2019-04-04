@@ -1,21 +1,25 @@
-import { TOGGLE_LOGIN_MODAL, TOGGLE_SIGNUP_MODAL } from '../actions/types';
+import { SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, HIDE_MODAL } from '../actions/types';
 
 const initialState = {
-  loginModal: false,
-  signupModal: false,
+  modal: '',
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_LOGIN_MODAL:
+    case SHOW_LOGIN_MODAL:
       return {
         ...state,
-        loginModal: !state.loginModal,
+        modal: 'login',
       };
-    case TOGGLE_SIGNUP_MODAL:
+    case SHOW_SIGNUP_MODAL:
       return {
         ...state,
-        signupModal: !state.signupModal,
+        modal: 'signup',
+      };
+    case HIDE_MODAL:
+      return {
+        ...state,
+        modal: '',
       };
     default:
       return state;

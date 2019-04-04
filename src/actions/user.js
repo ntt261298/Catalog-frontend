@@ -1,5 +1,4 @@
 import {
-  TOGGLE_LOGIN_MODAL, TOGGLE_SIGNUP_MODAL,
   VERIFY_TOKEN, VERIFY_TOKEN_SUCCESS, VERIFY_TOKEN_FAIL,
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
   USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
@@ -40,7 +39,6 @@ export const onLogin = (username, password) => async (dispatch) => {
       },
     });
     const statusCode = response.status;
-    if (statusCode === 200) dispatch({ type: TOGGLE_LOGIN_MODAL });
     response = await response.json();
     const payload = {
       ...response,
@@ -67,7 +65,6 @@ export const onSignup = (username, password) => async (dispatch) => {
       },
     });
     const statusCode = response.status;
-    if (statusCode === 201) dispatch({ type: TOGGLE_SIGNUP_MODAL });
     response = await response.json();
     console.log(response);
     const payload = {

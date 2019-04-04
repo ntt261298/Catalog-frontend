@@ -1,27 +1,27 @@
 import React from 'react';
 import { shallow } from '../../../enzyme';
-import Category from '../Category';
+import Item from '../Item';
 
-describe('Category tests', () => {
+describe('Item tests', () => {
   let wrapper;
   let props;
   const setup = () => {
     wrapper = shallow(
-      <Category {...props} />,
+      <Item {...props} />,
     );
   };
 
   beforeEach(() => {
     props = {
       ...props,
-      categories: [{ id: 1, items: [], name: 'One' },
-        { id: 1, items: [], name: 'Two' },
-        { id: 1, items: [], name: 'Three' }],
-      getCategories: () => props.categories,
+      items: [{ id: 1, title: 'Title 1', desciption: 'One' },
+        { id: 2, title: 'Title 2', desciption: 'Two' },
+        { id: 3, title: 'Title 3', desciption: 'Three' }],
+      getItems: () => props.items,
     };
   });
 
-  it('renders list-categories', () => {
+  it('renders list-items', () => {
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();

@@ -1,11 +1,15 @@
 import {
-  TOGGLE_LOGIN_MODAL, TOGGLE_SIGNUP_MODAL,
+  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, HIDE_MODAL,
 } from './types';
 
-export const toggleLogin = () => ({
-  type: TOGGLE_LOGIN_MODAL,
+export const showLogin = () => ({
+  type: SHOW_LOGIN_MODAL,
 });
 
-export const toggleSignup = () => ({
-  type: TOGGLE_SIGNUP_MODAL,
+export const showSignup = () => ({
+  type: SHOW_SIGNUP_MODAL,
+});
+
+export const hideModal = () => ({
+  type: HIDE_MODAL,
 });

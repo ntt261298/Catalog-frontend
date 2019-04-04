@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { toggleLogin } from '../../actions/app';
+import { showLogin } from '../../actions/app';
 
-const LoginButton = props => (
-  <button type="button" onClick={props.toggleLogin} className="btn-login">Login</button>
+export const LoginButton = props => (
+  <button type="button" onClick={props.showLogin} className="btn-login">Login</button>
 );
 
 LoginButton.propTypes = {
-  toggleLogin: PropTypes.func.isRequired,
+  showLogin: PropTypes.func.isRequired,
 };
 
-export default connect(null, { toggleLogin })(LoginButton);
+export default connect(null, { showLogin })(LoginButton);

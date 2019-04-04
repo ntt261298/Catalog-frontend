@@ -14,6 +14,14 @@ ul {
     padding-left: 0px;
     line-height: 2rem;
 }
+
+a {
+    color: #000;
+}
+a:hover {
+    color: var(--blue);
+    border-bottom: none;
+}
 /* Modal Style */
 .modal-content {
     text-align: center;
@@ -51,3 +59,8 @@ ul {
 .modal-footer button {
     padding: 5px 20px;
 }
+/* Alert message style */
+.alert {
+    width: 70%;
+    margin: 10px auto;
+}   

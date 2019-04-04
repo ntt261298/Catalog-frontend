@@ -5,3 +5,9 @@ exports[`Login button tests renders login button 1`] = `
   <Component />
 </ContextConsumer>
 `;
+
+exports[`Login button tests should render login button 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

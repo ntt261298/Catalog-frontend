@@ -17,7 +17,7 @@ export class Item extends Component {
     }
 
     componentDidMount() {
-      this.props.getItems();
+      this.props.getCategoryItems();
     }
 
     setPage(page) {
@@ -33,7 +33,6 @@ export class Item extends Component {
         numeric.push(
           <span
             onClick={this.setPage.bind(this, i)}
-            key={i}
             style={page === i ? activeStyle : null}
           >
             { i }
@@ -96,12 +95,12 @@ export class Item extends Component {
 }
 
 Item.propTypes = {
-  getItems: PropTypes.func.isRequired,
+  getCategoryItems: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
-  items: state.item.items,
+  items: state.category.items,
 });
 
 export default connect(mapStateToProps, { getItems })(Item);
