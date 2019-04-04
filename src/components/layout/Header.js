@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import '../../style/layout.css';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 import UserDropdown from './UserDropdown';
@@ -12,7 +13,7 @@ const Header = (props) => {
   return (
     <div className="header">
       <div className="header-logo">
-        Catalog App
+        <Link to="/">Catalog App</Link>
       </div>
       <div className="header-menu">
         {accessToken ? (

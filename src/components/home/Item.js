@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getItems } from '../../actions/item';
 import lastPage from '../../assets/images/page-last.svg';
 import firstPage from '../../assets/images/page-first.svg';
@@ -75,9 +76,9 @@ export class Item extends Component {
             items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(
               ({ id, title, category_id }) => (
                 <li key={id}>
-                  <a href={`category/${category_id}/item/${id}`}>
+                  <Link href={`category/${category_id}/item/${id}`}>
                     { title }
-                  </a>
+                  </Link>
                 </li>
               ),
             )

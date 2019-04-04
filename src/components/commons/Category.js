@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import getCategories from '../../actions/category';
 
 export class Category extends Component {
@@ -17,7 +18,7 @@ export class Category extends Component {
           {
             categories.map(({ id, name }) => (
               <li key={id}>
-                <a href={`category/${id}`}>{ name }</a>
+                <Link to={`/category/${id}`}>{ name }</Link>
               </li>
             ))
           }

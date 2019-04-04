@@ -4,10 +4,9 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { onLogout } from '../../actions/user';
 import userImage from '../../assets/images/baseline-person-24px.svg';
-
-// import { Link } from 'react-router-dom';
 
 const UserDropdown = (props) => {
   const { onLogout } = props;
@@ -19,11 +18,11 @@ const UserDropdown = (props) => {
         </div>
       </DropdownToggle>
       <DropdownMenu>
-        {/* <Link>    */}
-        <DropdownItem>
+        <Link to="/me/items">
+          <DropdownItem>
           Activities
-        </DropdownItem>
-        {/* </Link> */}
+          </DropdownItem>
+        </Link>
         <DropdownItem divider />
         <DropdownItem onClick={onLogout}>Logout</DropdownItem>
       </DropdownMenu>
