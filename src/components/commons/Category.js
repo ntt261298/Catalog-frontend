@@ -10,17 +10,20 @@ export class Category extends Component {
   }
 
   render() {
-    const { categories } = this.props;
+    const { category } = this.props;
     return (
       <div className="category">
         <h2>Catagories</h2>
         <ul>
           {
-            categories.map(({ id, name }) => (
-              <li key={id}>
-                <Link to={`/category/${id}`}>{ name }</Link>
-              </li>
-            ))
+            category.allIds.map((id) => {
+              const { name } = category.byId[id];
+              return (
+                <li key={id}>
+                  <Link to={`/category/${id}`}>{ name }</Link>
+                </li>
+              );
+            })
           }
         </ul>
       </div>
@@ -30,11 +33,11 @@ export class Category extends Component {
 
 Category.propTypes = {
   getCategories: PropTypes.func.isRequired,
-  categories: PropTypes.array.isRequired,
+  category: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-  categories: state.category.categories,
+  category: state.category,
 });
 
 export default connect(mapStateToProps, { getCategories })(Category);

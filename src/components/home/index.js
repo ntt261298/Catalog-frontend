@@ -10,7 +10,7 @@ const HomePage = () => (
     <Header />
     <div className="home-main">
       <Category />
-      <Item />
+      <Item type="home" id="" />
     </div>
   </div>
 );

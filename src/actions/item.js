@@ -1,5 +1,6 @@
 import {
   GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAIL,
+  ADD_ITEM, ADD_ITEM_SUCCESS, ADD_ITEM_FAIL,
   GET_USER_ITEMS, GET_USER_ITEMS_SUCCESS, GET_USER_ITEMS_FAIL,
   GET_CATEGORY_ITEMS, GET_CATEGORY_ITEMS_SUCCESS, GET_CATEGORY_ITEMS_FAIL,
 } from './types';
@@ -44,10 +45,10 @@ export const getUserItems = token => async (dispatch) => {
   }
 };
 
-export const createItem = (title, description, categoryID, token) => async (dispatch) => {
-  dispatch({ type: GET_USER_ITEMS });
+export const addItem = (title, description, categoryID, token) => async (dispatch) => {
+  dispatch({ type: ADD_ITEM });
   try {
-    const response = await (await fetch('/users/items', {
+    const response = await (await fetch(`/categories/${categoryID}/items`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -59,8 +60,8 @@ export const createItem = (title, description, categoryID, token) => async (disp
         categoryID,
       },
     })).json();
-    dispatch({ type: GET_USER_ITEMS_SUCCESS, payload: response });
+    dispatch({ type: ADD_ITEM_SUCCESS, payload: response });
   } catch (err) {
-    dispatch({ type: GET_USER_ITEMS_FAIL, payload: err });
+    dispatch({ type: ADD_ITEM_FAIL, payload: err });
   }
 };

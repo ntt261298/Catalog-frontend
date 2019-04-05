@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../../style/home.css';
 import { PropTypes } from 'prop-types';
 import Category from '../commons/Category';
-import Item from './Item';
+import Item from '../commons/Item';
 import Header from '../layout/Header';
 
 const CategoryPage = props => (
@@ -11,7 +11,7 @@ const CategoryPage = props => (
     <Header />
     <div className="home-main">
       <Category />
-      <Item id={props.match.params.id} />
+      <Item type="category" id={props.match.params.id} />
     </div>
   </div>
 );

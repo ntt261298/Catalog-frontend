@@ -10,6 +10,7 @@ const getCategories = () => async (dispatch) => {
     })).json();
     dispatch({ type: GET_CATEGORIES_SUCCESS, payload: response });
   } catch (err) {
+    console.log(err);
     dispatch({ type: GET_CATEGORIES_FAIL, payload: err });
   }
 };

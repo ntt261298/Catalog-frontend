@@ -1,4 +1,6 @@
-import { SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, HIDE_MODAL } from '../actions/types';
+import {
+  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, SHOW_ADD_ITEM_MODAL, HIDE_MODAL,
+} from '../actions/types';
 
 const initialState = {
   modal: '',
@@ -15,6 +17,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         modal: 'signup',
+      };
+    case SHOW_ADD_ITEM_MODAL:
+      return {
+        ...state,
+        modal: 'addItem',
       };
     case HIDE_MODAL:
       return {

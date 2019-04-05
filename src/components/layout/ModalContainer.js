@@ -13,6 +13,11 @@ const SignupModal = Loadable({
   loading: () => <div>Loading...</div>,
   delay: 200,
 });
+const AddItemModal = Loadable({
+  loader: () => import('../user/AddItemModal'),
+  loading: () => <div>Loading...</div>,
+  delay: 200,
+});
 
 const ModalContainer = (props) => {
   switch (props.modal) {
@@ -20,6 +25,8 @@ const ModalContainer = (props) => {
       return <LoginModal />;
     case 'signup':
       return <SignupModal />;
+    case 'addItem':
+      return <AddItemModal />;
     default:
       return null;
   }

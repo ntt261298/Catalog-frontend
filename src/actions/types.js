@@ -20,6 +20,7 @@ export const GET_USER_ITEMS_FAIL = 'GET_USER_ITEMS_FAIL';
 
 export const SHOW_LOGIN_MODAL = 'SHOW_LOGIN_MODAL';
 export const SHOW_SIGNUP_MODAL = 'SHOW_SIGNUP_MODAL';
+export const SHOW_ADD_ITEM_MODAL = 'SHOW_ADD_ITEM_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
 export const GET_TOKEN = 'GET_TOKEN';

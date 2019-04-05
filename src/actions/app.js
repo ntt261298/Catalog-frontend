@@ -1,5 +1,5 @@
 import {
-  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, HIDE_MODAL,
+  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, SHOW_ADD_ITEM_MODAL, HIDE_MODAL,
 } from './types';
 
 export const showLogin = () => ({
@@ -8,6 +8,10 @@ export const showLogin = () => ({
 
 export const showSignup = () => ({
   type: SHOW_SIGNUP_MODAL,
+});
+
+export const showAddItem = () => ({
+  type: SHOW_ADD_ITEM_MODAL,
 });
 
 export const hideModal = () => ({

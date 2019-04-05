@@ -27,6 +27,10 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 20px 0;
 }
+.main-user-header img {
+    width: 50px;
+    margin: 0 auto;
+}
 .main-user-header img:hover {
     cursor: pointer;
 }

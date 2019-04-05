@@ -6,7 +6,7 @@ import {
 import { PropTypes } from 'prop-types';
 import { hideModal } from '../../actions/app';
 import getCategories from '../../actions/category';
-import { onAddItem } from '../../actions/user';
+import { addItem } from '../../actions/item';
 
 
 export class AddItemModal extends React.Component {
@@ -26,32 +26,32 @@ export class AddItemModal extends React.Component {
     });
   }
 
-  onAddItem = async () => {
-    const { username, password } = this.state;
-    if (!username) {
+  addItem = async () => {
+    const { title, description, categoryID } = this.state;
+    if (!title) {
       this.setState({
         message: 'Title must not be blank',
       });
       return;
     }
-    if (password.length < 6) {
+    if (!description) {
       this.setState({
         message: 'Description must not be blank',
       });
       return;
     }
-    await this.props.onAddItem(this.state.title, this.state.description, this.state.category, this.props.token);
+    await this.props.addItem(title, description, categoryID, this.props.token);
     this.props.hideModal();
   }
 
   render() {
-    const { modal, hideModal, categories } = this.props;
+    const { modal, hideModal, category } = this.props;
     const { message } = this.state;
-    const isAddItemModal = modal === 'add';
+    const isAddItemModal = modal === 'addItem';
     return (
       <div>
         <Modal isOpen={isAddItemModal} toggle={hideModal}>
-          <ModalHeader toggle={hideModal}>Login</ModalHeader>
+          <ModalHeader toggle={hideModal}>Add Item</ModalHeader>
           <ModalBody>
             <div>
               <label htmlFor="title">
@@ -70,8 +70,8 @@ export class AddItemModal extends React.Component {
                 Category:
                 <select name="category">
                   {
-                        categories.map(({ name, id }) => (
-                          <option value={id}>{name}</option>
+                        category.allIds.map(id => (
+                          <option value={id}>{category.byId[id].name}</option>
                         ))
                     }
                 </select>
@@ -84,7 +84,7 @@ export class AddItemModal extends React.Component {
             ) : null}
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.onAddItem}>Add</Button>
+            <Button color="primary" onClick={this.addItem}>Add</Button>
           </ModalFooter>
         </Modal>
       </div>
@@ -96,17 +96,16 @@ AddItemModal.propTypes = {
   modal: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
   hideModal: PropTypes.func.isRequired,
-  onAddItem: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
   token: state.user.accessToken,
-  categories: state.category.categories,
-  errMessage: state.user.message,
+  category: state.category,
 });
 
 export default connect(mapStateToProps, {
-  getCategories, onAddItem, hideModal,
+  getCategories, addItem, hideModal,
 })(AddItemModal);
