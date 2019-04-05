@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../../style/home.css';
 import Category from '../commons/Category';
-import Item from './Item';
+import Item from '../commons/Item';
 import Header from '../layout/Header';
 
 const HomePage = () => (

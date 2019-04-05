@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../../style/home.css';
+import '../../style/user.css';
 // import { PropTypes } from 'prop-types';
 import Item from './Item';
 import Header from '../layout/Header';
@@ -8,7 +8,7 @@ import Header from '../layout/Header';
 const UserPage = () => (
   <div>
     <Header />
-    <div className="home-main">
+    <div className="user-main">
       <Item />
     </div>
   </div>

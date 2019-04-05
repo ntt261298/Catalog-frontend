@@ -6,11 +6,17 @@ import lastPage from '../../assets/images/page-last.svg';
 import firstPage from '../../assets/images/page-first.svg';
 import left from '../../assets/images/left.svg';
 import right from '../../assets/images/right.svg';
+import add from '../../assets/images/add-button.svg';
 
 
 const activeStyle = {
   background: '#444',
   color: '#fff',
+};
+
+const plusStyle = {
+  width: '50px',
+  right: '0',
 };
 
 const itemsPerPage = 1;
@@ -68,16 +74,26 @@ export class Item extends Component {
       const { page } = this.state;
       const totalPages = Math.ceil(items.length / itemsPerPage);
       return (
-        <div className="item">
-          <h2>User's Items</h2>
+        <div className="user-items">
+          <div className="main-user-header">
+            <h2>User's Items</h2>
+            <div><img style={plusStyle} src={add} alt="" /></div>
+          </div>
           <ul>
             {
             items.slice((page - 1) * itemsPerPage, page * itemsPerPage).map(
-              ({ id, title, category_id }) => (
-                <li key={id}>
+              ({
+                id, title, description, category_id,
+              }) => (
+                <li key={id} className="user-item">
+                  <div className="edit-delete">
+                    <span>edit</span>
+                    <span>delete</span>
+                  </div>
                   <a href={`category/${category_id}/item/${id}`}>
                     { title }
                   </a>
+                  <p>{ description }</p>
                 </li>
               ),
             )

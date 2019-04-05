@@ -30,13 +30,33 @@ export const getCategoryItems = categoryID => async (dispatch) => {
 
 export const getUserItems = token => async (dispatch) => {
   dispatch({ type: GET_USER_ITEMS });
-  console.log('abc');
   try {
     const response = await (await fetch('/users/items', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
+      },
+    })).json();
+    dispatch({ type: GET_USER_ITEMS_SUCCESS, payload: response });
+  } catch (err) {
+    dispatch({ type: GET_USER_ITEMS_FAIL, payload: err });
+  }
+};
+
+export const createItem = (title, description, categoryID, token) => async (dispatch) => {
+  dispatch({ type: GET_USER_ITEMS });
+  try {
+    const response = await (await fetch('/users/items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: {
+        title,
+        description,
+        categoryID,
       },
     })).json();
     dispatch({ type: GET_USER_ITEMS_SUCCESS, payload: response });

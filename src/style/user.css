@@ -1,0 +1,32 @@
+.user-main {
+    position: relative;
+    text-align: center;
+    margin: 20px auto; 
+    width: 60%;    
+}
+.user-item {
+    border: 1px solid #444;
+    padding: 10px;
+}
+.user-item p {
+    border-top: 0.2px solid #444;
+}
+.user-item .edit-delete {
+    position: absolute;
+    right: 10px;
+}
+.user-item .edit-delete span{
+    margin: 0 3px;
+}
+.user-item .edit-delete span:hover{
+    color: var(--blue);
+    cursor: pointer;
+}
+.main-user-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 0;
+}
+.main-user-header img:hover {
+    cursor: pointer;
+}
