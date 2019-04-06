@@ -13,7 +13,7 @@ export class AddItemModal extends React.Component {
   state = {
     title: '',
     description: '',
-    categoryID: '',
+    categoryID: '1',
   }
 
   componentDidMount() {
@@ -66,9 +66,9 @@ export class AddItemModal extends React.Component {
               </label>
             </div>
             <div>
-              <label htmlFor="category">
+              <label htmlFor="categoryID">
                 Category:
-                <select name="category">
+                <select name="categoryID" onChange={this.onChangeInput}>
                   {
                         category.allIds.map(id => (
                           <option value={id}>{category.byId[id].name}</option>

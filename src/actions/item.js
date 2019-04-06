@@ -46,19 +46,18 @@ export const getUserItems = token => async (dispatch) => {
 };
 
 export const addItem = (title, description, categoryID, token) => async (dispatch) => {
+  const data = {
+    title, description,
+  };
   dispatch({ type: ADD_ITEM });
   try {
-    const response = await (await fetch(`/categories/${categoryID}/items`, {
+    const response = await (await fetch(`http://localhost:5000/categories/${categoryID}/items`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: {
-        title,
-        description,
-        categoryID,
-      },
+      body: JSON.stringify(data),
     })).json();
     dispatch({ type: ADD_ITEM_SUCCESS, payload: response });
   } catch (err) {

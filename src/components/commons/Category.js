@@ -4,9 +4,23 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import getCategories from '../../actions/category';
 
+const activeStyle = {
+  color: 'var(--blue)',
+};
+
 export class Category extends Component {
+  state = {
+    active: '',
+  }
+
   componentDidMount() {
     this.props.getCategories();
+  }
+
+  changeActive(id) {
+    this.setState({
+      active: id,
+    });
   }
 
   render() {
@@ -20,7 +34,7 @@ export class Category extends Component {
               const { name } = category.byId[id];
               return (
                 <li key={id}>
-                  <Link to={`/category/${id}`}>{ name }</Link>
+                  <Link onClick={() => this.changeActive(id)} style={this.state.active === id ? activeStyle : null} to={`/category/${id}`}>{ name }</Link>
                 </li>
               );
             })
