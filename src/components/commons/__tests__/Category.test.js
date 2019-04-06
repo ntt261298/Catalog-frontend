@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from '../../../enzyme';
 import Category from '../Category';
 
-describe('Item tests', () => {
+describe('src/components/commons/Category', () => {
   let wrapper;
   let props;
   const setup = () => {
@@ -14,10 +14,22 @@ describe('Item tests', () => {
   beforeEach(() => {
     props = {
       ...props,
-      category: [{ id: 1, name: 'Title 1', items: [] },
-        { id: 2, name: 'Title 2', items: [] },
-        { id: 3, name: 'Title 3', items: [] }],
-      getCategories: () => props.items,
+      category: {
+        byId: {
+          1: {
+            id: 1,
+            item: [],
+            name: 'Category 1',
+          },
+          2: {
+            id: 2,
+            item: [],
+            name: 'Category 2',
+          },
+        },
+        allIds: [1, 2],
+      },
+      getCategories: jest.fn(),
     };
   });
 
@@ -25,5 +37,11 @@ describe('Item tests', () => {
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call getCategories in componentDidMount', () => {
+    setup();
+    // Expect the wrapper object to be defined
+    expect(props.getCategories).toHaveBeenCalled();
   });
 });

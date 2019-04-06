@@ -1,10 +1,5 @@
 import { combineReducers } from 'redux';
-import {
-  GET_ITEMS, GET_CATEGORIES_SUCCESS, GET_ITEMS_FAIL,
-  ADD_ITEM_SUCCESS,
-  GET_USER_ITEMS, GET_USER_ITEMS_SUCCESS, GET_USER_ITEMS_FAIL,
-  GET_CATEGORY_ITEMS, GET_CATEGORY_ITEMS_SUCCESS, GET_CATEGORY_ITEMS_FAIL,
-} from '../actions/types';
+import { GET_CATEGORIES_SUCCESS } from '../actions/types';
 
 function addCategoryEntry(state, category) {
   // Insert the new Item object into the updated lookup table
@@ -41,7 +36,6 @@ function allCategories(state = [], action) {
       action.payload.forEach((category) => {
         state = addCategoryId(state, category);
       });
-      console.log(state);
       return state;
     }
     default:

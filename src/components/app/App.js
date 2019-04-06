@@ -1,34 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import HomePage from './components/home/index';
-import CategoryPage from './components/category/index';
-import ItemPage from './components/item/index';
-import UserPage from './components/user/index';
+import PrivateRoute from './PrivateRoute';
+import HomePage from '../home/HomePage';
+import CategoryPage from '../category/CategoryPage';
+import ItemPage from '../item/ItemPage';
+import UserPage from '../user/UserPage';
 
-const PrivateRoute = ({ component: Component, token, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => (
-      !token
-        ? <Redirect to="/" />
-        : <Component {...props} />
-    )
-  }
-  />
-);
-
-PrivateRoute.propTypes = {
-  component: PropTypes.func.isRequired,
-  token: PropTypes.string,
-};
-
-PrivateRoute.defaultProps = {
-  token: '',
-};
-
-const App = props => (
+export const App = props => (
   <Router>
     <div className="App">
       <Route path="/" exact component={HomePage} />

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/layout/CategoryPage.js should render category page 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="home-main"
+  >
+    <Connect(Category) />
+    <Connect(Item)
+      id={1}
+      type="category"
+    />
+  </div>
+</div>
+`;

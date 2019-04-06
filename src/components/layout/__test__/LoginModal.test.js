@@ -6,15 +6,11 @@ describe('src/components/layout/LoginModal.js', () => {
   let wrapper;
   let props;
   let loginButton;
-  let modalHeader;
   let newAccountParam;
-  let userInput;
 
   const update = () => {
     loginButton = wrapper.find('Button');
-    modalHeader = wrapper.find('ModalHeader');
     newAccountParam = wrapper.find('p');
-    userInput = wrapper.find('input[name="username"]');
   };
 
   const setup = () => {
@@ -27,9 +23,8 @@ describe('src/components/layout/LoginModal.js', () => {
   beforeEach(() => {
     props = {
       modal: 'login',
+      errMessage: '',
       onLogin: jest.fn(),
-      moveToSignup: jest.fn(),
-      onChangeInput: jest.fn(),
       hideModal: jest.fn(),
       showSignup: jest.fn(),
       toggle: jest.fn(),
@@ -44,30 +39,16 @@ describe('src/components/layout/LoginModal.js', () => {
 
   it('should call onLogin when login button is clicked', () => {
     setup();
-    loginButton.simulate('click');
-    expect(props.onLogin).toHaveBeenCalled();
+    wrapper.setState({ username: 'test', password: '123456' }, () => {
+      loginButton.simulate('click');
+      expect(props.onLogin).toHaveBeenCalled();
+    });
   });
 
-  it('should call hideModal when close button is clicked', () => {
-    setup();
-    modalHeader.simulate('click');
-    expect(props.hideModal).toHaveBeenCalled();
-  });
-
-  it('should call showSignup when new account param is clicked', () => {
+  it('should call showSignup and hideModal when new account param is clicked', () => {
     setup();
     newAccountParam.simulate('click');
-    expect(newAccountParam).toHaveLength(1);
-    expect(props.moveToSignup).toHaveBeenCalled();
-  });
-
-  it('should call onChangeInput when user\'s input is changed', () => {
-    setup();
-    userInput.simulate('change', {
-      target: {
-        name: '123456',
-      },
-    });
-    expect(props.onChangeInput).toHaveBeenCalled();
+    expect(props.showSignup).toHaveBeenCalled();
+    expect(props.hideModal).toHaveBeenCalled();
   });
 });

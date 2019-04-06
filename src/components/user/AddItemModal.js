@@ -95,6 +95,7 @@ export class AddItemModal extends React.Component {
 AddItemModal.propTypes = {
   modal: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
+  category: PropTypes.object.isRequired,
   hideModal: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,

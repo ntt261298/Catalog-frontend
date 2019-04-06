@@ -5,3 +5,9 @@ exports[`Header tests renders header 1`] = `
   <Component />
 </ContextConsumer>
 `;
+
+exports[`src/components/layout/Header should render header 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

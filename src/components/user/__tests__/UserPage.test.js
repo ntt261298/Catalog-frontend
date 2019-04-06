@@ -1,23 +1,17 @@
 import React from 'react';
 import { shallow } from '../../../enzyme';
-import Header from '../Header';
+import { UserPage } from '../UserPage';
 
-describe('src/components/layout/Header', () => {
+describe('src/components/user/UserPage.js', () => {
   let wrapper;
-  let props;
+
   const setup = () => {
     wrapper = shallow(
-      <Header {...props} />,
+      <UserPage />,
     );
   };
 
-  beforeEach(() => {
-    props = {
-      accessToken: 'randowAccessToken',
-    };
-  });
-
-  it('should render header', () => {
+  it('should render user page', () => {
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();

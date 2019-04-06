@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import {
-  GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAIL,
+  GET_ITEMS_SUCCESS,
   ADD_ITEM_SUCCESS,
-  GET_USER_ITEMS, GET_USER_ITEMS_SUCCESS, GET_USER_ITEMS_FAIL,
-  GET_CATEGORY_ITEMS, GET_CATEGORY_ITEMS_SUCCESS, GET_CATEGORY_ITEMS_FAIL,
+  GET_USER_ITEMS_SUCCESS,
+  GET_CATEGORY_ITEMS_SUCCESS,
 } from '../actions/types';
 
 function addItemEntry(state, item) {
@@ -72,8 +72,6 @@ function categoryItems(state = [], action) {
       });
       return state;
     }
-    // case ADD_ITEM_SUCCESS:
-    //   return addItemId(state, action.payload);
     default:
       return state;
   }
@@ -82,6 +80,7 @@ function categoryItems(state = [], action) {
 function userItems(state = [], action) {
   switch (action.type) {
     case GET_USER_ITEMS_SUCCESS: {
+      state = [];
       action.payload.forEach((item) => {
         state = addItemId(state, item);
       });
@@ -98,61 +97,3 @@ export default combineReducers({
   categoryIds: categoryItems,
   userIds: userItems,
 });
-
-// export default function (state = initialState, action) {
-//   switch (action.type) {
-//     case GET_ITEMS:
-//       return {
-//         ...state,
-//         loading: true,
-//       };
-//     case GET_ITEMS_SUCCESS:
-//       return {
-//         ...state,
-//         items: action.payload,
-//         loading: false,
-//       };
-//     case GET_ITEMS_FAIL:
-//       return {
-//         ...state,
-//         error: action.payload,
-//         loading: false,
-//       };
-//     case GET_CATEGORY_ITEMS:
-//       return {
-//         ...state,
-//         loading: true,
-//       };
-//     case GET_CATEGORY_ITEMS_SUCCESS:
-//       return {
-//         ...state,
-//         categoryItems: action.payload,
-//         loading: false,
-//       };
-//     case GET_CATEGORY_ITEMS_FAIL:
-//       return {
-//         ...state,
-//         error: action.payload,
-//         loading: false,
-//       };
-//     case GET_USER_ITEMS:
-//       return {
-//         ...state,
-//         loading: true,
-//       };
-//     case GET_USER_ITEMS_SUCCESS:
-//       return {
-//         ...state,
-//         items: action.payload,
-//         loading: false,
-//       };
-//     case GET_USER_ITEMS_FAIL:
-//       return {
-//         ...state,
-//         error: action.payload,
-//         loading: false,
-//       };
-//     default:
-//       return state;
-//   }
-// }

@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/app/App should render app 1`] = `
+<BrowserRouter>
+  <div
+    className="App"
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:id"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:categoryID/item/:itemID"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/me/items"
+      token="randomToken"
+    />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`src/components/home/HomePage.js should render app 1`] = `
+<BrowserRouter>
+  <div
+    className="App"
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:id"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:categoryID/item/:itemID"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/me/items"
+      token="randomToken"
+    />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`src/components/home/HomePage.js should render home page 1`] = `
+<BrowserRouter>
+  <div
+    className="App"
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:id"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/category/:categoryID/item/:itemID"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/me/items"
+      token=""
+    />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`src/components/home/HomePage.js should render private route 1`] = `
+<Route
+  components=""
+  render={[Function]}
+/>
+`;

@@ -16,9 +16,6 @@ const ItemPage = props => (
 
 ItemPage.propTypes = {
   match: PropTypes.object.isRequired,
-  // toggleLogin: PropTypes.func.isRequired,
-  // userLogout: PropTypes.func.isRequired,
-  // getSearchResults: PropTypes.func.isRequired
 };
 
 export default connect(null, null)(ItemPage);

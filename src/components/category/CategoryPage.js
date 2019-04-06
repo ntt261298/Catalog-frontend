@@ -6,7 +6,7 @@ import Category from '../commons/Category';
 import Item from '../commons/Item';
 import Header from '../layout/Header';
 
-const CategoryPage = props => (
+export const CategoryPage = props => (
   <div>
     <Header />
     <div className="home-main">
@@ -18,9 +18,6 @@ const CategoryPage = props => (
 
 CategoryPage.propTypes = {
   match: PropTypes.object.isRequired,
-  // toggleLogin: PropTypes.func.isRequired,
-  // userLogout: PropTypes.func.isRequired,
-  // getSearchResults: PropTypes.func.isRequired
 };
 
 export default connect(null, null)(CategoryPage);

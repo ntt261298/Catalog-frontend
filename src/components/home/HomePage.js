@@ -5,7 +5,7 @@ import Category from '../commons/Category';
 import Item from '../commons/Item';
 import Header from '../layout/Header';
 
-const HomePage = () => (
+export const HomePage = () => (
   <div>
     <Header />
     <div className="home-main">
@@ -14,11 +14,5 @@ const HomePage = () => (
     </div>
   </div>
 );
-
-HomePage.propTypes = {
-  // toggleLogin: PropTypes.func.isRequired,
-  // userLogout: PropTypes.func.isRequired,
-  // getSearchResults: PropTypes.func.isRequired
-};
 
 export default connect(null, null)(HomePage);

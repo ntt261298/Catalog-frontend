@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/home/HomePage.js should not render private route 1`] = `
+<BrowserRouter
+  components=""
+  render={[Function]}
+/>
+`;
+
+exports[`src/components/home/HomePage.js should render private route 1`] = `
+<BrowserRouter
+  components=""
+  render={[Function]}
+/>
+`;
