@@ -6,7 +6,7 @@ import {
   GET_CATEGORY_ITEMS_SUCCESS,
 } from '../actions/types';
 
-const initialState = {
+export const initialState = {
   byId: {},
   allIds: [],
   categoryItemIds: [],
@@ -32,19 +32,21 @@ function addItemId(state, item) {
 export default function (state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS_SUCCESS: {
+      state.allIds = [];
       action.payload.forEach((item) => {
-        state.allIds = [];
         state.byId = addItemEntry(state.byId, item);
         state.allIds = addItemId(state.allIds, item);
       });
       return state;
     }
     case GET_ITEM_SUCCESS: {
+      state.itemId = [];
       state.byId = addItemEntry(state.byId, action.payload);
       state.itemId = [action.payload.id];
       return state;
     }
     case GET_CATEGORY_ITEMS_SUCCESS: {
+      state.categoryItemIds = [];
       action.payload.forEach((item) => {
         state.byId = addItemEntry(state.byId, item);
         state.categoryItemIds = addItemId(state.categoryItemIds, item);
@@ -52,9 +54,10 @@ export default function (state = initialState, action) {
       return state;
     }
     case GET_USER_ITEMS_SUCCESS: {
+      state.userItemIds = [];
       action.payload.forEach((item) => {
         state.byId = addItemEntry(state.byId, item);
-        state.userItemIds = addItemId((state.userItemIds, item));
+        state.userItemIds = addItemId(state.userItemIds, item);
       });
       return state;
     }

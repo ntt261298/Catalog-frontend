@@ -18,7 +18,7 @@ export class UserItems extends Component {
   }
 
   componentDidMount() {
-    this.props.getUserItems(this.props.token);
+    this.props.getUserItems();
   }
 
   // componentDidUpdate(prevProps) {
@@ -36,8 +36,8 @@ export class UserItems extends Component {
   }
 
   onDeleteItem = async () => {
-    await this.props.deleteItem(this.state.categoryID, this.state.itemID, this.props.token);
-    await this.props.getUserItems(this.props.token);
+    await this.props.deleteItem(this.state.categoryID, this.state.itemID);
+    await this.props.getUserItems();
     this.props.hideModal();
   }
 
@@ -60,10 +60,10 @@ export class UserItems extends Component {
               <h2>User's Items</h2>
               <img onClick={showAddItem} src={plus} alt="" />
             </div>
-            {items.map(({
-              title, description, category_id, id,
-            }) => (
-              <ul>
+            <ul>
+              {items.map(({
+                title, description, category_id, id,
+              }) => (
                 <li key={id} className="user-item">
                   <div className="edit-delete">
                     <span>edit</span>
@@ -81,8 +81,8 @@ export class UserItems extends Component {
                   </Link>
                   <p>{ description }</p>
                 </li>
-              </ul>
-            ))}
+              ))}
+            </ul>
           </Fragment>
         }
       </div>
@@ -97,13 +97,11 @@ UserItems.propTypes = {
   deleteItem: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
-  token: PropTypes.string.isRequired,
   modal: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   items: selectUserItems(state),
-  token: state.user.accessToken,
   modal: state.app.modal,
 });
 

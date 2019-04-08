@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import '../../style/user.css';
 import UserItems from './UserItems';
 import Header from '../layout/Header';
@@ -13,4 +12,4 @@ export const UserPage = () => (
   </div>
 );
 
-export default connect(null, null)(UserPage);
+export default UserPage;

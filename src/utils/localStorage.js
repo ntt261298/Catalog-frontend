@@ -22,7 +22,7 @@ export const saveToken = (state) => {
 export const removeToken = (state) => {
   try {
     const seriallizedState = JSON.stringify(state);
-    localStorage.remove('token', seriallizedState);
+    localStorage.removeItem('token', seriallizedState);
   } catch (err) {
     console.error(err);
   }

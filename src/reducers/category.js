@@ -24,7 +24,6 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case GET_CATEGORIES_SUCCESS: {
       action.payload.forEach((item) => {
-        state.allIds = [];
         state.byId = addItemEntry(state.byId, item);
         state.allIds = addItemId(state.allIds, item);
       });

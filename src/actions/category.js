@@ -1,18 +1,8 @@
-import {
-  GET_CATEGORIES, GET_CATEGORIES_SUCCESS, GET_CATEGORIES_FAIL,
-} from './types';
+import { GET_CATEGORIES } from './types';
+import { Get } from '../utils/request';
 
-const getCategories = () => async (dispatch) => {
-  dispatch({ type: GET_CATEGORIES });
-  try {
-    const response = await (await fetch('/categories', {
-      method: 'GET',
-    })).json();
-    dispatch({ type: GET_CATEGORIES_SUCCESS, payload: response });
-  } catch (err) {
-    console.log(err);
-    dispatch({ type: GET_CATEGORIES_FAIL, payload: err });
-  }
+const getCategories = () => (dispatch) => {
+  Get(dispatch, GET_CATEGORIES, '/categories');
 };
 
 export default getCategories;

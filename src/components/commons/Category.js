@@ -46,9 +46,11 @@ export class Category extends Component {
 Category.propTypes = {
   getCategories: PropTypes.func.isRequired,
   categories: PropTypes.array.isRequired,
+  // state: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
+  // state,
   categories: selectAllCategories(state),
 });
 

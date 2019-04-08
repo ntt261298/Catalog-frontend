@@ -7,6 +7,7 @@ import { PropTypes } from 'prop-types';
 import { hideModal } from '../../actions/app';
 import getCategories from '../../actions/category';
 import { addItem, getItems, getUserItems } from '../../actions/item';
+import { selectAllCategories } from '../../utils/selector';
 
 
 export class AddItemModal extends React.Component {
@@ -40,14 +41,14 @@ export class AddItemModal extends React.Component {
       });
       return;
     }
-    await this.props.addItem(title, description, categoryID, this.props.token);
+    await this.props.addItem(title, description, categoryID);
     // await this.props.getItems();
-    await this.props.getUserItems(this.props.token);
+    await this.props.getUserItems();
     this.props.hideModal();
   }
 
   render() {
-    const { modal, hideModal, category } = this.props;
+    const { modal, hideModal, categories } = this.props;
     const { message } = this.state;
     const isAddItemModal = modal === 'addItem';
     return (
@@ -72,8 +73,8 @@ export class AddItemModal extends React.Component {
                 Category:
                 <select name="categoryID" onChange={this.onChangeInput}>
                   {
-                        category.allIds.map(id => (
-                          <option key={id} value={id}>{category.byId[id].name}</option>
+                        categories.map(({ id, name }) => (
+                          <option key={id} value={id}>{name}</option>
                         ))
                     }
                 </select>
@@ -96,8 +97,7 @@ export class AddItemModal extends React.Component {
 
 AddItemModal.propTypes = {
   modal: PropTypes.string.isRequired,
-  token: PropTypes.string.isRequired,
-  category: PropTypes.object.isRequired,
+  categories: PropTypes.array.isRequired,
   hideModal: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
@@ -106,8 +106,7 @@ AddItemModal.propTypes = {
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
-  token: state.user.accessToken,
-  category: state.category,
+  categories: selectAllCategories(state),
 });
 
 export default connect(mapStateToProps, {

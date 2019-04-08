@@ -1,4 +1,5 @@
 import React from 'react';
+import toastr from 'toastr';
 import { connect } from 'react-redux';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
@@ -68,9 +69,7 @@ export class LoginModal extends React.Component {
               </label>
             </div>
             { message ? (
-              <div className="alert alert-danger" role="alert">
-                { message }
-              </div>
+              toastr.error(message)
             ) : null}
             { errMessage ? (
               <div className="alert alert-danger" role="alert">

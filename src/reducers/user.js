@@ -2,12 +2,12 @@ import {
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
   USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
 } from '../actions/types';
-import { saveToken, loadToken, removeToken } from '../utils/localStorage';
+import { saveToken, removeToken, loadToken } from '../utils/localStorage';
 
-const initialState = {
+export const initialState = {
   loading: false,
+  loggedIn: Boolean(loadToken()),
   message: '',
-  accessToken: loadToken(),
   error: '',
 };
 
@@ -19,23 +19,17 @@ export default function (state = initialState, action) {
         loading: true,
       };
     case USER_LOGIN_SUCCESS:
-      if (action.payload.statusCode === 200) {
-        saveToken(action.payload.access_token);
-        return {
-          ...state,
-          loading: false,
-          accessToken: action.payload.access_token,
-        };
-      }
+      saveToken(action.payload.access_token);
       return {
         ...state,
         loading: false,
-        message: action.payload.message,
+        loggedIn: true,
       };
     case USER_LOGIN_FAIL:
       return {
         ...state,
         error: action.payload,
+        loggedIn: false,
         loading: false,
       };
     case USER_SIGNUP:
@@ -44,19 +38,11 @@ export default function (state = initialState, action) {
         loading: true,
       };
     case USER_SIGNUP_SUCCESS:
-      if (action.payload.statusCode === 201) {
-        saveToken(action.payload.access_token);
-        return {
-          ...state,
-          loading: false,
-          accesToken: action.payload.access_token,
-        };
-      }
+      saveToken(action.payload.access_token);
       return {
         ...state,
         loading: false,
-        message: action.payload.message,
-
+        loggedIn: true,
       };
     case USER_SIGNUP_FAIL:
       return {
@@ -65,10 +51,10 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case USER_LOGOUT:
-      removeToken(state.accessToken);
+      removeToken();
       return {
         ...state,
-        accessToken: undefined,
+        loggedIn: false,
       };
     default:
       return state;

@@ -21,7 +21,7 @@ export class ItemDetail extends Component {
   }
 
   onDeleteItem = () => {
-    this.props.deleteItem(this.state.categoryID, this.state.itemID, this.props.token);
+    this.props.deleteItem(this.state.categoryID, this.state.itemID);
     this.props.hideModal();
   }
 
@@ -55,14 +55,12 @@ ItemDetail.propTypes = {
   deleteItem: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired,
-  token: PropTypes.string.isRequired,
   params: PropTypes.object.isRequired,
   modal: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   item: selectItem(state),
-  token: state.user.accessToken,
   modal: state.app.modal,
 });
 

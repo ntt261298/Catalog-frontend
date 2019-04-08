@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import '../../style/home.css';
 import Category from '../commons/Category';
 import Item from '../commons/Item';
@@ -15,4 +14,4 @@ export const HomePage = () => (
   </div>
 );
 
-export default connect(null, null)(HomePage);
+export default HomePage;
