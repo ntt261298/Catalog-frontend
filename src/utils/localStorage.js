@@ -2,11 +2,11 @@ export const loadToken = () => {
   try {
     const seriallizedState = localStorage.getItem('token');
     if (seriallizedState === null) {
-      return '';
+      return undefined;
     }
     return JSON.parse(seriallizedState);
   } catch (err) {
-    return '';
+    return undefined;
   }
 };
 
@@ -19,9 +19,10 @@ export const saveToken = (state) => {
   }
 };
 
-export const removeToken = () => {
+export const removeToken = (state) => {
   try {
-    localStorage.setItem('token', '');
+    const seriallizedState = JSON.stringify(state);
+    localStorage.remove('token', seriallizedState);
   } catch (err) {
     console.error(err);
   }

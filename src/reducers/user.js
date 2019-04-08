@@ -2,7 +2,7 @@ import {
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
   USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
 } from '../actions/types';
-import { saveToken, loadToken, removeToken } from '../helper/localStorage';
+import { saveToken, loadToken, removeToken } from '../utils/localStorage';
 
 const initialState = {
   loading: false,

@@ -101,7 +101,6 @@ AddItemModal.propTypes = {
   hideModal: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
-  getItems: PropTypes.func.isRequired,
   getUserItems: PropTypes.func.isRequired,
 };
 

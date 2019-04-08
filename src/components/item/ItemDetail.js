@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import {
   Button, Modal, ModalBody, ModalHeader,
 } from 'reactstrap';
+import { selectItem } from '../../utils/selector';
 import { getItem, deleteItem } from '../../actions/item';
 import { hideModal } from '../../actions/app';
 
@@ -37,25 +38,12 @@ export class ItemDetail extends Component {
           </ModalBody>
         </Modal>
         <ul>
-          { item.itemId.map((id) => {
-            const {
-              title, description,
-            } = item.byId[id];
-            return (
-              <li key={id} className="user-item">
-                {/* <div className="edit-delete"> */}
-                {/*  <span>edit</span> */}
-                {/*  <span onClick={ */}
-                {/*    () => this.onShowDeleteItem(category_id, id)} */}
-                {/*  > */}
-                {/*    delete */}
-                {/*  </span> */}
-                {/* </div> */}
-                <h3>{ title }</h3>
-                <p>{ description }</p>
-              </li>
-            );
-          }) }
+          { item.map(({ id, title, description }) => (
+            <li key={id} className="user-item">
+              <h3>{ title }</h3>
+              <p>{ description }</p>
+            </li>
+          )) }
         </ul>
       </div>
     );
@@ -73,7 +61,7 @@ ItemDetail.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  item: state.item,
+  item: selectItem(state),
   token: state.user.accessToken,
   modal: state.app.modal,
 });

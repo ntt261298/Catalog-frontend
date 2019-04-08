@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getItems, getCategoryItems } from '../../actions/item';
+import { selectCategoryItems, selectAllItems } from '../../utils/selector';
 
 
 export class Item extends Component {
@@ -27,39 +28,33 @@ export class Item extends Component {
   }
 
   render() {
-    const { type, item } = this.props;
+    const { type, categoryItems, allItems } = this.props;
     return (
       <div className="item">
         { type === 'home' ? (
           <Fragment>
             <h2>All Items</h2>
             <ul>
-              {item.allIds.map((id) => {
-                const { title, category_id } = item.byId[id];
-                return (
-                  <li key={id}>
-                    <Link to={`/category/${category_id}/item/${id}`}>
-                      { title }
-                    </Link>
-                  </li>
-                );
-              })}
+              {allItems.map(({ id, title, category_id }) => (
+                <li key={id}>
+                  <Link to={`/category/${category_id}/item/${id}`}>
+                    { title }
+                  </Link>
+                </li>
+              ))}
             </ul>
           </Fragment>
         ) : (
           <Fragment>
             <h2>Category's Items</h2>
             <ul>
-              {item.categoryIds.map((id) => {
-                const { title, category_id } = item.byId[id];
-                return (
-                  <li key={id}>
-                    <Link to={`/category/${category_id}/item/${id}`}>
-                      { title }
-                    </Link>
-                  </li>
-                );
-              })}
+              {categoryItems.map(({ id, title, category_id }) => (
+                <li key={id}>
+                  <Link to={`/category/${category_id}/item/${id}`}>
+                    { title }
+                  </Link>
+                </li>
+              ))}
             </ul>
           </Fragment>
         )}
@@ -71,13 +66,15 @@ export class Item extends Component {
 Item.propTypes = {
   getItems: PropTypes.func.isRequired,
   getCategoryItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired,
+  categoryItems: PropTypes.array.isRequired,
+  allItems: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  item: state.item,
+  categoryItems: selectCategoryItems(state),
+  allItems: selectAllItems(state),
 });
 
 export default connect(mapStateToProps, { getItems, getCategoryItems })(Item);

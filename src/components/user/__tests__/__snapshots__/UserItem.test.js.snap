@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/user/UserItem should render add user's item  1`] = `
+exports[`src/components/user/UserItems should render add user's item  1`] = `
 <div
   className="user-items"
 >
