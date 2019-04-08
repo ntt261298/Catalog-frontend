@@ -6,10 +6,7 @@ exports[`src/components/user/UserPage.js should render user page 1`] = `
   <div
     className="user-main"
   >
-    <Connect(UserItem)
-      id=""
-      type="user"
-    />
+    <Connect(UserItem) />
   </div>
 </div>
 `;

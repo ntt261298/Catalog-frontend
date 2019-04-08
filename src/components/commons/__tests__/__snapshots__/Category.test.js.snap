@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item tests renders list-items 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
 exports[`src/components/commons/Category should render list-categories 1`] = `
 <ContextConsumer>
   <Component />

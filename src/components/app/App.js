@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import PrivateRoute from './PrivateRoute';
 import HomePage from '../home/HomePage';
 import CategoryPage from '../category/CategoryPage';
 import ItemPage from '../item/ItemPage';
@@ -14,12 +13,7 @@ export const App = props => (
       <Route path="/" exact component={HomePage} />
       <Route path="/category/:id" exact component={CategoryPage} />
       <Route path="/category/:categoryID/item/:itemID" exact component={ItemPage} />
-      <PrivateRoute
-        path="/me/items"
-        exact
-        component={UserPage}
-        token={props.token}
-      />
+      <Route path="/me/items" exact render={() => (!props.token ? <Redirect to="/" /> : <UserPage />)} />
     </div>
   </Router>
 );

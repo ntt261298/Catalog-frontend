@@ -13,17 +13,16 @@ describe('src/components/commons/Category', () => {
 
   beforeEach(() => {
     props = {
-      ...props,
       category: {
         byId: {
           1: {
             id: 1,
-            item: [],
+            items: [],
             name: 'Category 1',
           },
           2: {
             id: 2,
-            item: [],
+            items: [],
             name: 'Category 2',
           },
         },
@@ -41,6 +40,7 @@ describe('src/components/commons/Category', () => {
 
   it('should call getCategories in componentDidMount', () => {
     setup();
+    wrapper.update();
     // Expect the wrapper object to be defined
     expect(props.getCategories).toHaveBeenCalled();
   });

@@ -8,7 +8,7 @@ import { showLogin, hideModal } from '../../actions/app';
 import { onSignup } from '../../actions/user';
 
 
-class SignupModal extends React.Component {
+export class SignupModal extends React.Component {
   state = {
     username: '',
     password: '',

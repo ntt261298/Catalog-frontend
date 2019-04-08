@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import {
   GET_ITEMS_SUCCESS,
-  ADD_ITEM_SUCCESS,
+  GET_ITEM_SUCCESS,
+  // ADD_ITEM_SUCCESS,
   GET_USER_ITEMS_SUCCESS,
   GET_CATEGORY_ITEMS_SUCCESS,
 } from '../actions/types';
@@ -22,6 +23,10 @@ function itemsById(state = {}, action) {
       });
       return state;
     }
+    case GET_ITEM_SUCCESS: {
+      state = addItemEntry(state, action.payload);
+      return state;
+    }
     case GET_CATEGORY_ITEMS_SUCCESS: {
       action.payload.forEach((item) => {
         state = addItemEntry(state, item);
@@ -34,8 +39,8 @@ function itemsById(state = {}, action) {
       });
       return state;
     }
-    case ADD_ITEM_SUCCESS:
-      return addItemEntry(state, action.payload);
+    // case ADD_ITEM_SUCCESS:
+    //   return addItemEntry(state, action.payload);
     default:
       return state;
   }
@@ -56,8 +61,8 @@ function allItems(state = [], action) {
       });
       return state;
     }
-    case ADD_ITEM_SUCCESS:
-      return addItemId(state, action.payload);
+    // case ADD_ITEM_SUCCESS:
+    //   return addItemId(state, action.payload);
     default:
       return state;
   }
@@ -91,9 +96,21 @@ function userItems(state = [], action) {
   }
 }
 
+function detailItem(state = [], action) {
+  switch (action.type) {
+    case GET_ITEM_SUCCESS: {
+      state = [action.payload.id];
+      return state;
+    }
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   byId: itemsById,
   allIds: allItems,
   categoryIds: categoryItems,
   userIds: userItems,
+  itemId: detailItem,
 });

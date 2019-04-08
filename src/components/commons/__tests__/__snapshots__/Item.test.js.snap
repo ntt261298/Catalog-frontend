@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item tests renders list-items 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
 exports[`src/components/commons/Item should render list-items 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
-exports[`src/components/commons/Item should render list-items 2`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

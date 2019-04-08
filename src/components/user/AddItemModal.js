@@ -6,7 +6,7 @@ import {
 import { PropTypes } from 'prop-types';
 import { hideModal } from '../../actions/app';
 import getCategories from '../../actions/category';
-import { addItem } from '../../actions/item';
+import { addItem, getItems, getUserItems } from '../../actions/item';
 
 
 export class AddItemModal extends React.Component {
@@ -41,6 +41,8 @@ export class AddItemModal extends React.Component {
       return;
     }
     await this.props.addItem(title, description, categoryID, this.props.token);
+    // await this.props.getItems();
+    await this.props.getUserItems(this.props.token);
     this.props.hideModal();
   }
 
@@ -71,7 +73,7 @@ export class AddItemModal extends React.Component {
                 <select name="categoryID" onChange={this.onChangeInput}>
                   {
                         category.allIds.map(id => (
-                          <option value={id}>{category.byId[id].name}</option>
+                          <option key={id} value={id}>{category.byId[id].name}</option>
                         ))
                     }
                 </select>
@@ -99,6 +101,8 @@ AddItemModal.propTypes = {
   hideModal: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
+  getItems: PropTypes.func.isRequired,
+  getUserItems: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -108,5 +112,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-  getCategories, addItem, hideModal,
+  getCategories, getItems, getUserItems, addItem, hideModal,
 })(AddItemModal);

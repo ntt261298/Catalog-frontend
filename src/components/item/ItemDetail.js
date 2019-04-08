@@ -1,32 +1,83 @@
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { PropTypes } from 'prop-types';
-// import getItem from '../../actions/item';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import {
+  Button, Modal, ModalBody, ModalHeader,
+} from 'reactstrap';
+import { getItem, deleteItem } from '../../actions/item';
+import { hideModal } from '../../actions/app';
 
-// export class Category extends Component {
-//   componentDidMount() {
-//     this.props.getItem();
-//   }
 
-//   render() {
-//     const { categoryName, itemName } = this.props.params;
-//     return (
-//       <div className="category">
-//         <h2>Item</h2>
+export class ItemDetail extends Component {
+  state = {
+    categoryID: '',
+    itemID: '',
+  }
 
-//       </div>
-//     );
-//   }
-// }
+  componentDidMount() {
+    const { categoryID, itemID } = this.props.params;
+    this.props.getItem(categoryID, itemID);
+  }
 
-// Category.propTypes = {
-//   getItem: PropTypes.func.isRequired,
-//   item: PropTypes.object.isRequired,
-//   params: PropTypes.object.isRequired,
-// };
+  onDeleteItem = () => {
+    this.props.deleteItem(this.state.categoryID, this.state.itemID, this.props.token);
+    this.props.hideModal();
+  }
 
-// const mapStateToProps = state => ({
-//   item: state.item.categories,
-// });
+  render() {
+    const { item, modal, hideModal } = this.props;
+    const isDeleteItemModal = modal === 'deleteItem';
+    return (
+      <div className="main">
+        <h2>Item Detail</h2>
+        <Modal isOpen={isDeleteItemModal} toggle={hideModal}>
+          <ModalHeader toggle={hideModal}>Delete item?</ModalHeader>
+          <ModalBody>
+            <Button color="danger" onClick={this.onDeleteItem}>Delete</Button>
+          </ModalBody>
+        </Modal>
+        <ul>
+          { item.itemId.map((id) => {
+            const {
+              title, description,
+            } = item.byId[id];
+            return (
+              <li key={id} className="user-item">
+                {/* <div className="edit-delete"> */}
+                {/*  <span>edit</span> */}
+                {/*  <span onClick={ */}
+                {/*    () => this.onShowDeleteItem(category_id, id)} */}
+                {/*  > */}
+                {/*    delete */}
+                {/*  </span> */}
+                {/* </div> */}
+                <h3>{ title }</h3>
+                <p>{ description }</p>
+              </li>
+            );
+          }) }
+        </ul>
+      </div>
+    );
+  }
+}
 
-// export default connect(mapStateToProps, { getItem })(Category);
+ItemDetail.propTypes = {
+  getItem: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  hideModal: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
+  params: PropTypes.object.isRequired,
+  modal: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
+  item: state.item,
+  token: state.user.accessToken,
+  modal: state.app.modal,
+});
+
+export default connect(mapStateToProps, {
+  getItem, deleteItem, hideModal,
+})(ItemDetail);

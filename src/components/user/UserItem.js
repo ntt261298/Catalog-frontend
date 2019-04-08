@@ -2,22 +2,59 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import { getUserItems } from '../../actions/item';
-import { showAddItem } from '../../actions/app';
+import {
+  Button, Modal, ModalBody, ModalHeader,
+} from 'reactstrap';
+import { getUserItems, deleteItem } from '../../actions/item';
+import { hideModal, showAddItem, showDeleteItem } from '../../actions/app';
 import plus from '../../assets/images/add-button.svg';
 
 
 export class UserItem extends Component {
+  state = {
+    categoryID: '',
+    itemID: '',
+  }
+
   componentDidMount() {
     this.props.getUserItems(this.props.token);
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if(prevProps !=== this.props.item) {
+  //
+  //   }
+  // }
+
+  onShowDeleteItem(categoryID, itemID) {
+    this.setState({
+      categoryID,
+      itemID,
+    });
+    this.props.showDeleteItem();
+  }
+
+  onDeleteItem = async () => {
+    await this.props.deleteItem(this.state.categoryID, this.state.itemID, this.props.token);
+    await this.props.getUserItems(this.props.token);
+    this.props.hideModal();
+  }
+
   render() {
-    const { item, showAddItem } = this.props;
+    const {
+      item, showAddItem, modal, hideModal,
+    } = this.props;
+    const isDeleteItemModal = modal === 'deleteItem';
     return (
       <div className="user-items">
         {
           <Fragment>
+            <Modal isOpen={isDeleteItemModal} toggle={hideModal}>
+              <ModalHeader toggle={hideModal}>Delete item?</ModalHeader>
+              <ModalBody>
+                <Button color="danger" onClick={this.onDeleteItem}>Delete</Button>
+              </ModalBody>
+            </Modal>
             <div className="main-user-header">
               <h2>User's Items</h2>
               <img onClick={showAddItem} src={plus} alt="" />
@@ -29,9 +66,16 @@ export class UserItem extends Component {
                   <li key={id} className="user-item">
                     <div className="edit-delete">
                       <span>edit</span>
-                      <span>delete</span>
+                      <span
+                        className="delete"
+                        onClick={
+                        () => this.onShowDeleteItem(category_id, id)
+                      }
+                      >
+                        delete
+                      </span>
                     </div>
-                    <Link href={`category/${category_id}/item/${id}`}>
+                    <Link to={`/category/${category_id}/item/${id}`}>
                       <h3>{ title }</h3>
                     </Link>
                     <p>{ description }</p>
@@ -49,13 +93,23 @@ export class UserItem extends Component {
 UserItem.propTypes = {
   getUserItems: PropTypes.func.isRequired,
   showAddItem: PropTypes.func.isRequired,
+  showDeleteItem: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  hideModal: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired,
   token: PropTypes.string.isRequired,
+  modal: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   item: state.item,
+  items: getUserItems(state),
   token: state.user.accessToken,
+  modal: state.app.modal,
 });
 
-export default connect(mapStateToProps, { getUserItems, showAddItem })(UserItem);
+const getUserItems = state => state.item.userIds.map(id => state.item.byId[id]);
+
+export default connect(mapStateToProps, {
+  getUserItems, showAddItem, showDeleteItem, deleteItem, hideModal,
+})(UserItem);

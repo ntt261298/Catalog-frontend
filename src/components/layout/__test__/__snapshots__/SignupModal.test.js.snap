@@ -5,3 +5,15 @@ exports[`src/components/layout/SignupModal.js renders signup modal 1`] = `
   <Component />
 </ContextConsumer>
 `;
+
+exports[`src/components/layout/SignupModal.js should render login modal 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`src/components/layout/SignupModal.js should render signup modal 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

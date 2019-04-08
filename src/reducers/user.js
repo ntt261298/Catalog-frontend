@@ -2,12 +2,12 @@ import {
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
   USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
 } from '../actions/types';
-import { saveState, loadState, removeState } from '../helper/localStorage';
+import { saveToken, loadToken, removeToken } from '../helper/localStorage';
 
 const initialState = {
   loading: false,
   message: '',
-  accessToken: loadState(),
+  accessToken: loadToken(),
   error: '',
 };
 
@@ -20,7 +20,7 @@ export default function (state = initialState, action) {
       };
     case USER_LOGIN_SUCCESS:
       if (action.payload.statusCode === 200) {
-        saveState(action.payload.access_token);
+        saveToken(action.payload.access_token);
         return {
           ...state,
           loading: false,
@@ -45,7 +45,7 @@ export default function (state = initialState, action) {
       };
     case USER_SIGNUP_SUCCESS:
       if (action.payload.statusCode === 201) {
-        saveState(action.payload.access_token);
+        saveToken(action.payload.access_token);
         return {
           ...state,
           loading: false,
@@ -65,7 +65,7 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case USER_LOGOUT:
-      removeState(state.accessToken);
+      removeToken(state.accessToken);
       return {
         ...state,
         accessToken: undefined,

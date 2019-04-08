@@ -14,6 +14,7 @@ export class Item extends Component {
       }
       case 'category': {
         this.props.getCategoryItems(this.props.id);
+        break;
       }
       default:
     }
@@ -37,7 +38,7 @@ export class Item extends Component {
                 const { title, category_id } = item.byId[id];
                 return (
                   <li key={id}>
-                    <Link href={`category/${category_id}/item/${id}`}>
+                    <Link to={`/category/${category_id}/item/${id}`}>
                       { title }
                     </Link>
                   </li>
@@ -53,7 +54,7 @@ export class Item extends Component {
                 const { title, category_id } = item.byId[id];
                 return (
                   <li key={id}>
-                    <Link href={`category/${category_id}/item/${id}`}>
+                    <Link to={`/category/${category_id}/item/${id}`}>
                       { title }
                     </Link>
                   </li>

@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import ItemDetail from './ItemDetail';
 import Header from '../layout/Header';
 
-const ItemPage = props => (
+export const ItemPage = props => (
   <div>
     <Header />
     <div className="item-main">

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/item/ItemDetail should render detail item  1`] = `
+<div
+  className="main"
+>
+  <h2>
+    Item Detail
+  </h2>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={true}
+    isOpen={false}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    toggle={[MockFunction]}
+    zIndex={1050}
+  >
+    <ModalHeader
+      charCode={215}
+      closeAriaLabel="Close"
+      tag="h5"
+      toggle={[MockFunction]}
+      wrapTag="div"
+    >
+      Delete item?
+    </ModalHeader>
+    <ModalBody
+      tag="div"
+    >
+      <Button
+        color="danger"
+        onClick={[Function]}
+        tag="button"
+      >
+        Delete
+      </Button>
+    </ModalBody>
+  </Modal>
+  <ul>
+    <li
+      className="user-item"
+      key="1"
+    >
+      <h3 />
+      <p />
+    </li>
+  </ul>
+</div>
+`;

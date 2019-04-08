@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../../style/user.css';
-import Item from './UserItem';
+import UserItem from './UserItem';
 import Header from '../layout/Header';
 
 export const UserPage = () => (
   <div>
     <Header />
-    <div className="user-main">
-      <Item type="user" id="" />
+    <div className="main">
+      <UserItem />
     </div>
   </div>
 );
