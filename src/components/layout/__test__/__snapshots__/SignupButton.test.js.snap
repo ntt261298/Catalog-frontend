@@ -3,7 +3,7 @@
 exports[`src/layout/SignupButton.js should render signup button 1`] = `
 <button
   className="btn-signup"
-  onClick={[MockFunction]}
+  onClick={[Function]}
   type="button"
 >
   Signup

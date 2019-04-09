@@ -3,7 +3,7 @@
 exports[`src/components/layout/LoginButton.js should render login button 1`] = `
 <button
   className="btn-login"
-  onClick={[MockFunction]}
+  onClick={[Function]}
   type="button"
 >
   Login

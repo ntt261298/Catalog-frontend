@@ -7,8 +7,6 @@ import { saveToken, removeToken, loadToken } from '../utils/localStorage';
 export const initialState = {
   loading: false,
   loggedIn: Boolean(loadToken()),
-  message: '',
-  error: '',
 };
 
 export default function (state = initialState, action) {
@@ -28,7 +26,6 @@ export default function (state = initialState, action) {
     case USER_LOGIN_FAIL:
       return {
         ...state,
-        error: action.payload,
         loggedIn: false,
         loading: false,
       };
@@ -47,7 +44,6 @@ export default function (state = initialState, action) {
     case USER_SIGNUP_FAIL:
       return {
         ...state,
-        error: action.payload,
         loading: false,
       };
     case USER_LOGOUT:

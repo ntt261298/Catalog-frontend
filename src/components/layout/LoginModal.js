@@ -1,9 +1,9 @@
 import React from 'react';
-import toastr from 'toastr';
 import { connect } from 'react-redux';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
+// import toastr from 'toastr';
 import { PropTypes } from 'prop-types';
 import { showSignup, hideModal } from '../../actions/app';
 import { onLogin } from '../../actions/user';
@@ -23,8 +23,8 @@ export class LoginModal extends React.Component {
   }
 
   moveToSignup = () => {
-    this.props.showSignup();
     this.props.hideModal();
+    this.props.showSignup();
   }
 
   onLogin = async () => {
@@ -41,14 +41,17 @@ export class LoginModal extends React.Component {
       });
       return;
     }
-    await this.props.onLogin(this.state.username, this.state.password);
-    if (!this.props.errMessage) {
-      this.props.hideModal();
-    }
+    this.props.onLogin(this.state.username, this.state.password)
+      .then(() => {
+        this.props.hideModal();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {
-    const { modal, errMessage, hideModal } = this.props;
+    const { modal, hideModal } = this.props;
     const { message } = this.state;
     const isLoginModal = modal === 'login';
     return (
@@ -69,11 +72,8 @@ export class LoginModal extends React.Component {
               </label>
             </div>
             { message ? (
-              toastr.error(message)
-            ) : null}
-            { errMessage ? (
               <div className="alert alert-danger" role="alert">
-                { errMessage }
+                { message }
               </div>
             ) : null}
             <p onClick={this.moveToSignup}>Create new account?</p>
@@ -89,7 +89,6 @@ export class LoginModal extends React.Component {
 
 LoginModal.propTypes = {
   modal: PropTypes.string.isRequired,
-  errMessage: PropTypes.string.isRequired,
   showSignup: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired,
@@ -97,7 +96,6 @@ LoginModal.propTypes = {
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
-  errMessage: state.user.message,
 });
 
 export default connect(mapStateToProps, {

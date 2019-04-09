@@ -14,52 +14,61 @@ export const initialState = {
   itemId: [],
 };
 
-function addItemEntry(state, item) {
-  // Insert the new Item object into the updated lookup table
-  return {
-    ...state,
-    [item.id]: item,
-  };
-}
-
-function addItemId(state, item) {
-  const { id } = item;
-  // Append the new Item's ID to the list of all IDs
-  if (state.indexOf(id) < 0) { return state.concat(id); }
-  return state;
-}
-
 export default function (state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS_SUCCESS: {
-      state.allIds = [];
+      const byId = { ...state.byId };
+      const allIds = [];
+
       action.payload.forEach((item) => {
-        state.byId = addItemEntry(state.byId, item);
-        state.allIds = addItemId(state.allIds, item);
+        byId[item.id] = item;
+        allIds.push(item.id);
       });
-      return state;
+      return {
+        ...state,
+        byId,
+        allIds,
+      };
     }
     case GET_ITEM_SUCCESS: {
-      state.itemId = [];
-      state.byId = addItemEntry(state.byId, action.payload);
-      state.itemId = [action.payload.id];
-      return state;
+      const byId = { ...state.byId };
+      const itemId = [];
+
+      byId[action.payload.id] = action.payload;
+      itemId.push(action.payload.id);
+      return {
+        ...state,
+        byId,
+        itemId,
+      };
     }
     case GET_CATEGORY_ITEMS_SUCCESS: {
-      state.categoryItemIds = [];
+      const byId = { ...state.byId };
+      const categoryItemIds = [];
+
       action.payload.forEach((item) => {
-        state.byId = addItemEntry(state.byId, item);
-        state.categoryItemIds = addItemId(state.categoryItemIds, item);
+        byId[item.id] = item;
+        categoryItemIds.push(item.id);
       });
-      return state;
+      return {
+        ...state,
+        byId,
+        categoryItemIds,
+      };
     }
     case GET_USER_ITEMS_SUCCESS: {
-      state.userItemIds = [];
+      const byId = { ...state.byId };
+      const userItemIds = [];
+
       action.payload.forEach((item) => {
-        state.byId = addItemEntry(state.byId, item);
-        state.userItemIds = addItemId(state.userItemIds, item);
+        byId[item.id] = item;
+        userItemIds.push(item.id);
       });
-      return state;
+      return {
+        ...state,
+        byId,
+        userItemIds,
+      };
     }
     default:
       return state;

@@ -26,7 +26,7 @@ export class ItemDetail extends Component {
   }
 
   render() {
-    const { item, modal, hideModal } = this.props;
+    const { items, modal, hideModal } = this.props;
     const isDeleteItemModal = modal === 'deleteItem';
     return (
       <div className="main">
@@ -38,7 +38,7 @@ export class ItemDetail extends Component {
           </ModalBody>
         </Modal>
         <ul>
-          { item.map(({ id, title, description }) => (
+          { items.map(({ id, title, description }) => (
             <li key={id} className="user-item">
               <h3>{ title }</h3>
               <p>{ description }</p>
@@ -54,13 +54,13 @@ ItemDetail.propTypes = {
   getItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
   params: PropTypes.object.isRequired,
   modal: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  item: selectItem(state),
+  items: selectItem(state),
   modal: state.app.modal,
 });
 

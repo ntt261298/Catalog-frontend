@@ -4,7 +4,7 @@ exports[`src/components/user/UserPage.js should render user page 1`] = `
 <div>
   <Connect(Header) />
   <div
-    className="user-main"
+    className="main"
   >
     <Connect(UserItems) />
   </div>

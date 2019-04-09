@@ -4,6 +4,7 @@ import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
 import { PropTypes } from 'prop-types';
+import toastr from 'toastr';
 import { showLogin, hideModal } from '../../actions/app';
 import { onSignup } from '../../actions/user';
 
@@ -40,10 +41,14 @@ export class SignupModal extends React.Component {
       });
       return;
     }
-    await this.props.onSignup(this.state.username, this.state.password);
-    if (!this.props.errMessage) {
-      this.props.hideModal();
-    }
+    this.props.onSignup(this.state.username, this.state.password)
+      .then((err) => {
+        toastr.error('af');
+      })
+      .catch((err) => {
+        toastr.error('af');
+        // console.log(err);
+      });
   }
 
   render() {
