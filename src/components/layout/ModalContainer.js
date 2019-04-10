@@ -24,7 +24,7 @@ const EditItemModal = Loadable({
   delay: 200,
 });
 
-export const ModalContainer = (props) => {
+const ModalContainer = (props) => {
   switch (props.modal) {
     case 'login':
       return <LoginModal />;

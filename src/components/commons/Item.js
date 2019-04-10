@@ -73,7 +73,7 @@ Item.propTypes = {
   categoryItems: PropTypes.array.isRequired,
   allItems: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

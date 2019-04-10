@@ -20,23 +20,26 @@ describe('src/components/user/AddItemModal', () => {
 
   beforeEach(() => {
     props = {
-      categories: [
-        {
-          id: 1,
-          items: [],
-          name: 'Category 1',
+      category: {
+        byId: {
+          1: {
+            id: 1,
+            items: [],
+            name: 'Category 1',
+          },
+          2: {
+            id: 2,
+            items: [],
+            name: 'Category 2',
+          },
         },
-        {
-          id: 2,
-          items: [],
-          name: 'Category 2',
-        },
-      ],
+        allIds: [1, 2],
+      },
       modal: 'addItem',
-      addItem: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      token: 'randomToken',
+      addItem: jest.fn(),
       hideModal: jest.fn(),
-      getUserItems: jest.fn().mockImplementation(() => Promise.resolve('message')),
-      getCategories: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      getCategories: jest.fn(),
     };
   });
 
@@ -53,26 +56,18 @@ describe('src/components/user/AddItemModal', () => {
     }, () => {
       addButton.simulate('click');
       expect(props.addItem).toHaveBeenCalled();
+      expect(props.hideModal).toHaveBeenCalled();
     });
   });
 
-  it('should set message \'Title must not be blank\' when title\'s input is blank', () => {
+  it('should call onChangeInput when user\'s input is changed', () => {
     setup();
     wrapper.setState({
-      title: '', description: '123456', categoryID: 1,
+      title: 'test', description: '123456', categoryID: 1,
     }, () => {
       addButton.simulate('click');
-      expect(props.addItem).not.toHaveBeenCalled();
-    });
-  });
-
-  it('should set message \'Description must not be blank\' when description\'s input is blank', () => {
-    setup();
-    wrapper.setState({
-      title: 'title', description: '', categoryID: 1,
-    }, () => {
-      addButton.simulate('click');
-      expect(props.addItem).not.toHaveBeenCalled();
+      expect(props.addItem).toHaveBeenCalled();
+      expect(props.hideModal).toHaveBeenCalled();
     });
   });
 });

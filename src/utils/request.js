@@ -38,7 +38,7 @@ export const post = async (dispatch, type, endpoint, data) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } await dispatch({ type: `${type}_SUCCESS` });
+    } await dispatch({ type: `${type}_SUCCESS`, payload: response });
     return response.message;
   } catch (err) {
     dispatch({ type: `${type}_FAIL` });
@@ -58,10 +58,10 @@ export const put = async (dispatch, type, endpoint, data) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS` });
+    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
     return response.message;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL` });
+    dispatch({ type: `${type}_FAIL`, payload: 'Something went wrong.' });
     throw Error(err);
   }
 };
@@ -77,7 +77,7 @@ export const del = async (dispatch, type, endpoint) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS` });
+    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
     return response.message;
   } catch (err) {
     dispatch({ type: `${type}_FAIL` });

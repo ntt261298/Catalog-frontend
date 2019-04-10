@@ -23,9 +23,10 @@ describe('src/components/layout/SignupModal.js', () => {
 
   beforeEach(() => {
     props = {
+      ...props,
       modal: 'signup',
       errMessage: '',
-      onSignup: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      onSignup: jest.fn(),
       showLogin: jest.fn(),
       hideModal: jest.fn(),
     };
@@ -51,22 +52,6 @@ describe('src/components/layout/SignupModal.js', () => {
     moveToLoginParam.simulate('click');
     expect(props.hideModal).toHaveBeenCalled();
     expect(props.showLogin).toHaveBeenCalled();
-  });
-
-  it('should set message \'Username must not be blank\' when user\'s input is blank', () => {
-    setup();
-    wrapper.setState({ username: '', password: '123456' }, () => {
-      signupButton.simulate('click');
-      expect(props.onSignup).not.toHaveBeenCalled();
-    });
-  });
-
-  it('should set message \'Password must have at least 6 characters\' when password\'s input is wrong', () => {
-    setup();
-    wrapper.setState({ username: 'test123', password: '123' }, () => {
-      signupButton.simulate('click');
-      expect(props.onSignup).not.toHaveBeenCalled();
-    });
   });
 
   it('should call onChangeInput when user\'s input is changed', () => {

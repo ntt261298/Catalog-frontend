@@ -6,12 +6,10 @@ describe('src/components/user/UserItems', () => {
   let wrapper;
   let props;
   let deleteSpan;
-  let editSpan;
   let deleteButton;
 
   const update = () => {
-    deleteSpan = wrapper.find('span.delete');
-    editSpan = wrapper.find('span.edit');
+    deleteSpan = wrapper.find('.delete');
     deleteButton = wrapper.find('Button');
   };
 
@@ -24,28 +22,31 @@ describe('src/components/user/UserItems', () => {
 
   beforeEach(() => {
     props = {
-      items: [
-        {
-          id: 1,
-          items: [],
-          name: 'Item 1',
+      item: {
+        byId: {
+          1: {
+            id: 1,
+            items: [],
+            name: 'Item 1',
+          },
+          2: {
+            id: 2,
+            items: [],
+            name: 'Item 2',
+          },
         },
-        {
-          id: 2,
-          items: [],
-          name: 'Item 2',
-        },
-      ],
+        allIds: [1, 2],
+        userIds: [1],
+        modal: '',
+      },
       modal: '',
       token: 'randomToken',
-      addItem: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      addItem: jest.fn(),
       hideModal: jest.fn(),
-      getUserItems: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      getUserItems: jest.fn(),
       showAddItem: jest.fn(),
-      showEditItem: jest.fn(),
-      setCurrentItem: jest.fn(),
       showDeleteItem: jest.fn(),
-      deleteItem: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      deleteItem: jest.fn(),
     };
   });
 
@@ -57,21 +58,15 @@ describe('src/components/user/UserItems', () => {
 
   it('should call onShowDeleteItem when delete span is clicked', () => {
     setup();
-    deleteSpan.at(0).simulate('click');
+    deleteSpan.simulate('click');
     expect(props.showDeleteItem).toHaveBeenCalled();
     update();
   });
 
-  it('should call onShowEditItem when edit span is clicked', () => {
-    setup();
-    editSpan.at(0).simulate('click');
-    expect(props.showEditItem).toHaveBeenCalled();
-    update();
-  });
-
-  it('should call deleteItem when delete button is clicked', () => {
+  it('should call deleteItem and hideModal when delete button is clicked', () => {
     setup();
     deleteButton.simulate('click');
     expect(props.deleteItem).toHaveBeenCalled();
+    expect(props.hideModal).toHaveBeenCalled();
   });
 });

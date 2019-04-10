@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { selectItem } from '../../utils/selector';
 import { getItem } from '../../actions/item';
-import { errMessage } from '../../utils/messages';
+import { errMessage, successMessage } from '../../utils/messages';
 
 
 export class ItemDetail extends Component {
@@ -19,13 +19,12 @@ export class ItemDetail extends Component {
   }
 
   render() {
-    const { item } = this.props;
-    console.log(item);
+    const { items } = this.props;
     return (
       <div className="main">
         <h2>Item Detail</h2>
         <ul>
-          { item.map(({ id, title, description }) => (
+          { items.map(({ id, title, description }) => (
             <li key={id} className="user-item">
               <h3>{ title }</h3>
               <p>{ description }</p>
@@ -39,12 +38,12 @@ export class ItemDetail extends Component {
 
 ItemDetail.propTypes = {
   getItem: PropTypes.func.isRequired,
-  item: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   params: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-  item: selectItem(state),
+  items: selectItem(state),
 });
 
 export default connect(mapStateToProps, {

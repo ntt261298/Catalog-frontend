@@ -25,14 +25,14 @@ exports[`src/components/user/UserItems should render add user's item  1`] = `
     onClosed={[Function]}
     onOpened={[Function]}
     role="dialog"
-    toggle={[Function]}
+    toggle={[MockFunction]}
     zIndex={1050}
   >
     <ModalHeader
       charCode={215}
       closeAriaLabel="Close"
       tag="h5"
-      toggle={[Function]}
+      toggle={[MockFunction]}
       wrapTag="div"
     >
       Delete item?
@@ -57,8 +57,8 @@ exports[`src/components/user/UserItems should render add user's item  1`] = `
     </h2>
     <img
       alt=""
-      onClick={[Function]}
-      src="add-button.svg"
+      onClick={[MockFunction]}
+      src="test-file-stub"
     />
   </div>
   <ul>
@@ -69,10 +69,7 @@ exports[`src/components/user/UserItems should render add user's item  1`] = `
       <div
         className="edit-delete"
       >
-        <span
-          className="edit"
-          onClick={[Function]}
-        >
+        <span>
           edit
         </span>
         <span
@@ -84,33 +81,6 @@ exports[`src/components/user/UserItems should render add user's item  1`] = `
       </div>
       <Link
         to="/category/undefined/item/1"
-      >
-        <h3 />
-      </Link>
-      <p />
-    </li>
-    <li
-      className="user-item"
-      key="2"
-    >
-      <div
-        className="edit-delete"
-      >
-        <span
-          className="edit"
-          onClick={[Function]}
-        >
-          edit
-        </span>
-        <span
-          className="delete"
-          onClick={[Function]}
-        >
-          delete
-        </span>
-      </div>
-      <Link
-        to="/category/undefined/item/2"
       >
         <h3 />
       </Link>
