@@ -12,7 +12,6 @@ export const onLogin = (username, password) => async (dispatch) => {
 };
 
 export const onSignup = (username, password) => async (dispatch) => {
-  dispatch({ type: USER_SIGNUP });
   const data = {
     username,
     password,

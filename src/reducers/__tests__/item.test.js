@@ -144,32 +144,6 @@ describe('src/reducers/item', () => {
     expect(reducer(mockState, startAction)).toEqual(mockState);
   });
 
-  // it('should handle ADD_ITEM_SUCCESS', () => {
-  //   const successAction = {
-  //     type: actions.GET_ITEMS_SUCCESS,
-  //     payload: {
-  //       id: 4,
-  //       title: 'four',
-  //       description: 'four',
-  //       category_id: 1,
-  //       user_id: 2,
-  //     },
-  //   };
-  //   expect(reducer(mockState, successAction)).toEqual({
-  //     byId: {
-  //       ...mockState.byId,
-  //       4: {
-  //         id: 4,
-  //         title: 'four',
-  //         description: 'four',
-  //         category_id: 1,
-  //         user_id: 2,
-  //       },
-  //     }
-  //
-  //   });
-  // });
-
   it('should handle GET_ITEMS_FAIL', () => {
     const updateAction = {
       type: actions.GET_ITEMS_FAIL,

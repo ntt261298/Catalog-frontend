@@ -23,8 +23,7 @@ describe('src/components/layout/LoginModal.js', () => {
   beforeEach(() => {
     props = {
       modal: 'login',
-      errMessage: '',
-      onLogin: jest.fn(),
+      onLogin: jest.fn().mockImplementation(() => Promise.resolve('message')),
       hideModal: jest.fn(),
       showSignup: jest.fn(),
       toggle: jest.fn(),
@@ -37,11 +36,28 @@ describe('src/components/layout/LoginModal.js', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+
   it('should call onLogin when login button is clicked', () => {
     setup();
-    wrapper.setState({ username: 'test', password: '123456' }, () => {
+    wrapper.setState({ username: 'test123', password: '123456' }, () => {
       loginButton.simulate('click');
       expect(props.onLogin).toHaveBeenCalled();
+    });
+  });
+
+  it('should set message \'Username must not be blank\' when user\'s input is blank', () => {
+    setup();
+    wrapper.setState({ username: '', password: '123456' }, () => {
+      loginButton.simulate('click');
+      expect(props.onLogin).not.toHaveBeenCalled();
+    });
+  });
+
+  it('should set message \'Password must have at least 6 characters\' when password\'s input is wrong', () => {
+    setup();
+    wrapper.setState({ username: 'test123', password: '123' }, () => {
+      loginButton.simulate('click');
+      expect(props.onLogin).not.toHaveBeenCalled();
     });
   });
 

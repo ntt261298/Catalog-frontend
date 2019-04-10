@@ -13,11 +13,18 @@ describe('src/components/app/App', () => {
   };
   beforeEach(() => {
     props = {
-      token: 'randomToken',
+      loggedIn: true,
     };
   });
 
   it('should render app', () => {
+    setup();
+    // Expect the wrapper object to be defined
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render app with Redirect', () => {
+    props.loggedIn = false;
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();
