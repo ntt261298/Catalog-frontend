@@ -4,17 +4,20 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getItems, getCategoryItems } from '../../actions/item';
 import { selectCategoryItems, selectAllItems } from '../../utils/selector';
+import { errMessage } from '../../utils/messages';
 
 
 export class Item extends Component {
   componentDidMount() {
     switch (this.props.type) {
       case 'home': {
-        this.props.getItems();
+        this.props.getItems()
+          .catch(err => errMessage(err));
         return;
       }
       case 'category': {
-        this.props.getCategoryItems(this.props.id);
+        this.props.getCategoryItems(this.props.id)
+          .catch(err => errMessage(err));
         break;
       }
       default:
@@ -23,7 +26,8 @@ export class Item extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
-      this.props.getCategoryItems(this.props.id);
+      this.props.getCategoryItems(this.props.id)
+        .catch(err => errMessage(err));
     }
   }
 

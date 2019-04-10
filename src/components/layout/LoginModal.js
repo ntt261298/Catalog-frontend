@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
-// import toastr from 'toastr';
 import { PropTypes } from 'prop-types';
 import { showSignup, hideModal } from '../../actions/app';
 import { onLogin } from '../../actions/user';
+import { errMessage, successMessage } from '../../utils/messages';
 
 
 export class LoginModal extends React.Component {
@@ -42,12 +42,11 @@ export class LoginModal extends React.Component {
       return;
     }
     this.props.onLogin(this.state.username, this.state.password)
-      .then(() => {
+      .then((message) => {
+        successMessage(message);
         this.props.hideModal();
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(err => errMessage(err));
   }
 
   render() {

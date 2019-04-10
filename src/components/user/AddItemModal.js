@@ -8,6 +8,7 @@ import { hideModal } from '../../actions/app';
 import getCategories from '../../actions/category';
 import { addItem, getItems, getUserItems } from '../../actions/item';
 import { selectAllCategories } from '../../utils/selector';
+import { errMessage, successMessage } from '../../utils/messages';
 
 
 export class AddItemModal extends React.Component {
@@ -41,9 +42,11 @@ export class AddItemModal extends React.Component {
       });
       return;
     }
-    await this.props.addItem(title, description, categoryID);
-    // await this.props.getItems();
-    await this.props.getUserItems();
+    await this.props.addItem(title, description, categoryID)
+      .then(message => successMessage(message))
+      .catch(err => errMessage(err));
+    await this.props.getUserItems()
+      .catch(err => errMessage(err));
     this.props.hideModal();
   }
 
@@ -65,7 +68,8 @@ export class AddItemModal extends React.Component {
             <div>
               <label htmlFor="description">
                 Description:
-                <input type="text" name="description" onChange={this.onChangeInput} />
+                <br />
+                <textarea name="description" onChange={this.onChangeInput} />
               </label>
             </div>
             <div>

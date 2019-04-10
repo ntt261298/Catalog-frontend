@@ -1,14 +1,14 @@
 import {
-  USER_LOGIN, USER_SIGNUP, USER_LOGOUT,
+  USER_LOGIN, USER_SIGNUP, USER_LOGOUT, USER_CURRENT_ITEM,
 } from './types';
-import { Post } from '../utils/request';
+import { post } from '../utils/request';
 
 export const onLogin = (username, password) => async (dispatch) => {
   const data = {
     username,
     password,
   };
-  Post(dispatch, USER_LOGIN, '/users/auth', data);
+  return post(dispatch, USER_LOGIN, '/users/auth', data);
 };
 
 export const onSignup = (username, password) => async (dispatch) => {
@@ -17,9 +17,14 @@ export const onSignup = (username, password) => async (dispatch) => {
     username,
     password,
   };
-  Post(dispatch, USER_SIGNUP, '/users', data);
+  return post(dispatch, USER_SIGNUP, '/users', data);
 };
 
 export const onLogout = () => ({
   type: USER_LOGOUT,
+});
+
+export const setCurrentItem = item => ({
+  type: USER_CURRENT_ITEM,
+  payload: item,
 });

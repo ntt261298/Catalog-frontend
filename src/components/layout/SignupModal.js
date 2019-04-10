@@ -4,7 +4,7 @@ import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
 import { PropTypes } from 'prop-types';
-import toastr from 'toastr';
+import { successMessage, errMessage } from '../../utils/messages';
 import { showLogin, hideModal } from '../../actions/app';
 import { onSignup } from '../../actions/user';
 
@@ -42,17 +42,15 @@ export class SignupModal extends React.Component {
       return;
     }
     this.props.onSignup(this.state.username, this.state.password)
-      .then((err) => {
-        toastr.error('af');
+      .then((message) => {
+        successMessage(message);
+        this.props.hideModal();
       })
-      .catch((err) => {
-        toastr.error('af');
-        // console.log(err);
-      });
+      .catch(err => errMessage(err));
   }
 
   render() {
-    const { modal, errMessage, hideModal } = this.props;
+    const { modal, hideModal } = this.props;
     const { message } = this.state;
     const isSignupModal = modal === 'signup';
     return (
@@ -77,11 +75,6 @@ export class SignupModal extends React.Component {
                 { message }
               </div>
             ) : null}
-            { errMessage ? (
-              <div className="alert alert-danger" role="alert">
-                { errMessage }
-              </div>
-            ) : null}
             <p onClick={this.moveToLogin}>Sign in to your account?</p>
           </ModalBody>
           <ModalFooter>
@@ -95,7 +88,6 @@ export class SignupModal extends React.Component {
 
 SignupModal.propTypes = {
   modal: PropTypes.string.isRequired,
-  errMessage: PropTypes.string.isRequired,
   showLogin: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
   onSignup: PropTypes.func.isRequired,
@@ -103,7 +95,6 @@ SignupModal.propTypes = {
 
 const mapStateToProps = state => ({
   modal: state.app.modal,
-  errMessage: state.user.message,
 });
 
 export default connect(mapStateToProps, { showLogin, hideModal, onSignup })(SignupModal);

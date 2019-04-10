@@ -8,7 +8,7 @@ const defaultHeader = {
 const defaultHost = 'http://127.0.0.1:5000';
 
 
-export const Get = async (dispatch, type, endpoint) => {
+export const get = async (dispatch, type, endpoint) => {
   dispatch({ type: `${type}` });
   try {
     let response = await fetch(`${defaultHost}${endpoint}`, {
@@ -17,19 +17,16 @@ export const Get = async (dispatch, type, endpoint) => {
     });
     const statusCode = response.status;
     response = await response.json();
-    console.log(statusCode);
     if (statusCode >= 400 && statusCode < 500) {
-      await dispatch({ type: `${type}_FAIL` });
-      throw Error(response.message);
+      throw response.message;
     } await dispatch({ type: `${type}_SUCCESS`, payload: response });
   } catch (err) {
-    console.log(err);
-    dispatch({ type: `${type}_FAIL`, payload: 'Something went wrong.' });
-    throw Error(err.message);
+    dispatch({ type: `${type}_FAIL` });
+    throw Error(err);
   }
 };
 
-export const Post = async (dispatch, type, endpoint, data) => {
+export const post = async (dispatch, type, endpoint, data) => {
   dispatch({ type: `${type}` });
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -39,15 +36,17 @@ export const Post = async (dispatch, type, endpoint, data) => {
     }));
     const statusCode = response.status;
     response = await response.json();
-    if (statusCode >= 300 && statusCode < 500) {
+    if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
     } await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    return response.message;
   } catch (err) {
     dispatch({ type: `${type}_FAIL` });
+    throw Error(err);
   }
 };
 
-export const Put = async (dispatch, type, endpoint, data) => {
+export const put = async (dispatch, type, endpoint, data) => {
   dispatch({ type: `${type}` });
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -57,15 +56,17 @@ export const Put = async (dispatch, type, endpoint, data) => {
     }));
     const statusCode = response.status;
     response = await response.json();
-    if (statusCode >= 300 && statusCode < 500) {
-      await dispatch({ type: `${type}_FAIL`, payload: response });
+    if (statusCode >= 400 && statusCode < 500) {
+      throw response.message;
     } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    return response.message;
   } catch (err) {
     dispatch({ type: `${type}_FAIL`, payload: 'Something went wrong.' });
+    throw Error(err);
   }
 };
 
-export const Delete = async (dispatch, type, endpoint) => {
+export const del = async (dispatch, type, endpoint) => {
   dispatch({ type: `${type}` });
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -74,10 +75,12 @@ export const Delete = async (dispatch, type, endpoint) => {
     }));
     const statusCode = response.status;
     response = await response.json();
-    if (statusCode >= 300 && statusCode < 500) {
-      await dispatch({ type: `${type}_FAIL`, payload: response });
+    if (statusCode >= 400 && statusCode < 500) {
+      throw response.message;
     } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    return response.message;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL`, payload: 'Something went wrong.' });
+    dispatch({ type: `${type}_FAIL` });
+    throw Error(err);
   }
 };

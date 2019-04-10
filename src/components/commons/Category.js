@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import getCategories from '../../actions/category';
 import { selectAllCategories } from '../../utils/selector';
+import { errMessage } from '../../utils/messages';
 
 const activeStyle = {
   color: 'var(--blue)',
@@ -15,7 +16,8 @@ export class Category extends Component {
   }
 
   componentDidMount() {
-    this.props.getCategories();
+    this.props.getCategories()
+      .catch(err => errMessage(err));
   }
 
   changeActive(id) {
@@ -46,11 +48,9 @@ export class Category extends Component {
 Category.propTypes = {
   getCategories: PropTypes.func.isRequired,
   categories: PropTypes.array.isRequired,
-  // state: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-  // state,
   categories: selectAllCategories(state),
 });
 

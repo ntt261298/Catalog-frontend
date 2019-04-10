@@ -1,8 +1,8 @@
 import { GET_CATEGORIES } from './types';
-import { Get } from '../utils/request';
+import { get } from '../utils/request';
 
-const getCategories = () => (dispatch) => {
-  Get(dispatch, GET_CATEGORIES, '/categories');
+const getCategories = () => async (dispatch) => {
+  get(dispatch, GET_CATEGORIES, '/categories');
 };
 
 export default getCategories;

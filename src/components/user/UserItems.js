@@ -7,8 +7,12 @@ import {
 } from 'reactstrap';
 import { selectUserItems } from '../../utils/selector';
 import { getUserItems, deleteItem } from '../../actions/item';
-import { hideModal, showAddItem, showDeleteItem } from '../../actions/app';
+import { setCurrentItem } from '../../actions/user';
+import {
+  hideModal, showAddItem, showEditItem, showDeleteItem,
+} from '../../actions/app';
 import plus from '../../assets/images/add-button.svg';
+import { errMessage, successMessage } from '../../utils/messages';
 
 
 export class UserItems extends Component {
@@ -18,14 +22,17 @@ export class UserItems extends Component {
   }
 
   componentDidMount() {
-    this.props.getUserItems();
+    this.props.getUserItems()
+      .catch(err => errMessage(err));
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if(prevProps !=== this.props.item) {
-  //
-  //   }
-  // }
+  onShowEditItem(id, title, description, categoryID) {
+    const item = {
+      itemID: id, title, description, categoryID,
+    };
+    this.props.showEditItem();
+    this.props.setCurrentItem(item);
+  }
 
   onShowDeleteItem(categoryID, itemID) {
     this.setState({
@@ -36,8 +43,11 @@ export class UserItems extends Component {
   }
 
   onDeleteItem = async () => {
-    await this.props.deleteItem(this.state.categoryID, this.state.itemID);
-    await this.props.getUserItems();
+    await this.props.deleteItem(this.state.categoryID, this.state.itemID)
+      .then(message => successMessage(message))
+      .catch(err => errMessage(err));
+    await this.props.getUserItems()
+      .catch(err => errMessage(err));
     this.props.hideModal();
   }
 
@@ -66,7 +76,14 @@ export class UserItems extends Component {
               }) => (
                 <li key={id} className="user-item">
                   <div className="edit-delete">
-                    <span>edit</span>
+                    <span
+                      className="edit"
+                      onClick={
+                          () => this.onShowEditItem(id, title, description, category_id)
+                        }
+                    >
+                        edit
+                    </span>
                     <span
                       className="delete"
                       onClick={
@@ -92,7 +109,9 @@ export class UserItems extends Component {
 
 UserItems.propTypes = {
   getUserItems: PropTypes.func.isRequired,
+  setCurrentItem: PropTypes.func.isRequired,
   showAddItem: PropTypes.func.isRequired,
+  showEditItem: PropTypes.func.isRequired,
   showDeleteItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
@@ -106,5 +125,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-  getUserItems, showAddItem, showDeleteItem, deleteItem, hideModal,
+  getUserItems, setCurrentItem, showAddItem, showDeleteItem, showEditItem, deleteItem, hideModal,
 })(UserItems);

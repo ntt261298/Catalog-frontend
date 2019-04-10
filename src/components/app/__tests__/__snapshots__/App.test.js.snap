@@ -5,26 +5,31 @@ exports[`src/components/app/App should render app 1`] = `
   <div
     className="App"
   >
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/category/:id"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/category/:categoryID/item/:itemID"
-    />
-    <Route
-      exact={true}
-      path="/me/items"
-      render={[Function]}
-    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:id"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:categoryID/item/:itemID"
+      />
+      <Route
+        exact={true}
+        path="/me/items"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
   </div>
 </BrowserRouter>
 `;

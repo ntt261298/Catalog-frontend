@@ -1,5 +1,5 @@
 import {
-  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, SHOW_ADD_ITEM_MODAL, SHOW_DELETE_ITEM_MODAL, HIDE_MODAL,
+  SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL, SHOW_ADD_ITEM_MODAL, SHOW_EDIT_ITEM_MODAL, SHOW_DELETE_ITEM_MODAL, HIDE_MODAL,
 } from '../actions/types';
 
 const initialState = {
@@ -22,6 +22,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         modal: 'addItem',
+      };
+    case SHOW_EDIT_ITEM_MODAL:
+      return {
+        ...state,
+        modal: 'editItem',
       };
     case SHOW_DELETE_ITEM_MODAL:
       return {

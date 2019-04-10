@@ -1,12 +1,13 @@
 import {
   USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
-  USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT,
+  USER_SIGNUP, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, USER_LOGOUT, USER_CURRENT_ITEM,
 } from '../actions/types';
 import { saveToken, removeToken, loadToken } from '../utils/localStorage';
 
 export const initialState = {
   loading: false,
   loggedIn: Boolean(loadToken()),
+  currentItem: '',
 };
 
 export default function (state = initialState, action) {
@@ -51,6 +52,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loggedIn: false,
+      };
+    case USER_CURRENT_ITEM:
+      return {
+        ...state,
+        currentItem: action.payload,
       };
     default:
       return state;
