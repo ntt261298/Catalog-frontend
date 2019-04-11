@@ -2,7 +2,7 @@
 
 exports[`src/components/layout/CategoryPage.js should render item page 1`] = `
 <div>
-  <Connect(Header) />
+  <Connect(Component) />
   <div
     className="item-main"
   >

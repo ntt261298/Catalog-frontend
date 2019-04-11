@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { onLogout } from '../../actions/user';
 import userImage from '../../assets/images/baseline-person-24px.svg';
 
-const UserDropdown = (props) => {
+export const UserDropdown = (props) => {
   const { onLogout } = props;
   return (
     <UncontrolledDropdown>
@@ -24,7 +24,7 @@ const UserDropdown = (props) => {
           </DropdownItem>
         </Link>
         <DropdownItem divider />
-        <DropdownItem onClick={onLogout}>Logout</DropdownItem>
+        <DropdownItem className="logout" onClick={onLogout}>Logout</DropdownItem>
       </DropdownMenu>
     </UncontrolledDropdown>
   );

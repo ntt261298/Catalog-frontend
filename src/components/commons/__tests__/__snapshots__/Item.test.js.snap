@@ -1,7 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`src/components/commons/Item should render list-items 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="item"
+>
+  <h2>
+    All Items
+  </h2>
+  <ul>
+    <li
+      key="6"
+    >
+      <Link
+        to="/category/2/item/6"
+      >
+        Title 3
+      </Link>
+    </li>
+    <li
+      key="1"
+    >
+      <Link
+        to="/category/1/item/1"
+      >
+        Title 2
+      </Link>
+    </li>
+  </ul>
+</div>
 `;

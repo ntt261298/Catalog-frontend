@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/user/AddItemModal should render add item modal 1`] = `
+exports[`src/components/user/EditItemModal should render add edit modal 1`] = `
 <div>
   <Modal
     autoFocus={true}
@@ -33,7 +33,7 @@ exports[`src/components/user/AddItemModal should render add item modal 1`] = `
       toggle={[Function]}
       wrapTag="div"
     >
-      Add Item
+      Edit Item
     </ModalHeader>
     <ModalBody
       tag="div"
@@ -47,6 +47,7 @@ exports[`src/components/user/AddItemModal should render add item modal 1`] = `
             name="title"
             onChange={[Function]}
             type="text"
+            value="one"
           />
         </label>
       </div>
@@ -59,6 +60,7 @@ exports[`src/components/user/AddItemModal should render add item modal 1`] = `
           <textarea
             name="description"
             onChange={[Function]}
+            value="one"
           />
         </label>
       </div>
@@ -70,6 +72,7 @@ exports[`src/components/user/AddItemModal should render add item modal 1`] = `
           <select
             name="categoryID"
             onChange={[Function]}
+            value={1}
           >
             <option
               key="1"
@@ -95,7 +98,7 @@ exports[`src/components/user/AddItemModal should render add item modal 1`] = `
         onClick={[Function]}
         tag="button"
       >
-        Add
+        Edit
       </Button>
     </ModalFooter>
   </Modal>

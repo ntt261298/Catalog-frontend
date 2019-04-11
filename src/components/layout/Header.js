@@ -8,7 +8,7 @@ import SignupButton from './SignupButton';
 import UserDropdown from './UserDropdown';
 import ModalContainer from './ModalContainer';
 
-const Header = props => (
+export const Header = props => (
   <div className="header">
     <div className="header-logo">
       <Link to="/">Catalog App</Link>

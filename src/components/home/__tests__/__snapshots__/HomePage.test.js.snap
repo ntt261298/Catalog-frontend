@@ -2,7 +2,7 @@
 
 exports[`src/components/home/HomePage.js should render home page 1`] = `
 <div>
-  <Connect(Header) />
+  <Connect(Component) />
   <div
     className="home-main"
   >

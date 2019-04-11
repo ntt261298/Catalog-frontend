@@ -1,7 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`src/components/layout/Header should render header 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="header"
+>
+  <div
+    className="header-logo"
+  >
+    <Link
+      to="/"
+    >
+      Catalog App
+    </Link>
+  </div>
+  <div
+    className="header-menu"
+  >
+    <Connect(Component) />
+    <Connect(Component) />
+    <Connect(Component) />
+  </div>
+</div>
+`;
+
+exports[`src/components/layout/Header should render header with dropdown user 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header-logo"
+  >
+    <Link
+      to="/"
+    >
+      Catalog App
+    </Link>
+  </div>
+  <div
+    className="header-menu"
+  >
+    <Connect(Component) />
+    <Connect(Component) />
+  </div>
+</div>
 `;

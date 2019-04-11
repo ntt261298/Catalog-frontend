@@ -1,27 +1,39 @@
 import React from 'react';
 import { shallow } from '../../../enzyme';
-import SignupModal from '../SignupModal';
+import { UserDropdown } from '../UserDropdown';
 
 describe('src/coponents/layout/UserDropdown.js', () => {
   let wrapper;
   let props;
+  let logoutLink;
+
+  const update = () => {
+    logoutLink = wrapper.find('.logout');
+  };
   const setup = () => {
     wrapper = shallow(
-      <SignupModal {...props} />,
+      <UserDropdown {...props} />,
     );
+    update();
   };
 
   beforeEach(() => {
     props = {
-      ...props,
       signupModal: false,
-      onLogout() {},
+      onLogout: jest.fn(),
     };
   });
 
-  it('renders signup modal', () => {
+  it('should render user dropdown', () => {
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call onLogout when logoutLink is clicked', () => {
+    setup();
+    logoutLink.simulate('click');
+    // Expect the wrapper object to be defined
+    expect(props.onLogout).toMatchSnapshot();
   });
 });

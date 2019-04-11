@@ -1,7 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/coponents/layout/UserDropdown.js renders signup modal 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`src/coponents/layout/UserDropdown.js should call onLogout when logoutLink is clicked 1`] = `[Function]`;
+
+exports[`src/coponents/layout/UserDropdown.js should render user dropdown 1`] = `
+<UncontrolledDropdown>
+  <DropdownToggle
+    aria-haspopup={true}
+    caret={true}
+    color="secondary"
+  >
+    <div
+      className="user-img"
+    >
+      <img
+        alt="user"
+        src="baseline-person-24px.svg"
+      />
+    </div>
+  </DropdownToggle>
+  <DropdownMenu
+    flip={true}
+    tag="div"
+  >
+    <Link
+      to="/me/items"
+    >
+      <DropdownItem
+        tag="button"
+        toggle={true}
+      >
+        Activities
+      </DropdownItem>
+    </Link>
+    <DropdownItem
+      divider={true}
+      tag="button"
+      toggle={true}
+    />
+    <DropdownItem
+      className="logout"
+      onClick={[Function]}
+      tag="button"
+      toggle={true}
+    >
+      Logout
+    </DropdownItem>
+  </DropdownMenu>
+</UncontrolledDropdown>
 `;
