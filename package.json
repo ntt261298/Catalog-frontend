@@ -80,7 +80,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/src/index.js"
+      "!src/index.js",
+      "!src/components/layout/ListContainer.js"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
