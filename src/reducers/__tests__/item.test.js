@@ -96,10 +96,16 @@ describe('src/reducers/item', () => {
     expect(reducer(mockState, startAction)).toEqual(mockState);
   });
 
-  it('should handle GET_ITEMS_SUCCESS', () => {
+  it('should handle GET_ITEM_SUCCESS', () => {
     const successAction = {
       type: actions.GET_ITEM_SUCCESS,
-      payload: mockItem,
+      payload: {
+        id: 1,
+        title: 'one',
+        description: 'one',
+        category_id: 1,
+        user_id: 2,
+      },
     };
     expect(reducer(mockState, successAction)).toEqual(mockState);
   });
@@ -109,7 +115,10 @@ describe('src/reducers/item', () => {
       type: actions.GET_CATEGORY_ITEMS_SUCCESS,
       payload: mockItem,
     };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
+    expect(reducer(mockState, successAction)).toEqual({
+      ...mockState,
+      categoryItemIds: [1, 2, 3],
+    });
   });
 
   it('should handle GET_USER_ITEMS_SUCCESS', () => {
@@ -117,15 +126,10 @@ describe('src/reducers/item', () => {
       type: actions.GET_USER_ITEMS_SUCCESS,
       payload: mockItem,
     };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
-  });
-
-  it('should handle GET_ITEM_SUCCESS', () => {
-    const successAction = {
-      type: actions.GET_USER_ITEMS_SUCCESS,
-      payload: mockItem,
-    };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
+    expect(reducer(mockState, successAction)).toEqual({
+      ...mockState,
+      userItemIds: [1, 2, 3],
+    });
   });
 
   it('should handle GET_ITEMS_FAIL', () => {

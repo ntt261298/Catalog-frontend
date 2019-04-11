@@ -36,7 +36,7 @@ describe('src/actions/item', () => {
     mockMessage = 'Message from APIs';
   });
 
-  it('should dispatch GET_ITEMS', () => {
+  it('should dispatch GET_ITEMS and GET_ITEMS_SUCCESS', () => {
     fetch.mockResponse(JSON.stringify(mockItems));
 
     const expectedActions = [
@@ -54,6 +54,21 @@ describe('src/actions/item', () => {
       })
     );
   });
+
+  // it('should dispatch GET_ITEMS_FAIL', () => {
+  //   fetch.mockResponseOnce(JSON.stringify({ 'message': 'Item could not be found.' }), { status: 404, headers: { 'Content-Type': 'application/json' } });
+  //
+  //   const expectedActions = [
+  //     { type: 'GET_ITEMS_FAIL' },
+  //   ];
+  //
+  //   return (
+  //     store.dispatch(getItems()).then(() => {
+  //       // return of async actions
+  //       expect(store.getActions()).toEqual(expectedActions);
+  //     })
+  //   );
+  // });
 
 
   it('should dispatch GET_ITEM', () => {
@@ -134,7 +149,7 @@ describe('src/actions/item', () => {
 
     const expectedActions = [
       { type: 'ADD_ITEM' },
-      { type: 'ADD_ITEM_SUCCESS' },
+      { type: 'ADD_ITEM_SUCCESS', payload: mockMessage },
     ];
 
     return (
@@ -150,7 +165,7 @@ describe('src/actions/item', () => {
 
     const expectedActions = [
       { type: 'EDIT_ITEM' },
-      { type: 'EDIT_ITEM_SUCCESS' },
+      { type: 'EDIT_ITEM_SUCCESS', payload: mockMessage },
     ];
 
     return (

@@ -81,7 +81,8 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
       "!src/index.js",
-      "!src/components/layout/ListContainer.js"
+      "!src/components/layout/ListContainer.js",
+      "!src/store.js"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"

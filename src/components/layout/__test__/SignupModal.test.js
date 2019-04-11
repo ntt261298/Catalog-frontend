@@ -11,7 +11,6 @@ describe('src/components/layout/SignupModal.js', () => {
   const update = () => {
     signupButton = wrapper.find('Button');
     moveToLoginParam = wrapper.find('p');
-    // usernameInput = wrapper.find('input[name='username']')
   };
 
   const setup = () => {
@@ -42,7 +41,6 @@ describe('src/components/layout/SignupModal.js', () => {
     wrapper.setState({ username: 'test', password: '123456' }, () => {
       signupButton.simulate('click');
       expect(props.onSignup).toHaveBeenCalled();
-      expect(props.hideModal).toHaveBeenCalled();
     });
   });
 
@@ -67,12 +65,5 @@ describe('src/components/layout/SignupModal.js', () => {
       signupButton.simulate('click');
       expect(props.onSignup).not.toHaveBeenCalled();
     });
-  });
-
-  it('should call onChangeInput when user\'s input is changed', () => {
-    setup();
-    moveToLoginParam.simulate('change');
-    expect(props.hideModal).toHaveBeenCalled();
-    expect(props.showLogin).toHaveBeenCalled();
   });
 });

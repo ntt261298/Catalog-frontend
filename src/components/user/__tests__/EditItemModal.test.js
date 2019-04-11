@@ -68,7 +68,7 @@ describe('src/components/user/EditItemModal', () => {
       title: '', description: '123456', categoryID: 1,
     }, () => {
       editButton.simulate('click');
-      expect(props.addItem).not.toHaveBeenCalled();
+      expect(props.editItem).not.toHaveBeenCalled();
     });
   });
 

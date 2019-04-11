@@ -30,15 +30,11 @@ export class SignupModal extends React.Component {
   onSignup = async () => {
     const { username, password } = this.state;
     if (!username) {
-      this.setState({
-        message: 'Username must not be blank',
-      });
+      errMessage('Username must not be blank');
       return;
     }
     if (password.length < 6) {
-      this.setState({
-        message: 'Password must have at least 6 characters',
-      });
+      errMessage('Password must have at least 6 characters');
       return;
     }
     this.props.onSignup(this.state.username, this.state.password)

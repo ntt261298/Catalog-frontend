@@ -17,7 +17,7 @@ export const addItem = (title, description, categoryID) => async (dispatch) => {
   const data = {
     title, description,
   };
-  return post(dispatch, ADD_ITEM, `/categories/${categoryID}`, data);
+  return post(dispatch, ADD_ITEM, `/categories/${categoryID}/items`, data);
 };
 
 export const editItem = item => async (dispatch) => {

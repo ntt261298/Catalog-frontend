@@ -19,7 +19,7 @@ export const get = async (dispatch, type, endpoint) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
   } catch (err) {
     dispatch({ type: `${type}_FAIL` });
     throw Error(err);
@@ -38,7 +38,7 @@ export const post = async (dispatch, type, endpoint, data) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
     return response.message;
   } catch (err) {
     dispatch({ type: `${type}_FAIL` });

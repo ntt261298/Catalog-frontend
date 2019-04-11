@@ -13,7 +13,6 @@ export class LoginModal extends React.Component {
   state = {
     username: '',
     password: '',
-    message: '',
   }
 
   onChangeInput = (e) => {
@@ -30,15 +29,11 @@ export class LoginModal extends React.Component {
   onLogin = async () => {
     const { username, password } = this.state;
     if (!username) {
-      this.setState({
-        message: 'Username must not be blank',
-      });
+      errMessage('Username must not be blank');
       return;
     }
     if (password.length < 6) {
-      this.setState({
-        message: 'Password must have at least 6 characters',
-      });
+      errMessage('Password must have at least 6 characters');
       return;
     }
     this.props.onLogin(this.state.username, this.state.password)
@@ -51,7 +46,6 @@ export class LoginModal extends React.Component {
 
   render() {
     const { modal, hideModal } = this.props;
-    const { message } = this.state;
     const isLoginModal = modal === 'login';
     return (
       <div>
@@ -70,11 +64,6 @@ export class LoginModal extends React.Component {
                 <input type="password" name="password" onChange={this.onChangeInput} />
               </label>
             </div>
-            { message ? (
-              <div className="alert alert-danger" role="alert">
-                { message }
-              </div>
-            ) : null}
             <p onClick={this.moveToSignup}>Create new account?</p>
           </ModalBody>
           <ModalFooter>

@@ -20,7 +20,6 @@ export class ItemDetail extends Component {
 
   render() {
     const { item } = this.props;
-    console.log(item);
     return (
       <div className="main">
         <h2>Item Detail</h2>

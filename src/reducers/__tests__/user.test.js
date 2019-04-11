@@ -65,7 +65,7 @@ describe('src/reducers/user', () => {
 
   it('should handle USER_SIGNUP_SUCCESS', () => {
     const startAction = {
-      type: actions.USER_SIGNUP,
+      type: actions.USER_SIGNUP_SUCCESS,
       payload: {
         access_token: 'randomAccessToken',
       },
