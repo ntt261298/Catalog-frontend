@@ -2,9 +2,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import {
-  onLogin, onSignup, onLogout, setCurrentItem,
+  onLogin, onSignup, setCurrentItem,
 } from '../user';
-
 
 describe('src/actions/user', () => {
   let middlewares;
@@ -38,7 +37,6 @@ describe('src/actions/user', () => {
 
     return (
       store.dispatch(onLogin()).then(() => {
-        // return of async actions
         expect(store.getActions()).toEqual(expectedActions);
       })
     );
@@ -63,7 +61,6 @@ describe('src/actions/user', () => {
 
     return (
       store.dispatch(onSignup()).then(() => {
-        // return of async actions
         expect(store.getActions()).toEqual(expectedActions);
       })
     );
@@ -78,7 +75,6 @@ describe('src/actions/user', () => {
     ];
 
     store.dispatch(setCurrentItem());
-    // return of async actions
     expect(store.getActions()).toEqual(expectedActions);
   });
 
@@ -90,7 +86,6 @@ describe('src/actions/user', () => {
     ];
 
     store.dispatch(setCurrentItem());
-    // return of async actions
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

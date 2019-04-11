@@ -1,15 +1,20 @@
 import { loadToken } from './localStorage';
 
-const defaultHeader = {
-  'Content-Type': 'application/json',
-  Authorization: `Bearer ${loadToken()}`,
-};
+let defaultHeader;
+let defaultHost;
 
-const defaultHost = 'http://127.0.0.1:5000';
+const setDefault = () => {
+  defaultHeader = {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${loadToken()}`,
+  };
+  defaultHost = 'http://127.0.0.1:5000';
+};
 
 
 export const get = async (dispatch, type, endpoint) => {
   dispatch({ type: `${type}` });
+  setDefault();
   try {
     let response = await fetch(`${defaultHost}${endpoint}`, {
       method: 'GET',
@@ -28,6 +33,7 @@ export const get = async (dispatch, type, endpoint) => {
 
 export const post = async (dispatch, type, endpoint, data) => {
   dispatch({ type: `${type}` });
+  setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
       method: 'POST',
@@ -48,6 +54,7 @@ export const post = async (dispatch, type, endpoint, data) => {
 
 export const put = async (dispatch, type, endpoint, data) => {
   dispatch({ type: `${type}` });
+  setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
       method: 'PUT',
@@ -68,6 +75,7 @@ export const put = async (dispatch, type, endpoint, data) => {
 
 export const del = async (dispatch, type, endpoint) => {
   dispatch({ type: `${type}` });
+  setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
       method: 'DELETE',

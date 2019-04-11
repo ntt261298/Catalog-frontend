@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b979d0b-3beb-409a-ad7d-fc22082e8d7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/__tests__/item.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/__tests__/item.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/commons/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/ItemDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item/ItemDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/LoginModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/LoginModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/SignupModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/SignupModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/__tests__/EditItemModal.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/__tests__/EditItemModal.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/__tests__/user.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/__tests__/user.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/user.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,10 +18,55 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/actions/item.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="188">
+                  <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#119#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/utils/localStorage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+                <state relative-caret-position="165">
+                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/utils/request.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1125">
+                  <caret line="75" column="46" selection-start-line="75" selection-start-column="46" selection-end-line="75" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/actions/user.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="12" selection-start-line="12" selection-end-line="12" />
+                  <folding>
+                    <element signature="e#0#85#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/actions/__tests__/user.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#50#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -36,29 +74,13 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/reducers/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+                <state relative-caret-position="205">
+                  <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#172#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#62#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/setupTests.js">
-              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -81,11 +103,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+                <state relative-caret-position="330">
+                  <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/reducers/item.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="213">
+                  <caret line="28" column="13" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#0#155#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -94,42 +128,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/actions/__tests__/user.test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="104">
-                  <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#0#50#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/user/EditItemModal.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/EditItemModal.test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/UserItem.test.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -143,7 +141,64 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/UserPage.test.js">
+            <entry file="file://$PROJECT_DIR$/src/components/user/UserItems.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="426">
+                  <caret line="92" column="30" lean-forward="true" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#51#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/style/user.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/commons/Category.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                  <caret line="34" column="11" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/home/HomePage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/item/ItemDetail.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="123">
+                  <caret line="19" selection-start-line="19" selection-end-line="19" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/user/UserPage.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
                   <folding>
@@ -154,10 +209,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/layout/SignupModal.js">
+            <entry file="file://$PROJECT_DIR$/src/components/category/CategoryPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -166,33 +221,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js">
+            <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/actions/__tests__/item.test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="104">
-                  <caret line="184" column="6" lean-forward="true" selection-start-line="184" selection-start-column="6" selection-end-line="184" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#50#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/UserDropdown.test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-228">
+                <state relative-caret-position="232">
+                  <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -201,12 +233,12 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/AddItemModal.test.js">
+            <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/index.test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-555">
-                  <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
                   <folding>
-                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#0#39#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -240,9 +272,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/actions/types.js" />
-        <option value="$PROJECT_DIR$/src/reducers/user.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/style/404.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/app/404.js" />
@@ -269,32 +298,35 @@
         <option value="$PROJECT_DIR$/src/components/user/__tests__/UserItem.test.js" />
         <option value="$PROJECT_DIR$/src/utils/__tests__/localStorage.test.js" />
         <option value="$PROJECT_DIR$/src/actions/user.js" />
-        <option value="$PROJECT_DIR$/src/actions/__tests__/user.test.js" />
         <option value="$PROJECT_DIR$/src/actions/__tests__/category.test.js" />
-        <option value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
-        <option value="$PROJECT_DIR$/src/reducers/__tests__/user.test.js" />
         <option value="$PROJECT_DIR$/src/reducers/app.js" />
         <option value="$PROJECT_DIR$/src/reducers/__tests__/app.test.js" />
         <option value="$PROJECT_DIR$/src/reducers/__tests__/index.test.js" />
         <option value="$PROJECT_DIR$/src/utils/__tests__/selector.test.js" />
         <option value="$PROJECT_DIR$/src/components/layout/ListContainer.js" />
         <option value="$PROJECT_DIR$/src/components/layout/ModalContainer.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/commons/Item.js" />
         <option value="$PROJECT_DIR$/src/actions/item.js" />
         <option value="$PROJECT_DIR$/src/components/layout/LoginModal.js" />
         <option value="$PROJECT_DIR$/src/components/layout/SignupModal.js" />
         <option value="$PROJECT_DIR$/src/components/item/ItemDetail.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/utils/request.js" />
-        <option value="$PROJECT_DIR$/src/utils/localStorage.js" />
         <option value="$PROJECT_DIR$/src/actions/__tests__/item.test.js" />
         <option value="$PROJECT_DIR$/src/components/user/__tests__/EditItemModal.test.js" />
         <option value="$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js" />
+        <option value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
+        <option value="$PROJECT_DIR$/src/reducers/__tests__/user.test.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/utils/localStorage.js" />
+        <option value="$PROJECT_DIR$/src/utils/request.js" />
+        <option value="$PROJECT_DIR$/src/actions/__tests__/user.test.js" />
+        <option value="$PROJECT_DIR$/src/style/user.css" />
+        <option value="$PROJECT_DIR$/src/components/home/HomePage.js" />
+        <option value="$PROJECT_DIR$/src/components/category/CategoryPage.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="794" />
@@ -314,20 +346,12 @@
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -340,22 +364,28 @@
               <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="__test__" type="462c0819:PsiDirectoryNode" />
+              <item name="category" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -363,13 +393,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catalog-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catalog-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,21 +432,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.src/actions/item.should dispatch DELETE_ITEM">
-    <configuration name="src/actions/item.should dispatch DELETE_ITEM" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/actions/__tests__/item.test.js" />
-      <test-names>
-        <test-name value="src/actions/item" />
-        <test-name value="should dispatch DELETE_ITEM" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Jest.src/components/layout/SignupModal.js.should render signup modal">
     <configuration name="src/components/layout/SignupModal.js.should render signup modal" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -438,62 +447,76 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="src/components/user/AddItemModal.should set message 'Title must not be blank' when title's input is blank" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="src/reducers/item.should handle GET_CATEGORY_ITEMS_SUCCESS" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/user/__tests__/AddItemModal.test.js" />
+      <test-file value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
       <test-names>
-        <test-name value="src/components/user/AddItemModal" />
-        <test-name value="should set message 'Title must not be blank' when title's input is blank" />
+        <test-name value="src/reducers/item" />
+        <test-name value="should handle GET_CATEGORY_ITEMS_SUCCESS" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="src/components/user/UserItems.should call onShowEditItem when edit span is clicked" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="src/reducers/item.should handle GET_ITEMS_SUCCESS" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/user/__tests__/UserItem.test.js" />
+      <test-file value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
       <test-names>
-        <test-name value="src/components/user/UserItems" />
-        <test-name value="should call onShowEditItem when edit span is clicked" />
+        <test-name value="src/reducers/item" />
+        <test-name value="should handle GET_ITEMS_SUCCESS" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="src/coponents/layout/UserDropdown.js.should call onLogout when logoutLink is clicked" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="src/reducers/item.should handle GET_ITEM_SUCCESS" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/layout/__test__/UserDropdown.test.js" />
+      <test-file value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
       <test-names>
-        <test-name value="src/coponents/layout/UserDropdown.js" />
-        <test-name value="should call onLogout when logoutLink is clicked" />
+        <test-name value="src/reducers/item" />
+        <test-name value="should handle GET_ITEM_SUCCESS" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="src/reducers/item.should handle GET_USER_ITEMS_SUCCESS" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/__tests__/item.test.js" />
+      <test-names>
+        <test-name value="src/reducers/item" />
+        <test-name value="should handle GET_USER_ITEMS_SUCCESS" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.src/coponents/layout/UserDropdown.js.should call onLogout when logoutLink is clicked" />
-      <item itemvalue="Jest.src/components/user/AddItemModal.should set message 'Title must not be blank' when title's input is blank" />
-      <item itemvalue="Jest.src/components/user/UserItems.should call onShowEditItem when edit span is clicked" />
+      <item itemvalue="Jest.src/reducers/item.should handle GET_ITEM_SUCCESS" />
+      <item itemvalue="Jest.src/reducers/item.should handle GET_ITEMS_SUCCESS" />
+      <item itemvalue="Jest.src/reducers/item.should handle GET_USER_ITEMS_SUCCESS" />
+      <item itemvalue="Jest.src/reducers/item.should handle GET_CATEGORY_ITEMS_SUCCESS" />
       <item itemvalue="Jest.src/components/layout/SignupModal.js.should render signup modal" />
-      <item itemvalue="Jest.src/actions/item.should dispatch DELETE_ITEM" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.src/actions/item.should dispatch DELETE_ITEM" />
         <item itemvalue="Jest.src/components/layout/SignupModal.js.should render signup modal" />
-        <item itemvalue="Jest.src/components/user/UserItems.should call onShowEditItem when edit span is clicked" />
-        <item itemvalue="Jest.src/components/user/AddItemModal.should set message 'Title must not be blank' when title's input is blank" />
-        <item itemvalue="Jest.src/coponents/layout/UserDropdown.js.should call onLogout when logoutLink is clicked" />
+        <item itemvalue="Jest.src/reducers/item.should handle GET_CATEGORY_ITEMS_SUCCESS" />
+        <item itemvalue="Jest.src/reducers/item.should handle GET_USER_ITEMS_SUCCESS" />
+        <item itemvalue="Jest.src/reducers/item.should handle GET_ITEM_SUCCESS" />
+        <item itemvalue="Jest.src/reducers/item.should handle GET_ITEMS_SUCCESS" />
       </list>
     </recent_temporary>
   </component>
@@ -512,49 +535,50 @@
       <workItem from="1554563827591" duration="2623000" />
       <workItem from="1554572185814" duration="95291000" />
       <workItem from="1554951189050" duration="4000" />
-      <workItem from="1554951196214" duration="8755000" />
+      <workItem from="1554951196214" duration="15381000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="src_components_layout_SignupModal_js_should_set_message_'Password_must_have_at_least_6_characters'_when_password's_input_is_wrong - 2019.04.11 at 13h 34m 11s.xml">
-      <configuration name="src/components/layout/SignupModal.js.should set message 'Password must have at least 6 characters' when password's input is wrong" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_layout_SignupModal_js_should_call_onChangeInput_when_user's_input_is_changed - 2019.04.11 at 13h 34m 13s.xml">
-      <configuration name="src/components/layout/SignupModal.js.should call onChangeInput when user's input is changed" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_layout_SignupModal_js_should_call_onChangeInput_when_user's_input_is_changed - 2019.04.11 at 13h 34m 34s.xml">
-      <configuration name="src/components/layout/SignupModal.js.should call onChangeInput when user's input is changed" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_layout_SignupModal_js_should_set_message_'Password_must_have_at_least_6_characters'_when_password's_input_is_wrong - 2019.04.11 at 13h 35m 11s.xml">
-      <configuration name="src/components/layout/SignupModal.js.should set message 'Password must have at least 6 characters' when password's input is wrong" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_coponents_layout_UserDropdown_js_should_render_user_dropdown - 2019.04.11 at 13h 35m 18s.xml">
-      <configuration name="src/coponents/layout/UserDropdown.js.should render user dropdown" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_coponents_layout_UserDropdown_js_should_call_onLogout_when_logoutLink_is_clicked - 2019.04.11 at 13h 35m 22s.xml">
-      <configuration name="src/coponents/layout/UserDropdown.js.should call onLogout when logoutLink is clicked" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_user_AddItemModal_should_set_message_'Title_must_not_be_blank'_when_title's_input_is_blank - 2019.04.11 at 13h 35m 34s.xml">
-      <configuration name="src/components/user/AddItemModal.should set message 'Title must not be blank' when title's input is blank" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_user_UserItems_should_call_onShowEditItem_when_edit_span_is_clicked - 2019.04.11 at 13h 35m 45s.xml">
-      <configuration name="src/components/user/UserItems.should call onShowEditItem when edit span is clicked" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="src_components_layout_SignupModal_js_should_render_signup_modal - 2019.04.11 at 13h 36m 57s.xml">
-      <configuration name="src/components/layout/SignupModal.js.should render signup modal" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="src_actions_item_should_dispatch_DELETE_ITEM - 2019.04.11 at 13h 37m 49s.xml">
       <configuration name="src/actions/item.should dispatch DELETE_ITEM" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_ITEM_SUCCESS - 2019.04.11 at 13h 45m 12s.xml">
+      <configuration name="src/reducers/item.should handle GET_ITEM_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_ITEMS_SUCCESS - 2019.04.11 at 13h 47m 19s.xml">
+      <configuration name="src/reducers/item.should handle GET_ITEMS_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_ITEM_SUCCESS - 2019.04.11 at 13h 49m 56s.xml">
+      <configuration name="src/reducers/item.should handle GET_ITEM_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_ITEM_SUCCESS - 2019.04.11 at 13h 53m 18s.xml">
+      <configuration name="src/reducers/item.should handle GET_ITEM_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_ITEM_SUCCESS - 2019.04.11 at 13h 53m 48s.xml">
+      <configuration name="src/reducers/item.should handle GET_ITEM_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_USER_ITEMS_SUCCESS - 2019.04.11 at 13h 55m 00s.xml">
+      <configuration name="src/reducers/item.should handle GET_USER_ITEMS_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_reducers_item_should_handle_GET_CATEGORY_ITEMS_SUCCESS - 2019.04.11 at 13h 56m 03s.xml">
+      <configuration name="src/reducers/item.should handle GET_CATEGORY_ITEMS_SUCCESS" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_components_layout_SignupModal_js_should_render_signup_modal - 2019.04.11 at 14h 00m 44s.xml">
+      <configuration name="src/components/layout/SignupModal.js.should render signup modal" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="src_components_layout_SignupModal_js_should_render_signup_modal - 2019.04.11 at 14h 01m 42s.xml">
+      <configuration name="src/components/layout/SignupModal.js.should render signup modal" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116375000" />
+    <option name="totallyTimeSpent" value="123001000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="794" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="794" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18111347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18111347" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -566,7 +590,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32905984" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" visible="true" weight="0.485755" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930555" visible="true" weight="0.485755" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50069445" side_tool="true" weight="0.32780084" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -631,6 +655,12 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducers/__tests__/item.test.js</url>
+          <line>98</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -638,90 +668,10 @@
     <SUITE FILE_PATH="coverage/catalog_frontend$src_components_commons_Category_should_call_getCategories_in_componentDidMount.info" NAME="src/components/commons/Category.should call getCategories in componentDidMount Coverage Results" MODIFIED="1554554599406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/LoginModal.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app/__tests__/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="6" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/__tests__/category.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/item.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/category.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/user.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/app.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="3" selection-start-line="3" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/index.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,16 +691,6 @@
           <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,16 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/user/AddItemModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -805,41 +735,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/user/UserItems.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/user/UserPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -898,43 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/item/ItemDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/localStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -948,13 +806,6 @@
     <entry file="file://$PROJECT_DIR$/src/reducers/category.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/layout/ModalContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
@@ -966,26 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/__tests__/user.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,6 +859,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/UserPage.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/__tests__/item.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="192" column="2" selection-start-line="191" selection-start-column="2" selection-end-line="192" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/item.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="119" column="33" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/user.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/__snapshots__/SignupModal.test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/layout/SignupModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/localStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="46" selection-start-line="75" selection-start-column="46" selection-end-line="75" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/__tests__/user.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/UserItem.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -1038,14 +1006,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+    <entry file="file://$PROJECT_DIR$/src/assets/images/add-button.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/user/UserItems.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="426">
+          <caret line="92" column="30" lean-forward="true" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/user/__tests__/UserPage.test.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/__tests__/index.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/item/ItemDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/user/UserPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -1054,32 +1055,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/SignupModal.js">
+    <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        <state relative-caret-position="232">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/__test__/SignupModal.test.js">
+    <entry file="file://$PROJECT_DIR$/src/components/home/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="68" column="3" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/__tests__/item.test.js">
+    <entry file="file://$PROJECT_DIR$/src/components/category/CategoryPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="184" column="6" lean-forward="true" selection-start-line="184" selection-start-column="6" selection-end-line="184" selection-end-column="6" />
+        <state relative-caret-position="165">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/commons/Category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="34" column="11" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
