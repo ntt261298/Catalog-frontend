@@ -12,61 +12,61 @@ describe('src/reducers/user', () => {
 
 
   it('should handle default', () => {
-    const startAction = {
+    const action = {
       type: actions.SOME_ACTION,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: '',
     });
   });
 
   it('should handle SHOW_LOGIN_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.SHOW_LOGIN_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: 'login',
     });
   });
 
   it('should handle SHOW_SIGNUP_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.SHOW_SIGNUP_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: 'signup',
     });
   });
 
   it('should handle SHOW_ADD_ITEM_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.SHOW_ADD_ITEM_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: 'addItem',
     });
   });
   it('should handle SHOW_EDIT_ITEM_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.SHOW_EDIT_ITEM_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: 'editItem',
     });
   });
   it('should handle SHOW_DELETE_ITEM_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.SHOW_DELETE_ITEM_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: 'deleteItem',
     });
   });
   it('should handle HIDE_MODAL', () => {
-    const startAction = {
+    const action = {
       type: actions.HIDE_MODAL,
     };
-    expect(reducer(mockState, startAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       modal: '',
     });
   });

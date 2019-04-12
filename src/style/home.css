@@ -3,9 +3,9 @@
     padding: 1rem 10rem;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-        'category item item'
+        'category item item item'
 }
 .category {
     grid-area: category;
@@ -13,6 +13,19 @@
 }
 .item {
     grid-area: item;
+}
+.item h2 {
+    text-align: center;
+}
+.item-card {
+    text-align: center;
+    background: #f7f7f7;
+}
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    color: #444;
 }
 /* Numeric Box */
 .numeric span {
@@ -30,4 +43,21 @@
   }
 .numeric img:hover {
     cursor: pointer;
+}
+/*Responsive Style*/
+@media screen and (max-width: 1000px) {
+    .home-main {
+        padding: 2rem 1.5rem;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+                'category'
+                'item'
+    }
+    .category {
+        border-right: none;
+        text-align: center;
+    }
+    .item-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

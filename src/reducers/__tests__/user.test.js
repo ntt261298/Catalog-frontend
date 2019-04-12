@@ -1,5 +1,4 @@
-import reducer from '../user';
-import { initialState } from '../user';
+import reducer, { initialState } from '../user';
 import * as actions from '../../actions/types';
 
 describe('src/reducers/user', () => {
@@ -18,10 +17,10 @@ describe('src/reducers/user', () => {
   });
 
   it('should handle USER_LOGIN', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_LOGIN,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: true,
     });
@@ -29,13 +28,13 @@ describe('src/reducers/user', () => {
 
 
   it('should handle USER_LOGIN_SUCCESS', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_LOGIN_SUCCESS,
       payload: {
         access_token: 'randomAccessToken',
       },
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: false,
       loggedIn: true,
@@ -43,10 +42,10 @@ describe('src/reducers/user', () => {
   });
 
   it('should handle USER_LOGIN_FAIL', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_LOGIN_FAIL,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: false,
       loggedIn: false,
@@ -54,23 +53,23 @@ describe('src/reducers/user', () => {
   });
 
   it('should handle USER_SIGNUP', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_SIGNUP,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: true,
     });
   });
 
   it('should handle USER_SIGNUP_SUCCESS', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_SIGNUP_SUCCESS,
       payload: {
         access_token: 'randomAccessToken',
       },
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: false,
       loggedIn: true,
@@ -78,31 +77,31 @@ describe('src/reducers/user', () => {
   });
 
   it('should handle USER_SIGNUP_FAIL', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_SIGNUP_FAIL,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loading: false,
     });
   });
 
   it('should handle USER_LOGOUT', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_LOGOUT,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       loggedIn: false,
     });
   });
 
   it('should handle USER_CURRENT_ITEM', () => {
-    const startAction = {
+    const action = {
       type: actions.USER_CURRENT_ITEM,
       payload: mockItem,
     };
-    expect(reducer(initialState, startAction)).toEqual({
+    expect(reducer(initialState, action)).toEqual({
       ...initialState,
       currentItem: mockItem,
     });

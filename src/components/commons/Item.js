@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
 import { getItems, getCategoryItems } from '../../actions/item';
 import { selectCategoryItems, selectAllItems } from '../../utils/selector';
 import { errMessage } from '../../utils/messages';
@@ -38,26 +39,36 @@ export class Item extends Component {
         { type === 'home' ? (
           <Fragment>
             <h2>All Items</h2>
-            <ul>
+            <ul className="item-list">
               {allItems.map(({ id, title, category_id }) => (
-                <li key={id}>
-                  <Link to={`/category/${category_id}/item/${id}`}>
-                    { title }
-                  </Link>
-                </li>
+                <Card key={id} className="item-card">
+                  <Card.Body>
+                    <Card.Title style={{ borderBottom: '1px solid #f7f7f7' }}>{ title }</Card.Title>
+                    <Link to={`/category/${category_id}/item/${id}`}>
+                      <Button variant="primary">
+                          View Detail
+                      </Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
               ))}
             </ul>
           </Fragment>
         ) : (
           <Fragment>
             <h2>Category's Items</h2>
-            <ul>
+            <ul className="item-list">
               {categoryItems.map(({ id, title, category_id }) => (
-                <li key={id}>
-                  <Link to={`/category/${category_id}/item/${id}`}>
-                    { title }
-                  </Link>
-                </li>
+                <Card key={id} className="item-card">
+                  <Card.Body>
+                    <Card.Title style={{ borderBottom: '1px solid #f7f7f7' }}>{ title }</Card.Title>
+                    <Link to={`/category/${category_id}/item/${id}`}>
+                      <Button variant="primary">
+                        View Detail
+                      </Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
               ))}
             </ul>
           </Fragment>

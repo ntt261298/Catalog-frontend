@@ -65,39 +65,39 @@ describe('src/reducers/item', () => {
   });
 
   it('should handle GET_ITEMS', () => {
-    const startAction = {
+    const action = {
       type: actions.GET_ITEMS,
     };
     // it's empty on purpose because it's just starting to fetch posts
-    expect(reducer(mockState, startAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_ITEMS_SUCCESS', () => {
-    const successAction = {
+    const action = {
       type: actions.GET_ITEMS_SUCCESS,
       payload: mockItem,
     };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_ITEMS_FAIL', () => {
-    const updateAction = {
+    const action = {
       type: actions.GET_ITEMS_FAIL,
       payload: 'err',
     };
-    expect(reducer(mockState, updateAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_ITEM', () => {
-    const startAction = {
+    const action = {
       type: actions.GET_ITEM,
     };
     // it's empty on purpose because it's just starting to fetch posts
-    expect(reducer(mockState, startAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_ITEM_SUCCESS', () => {
-    const successAction = {
+    const action = {
       type: actions.GET_ITEM_SUCCESS,
       payload: {
         id: 1,
@@ -107,52 +107,52 @@ describe('src/reducers/item', () => {
         user_id: 2,
       },
     };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_CATEGORY_ITEMS_SUCCESS', () => {
-    const successAction = {
+    const action = {
       type: actions.GET_CATEGORY_ITEMS_SUCCESS,
       payload: mockItem,
     };
-    expect(reducer(mockState, successAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       ...mockState,
       categoryItemIds: [1, 2, 3],
     });
   });
 
   it('should handle GET_USER_ITEMS_SUCCESS', () => {
-    const successAction = {
+    const action = {
       type: actions.GET_USER_ITEMS_SUCCESS,
       payload: mockItem,
     };
-    expect(reducer(mockState, successAction)).toEqual({
+    expect(reducer(mockState, action)).toEqual({
       ...mockState,
       userItemIds: [1, 2, 3],
     });
   });
 
   it('should handle GET_ITEMS_FAIL', () => {
-    const updateAction = {
+    const action = {
       type: actions.GET_ITEM_FAIL,
       payload: 'err',
     };
-    expect(reducer(mockState, updateAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle ADD_ITEM', () => {
-    const startAction = {
+    const action = {
       type: actions.ADD_ITEM,
     };
     // it's empty on purpose because it's just starting to fetch posts
-    expect(reducer(mockState, startAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_ITEMS_FAIL', () => {
-    const updateAction = {
+    const action = {
       type: actions.GET_ITEMS_FAIL,
       payload: 'err',
     };
-    expect(reducer(mockState, updateAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 });

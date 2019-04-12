@@ -8,6 +8,7 @@
     border: 1px solid #444;
     padding: 10px;
     margin: 10px 0;
+    background: #f7f7f7;
 }
 .user-item p {
     border-top: 0.2px solid #444;
@@ -17,6 +18,7 @@
     right: 10px;
 }
 .user-item .edit-delete span{
+    color: #444;
     margin: 0 3px;
 }
 .user-item .edit-delete span:hover{
@@ -35,3 +37,4 @@
 .main-user-header img:hover {
     cursor: pointer;
 }
+

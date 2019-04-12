@@ -3,7 +3,11 @@
     padding: 1rem 10rem;
     box-shadow: var(--shadow);
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
+    background: #fff;
+}
+.header a {
+    color: #000;
 }
 .header-logo {
     font-size: 2rem;
@@ -35,4 +39,18 @@
     border-radius: 3px;
     color: #fff;
     background-color: var(--blue);
+}
+/*Responsive Style*/
+@media screen and (max-width: 1000px) {
+    .header {
+        padding: 1rem 0rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .header-logo {
+        text-align: center;
+    }
+    .header-menu {
+        text-align: center;
+    }
 }

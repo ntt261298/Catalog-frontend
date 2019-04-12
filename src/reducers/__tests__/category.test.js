@@ -50,26 +50,26 @@ describe('src/reducers/category', () => {
   });
 
   it('should handle GET_CATEGORIES', () => {
-    const startAction = {
+    const action = {
       type: actions.GET_CATEGORIES,
     };
     // it's empty on purpose because it's just starting to fetch posts
-    expect(reducer(mockState, startAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_CATEGORIES_SUCCESS', () => {
-    const successAction = {
+    const action = {
       type: actions.GET_CATEGORIES_SUCCESS,
       payload: mockCategory,
     };
-    expect(reducer(mockState, successAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 
   it('should handle GET_CATEGORIES_FAIL', () => {
-    const updateAction = {
+    const action = {
       type: actions.GET_CATEGORIES_FAIL,
       payload: 'err',
     };
-    expect(reducer(mockState, updateAction)).toEqual(mockState);
+    expect(reducer(mockState, action)).toEqual(mockState);
   });
 });
