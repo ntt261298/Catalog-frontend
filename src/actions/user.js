@@ -3,20 +3,26 @@ import {
 } from './types';
 import { post } from '../utils/request';
 
-export const onLogin = (username, password) => async (dispatch) => {
+export const onLogin = (username, password) => {
   const data = {
     username,
     password,
   };
-  return post(dispatch, USER_LOGIN, '/users/auth', data);
+  return {
+    type: USER_LOGIN,
+    promise: post('/users/auth', data),
+  };
 };
 
-export const onSignup = (username, password) => async (dispatch) => {
+export const onSignup = (username, password) => {
   const data = {
     username,
     password,
   };
-  return post(dispatch, USER_SIGNUP, '/users', data);
+  return {
+    type: USER_SIGNUP,
+    promise: post('/users', data),
+  };
 };
 
 export const onLogout = () => ({

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/Commons/Item should render list-items 1`] = `
+<div
+  className="item"
+>
+  <h2>
+    All Items
+  </h2>
+  <ul
+    className="item-list"
+  >
+    <Card
+      as="div"
+      body={false}
+      className="item-card"
+      key="6"
+    >
+      <CardBody>
+        <CardTitle
+          style={
+            Object {
+              "borderBottom": "1px solid #f7f7f7",
+            }
+          }
+        >
+          Title 3
+        </CardTitle>
+        <Link
+          to="/category/2/item/6"
+        >
+          <Button
+            active={false}
+            disabled={false}
+            type="button"
+            variant="primary"
+          >
+            View Detail
+          </Button>
+        </Link>
+      </CardBody>
+    </Card>
+    <Card
+      as="div"
+      body={false}
+      className="item-card"
+      key="1"
+    >
+      <CardBody>
+        <CardTitle
+          style={
+            Object {
+              "borderBottom": "1px solid #f7f7f7",
+            }
+          }
+        >
+          Title 2
+        </CardTitle>
+        <Link
+          to="/category/1/item/1"
+        >
+          <Button
+            active={false}
+            disabled={false}
+            type="button"
+            variant="primary"
+          >
+            View Detail
+          </Button>
+        </Link>
+      </CardBody>
+    </Card>
+  </ul>
+</div>
+`;

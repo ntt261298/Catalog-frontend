@@ -1,19 +1,17 @@
 import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { middleware } from '../../utils/middleware';
 
 import {
   onLogin, onSignup, setCurrentItem,
 } from '../user';
 
-describe('src/actions/user', () => {
-  let middlewares;
+describe('src/actions/User', () => {
   let mockStore;
   let initialState;
   let store;
 
   beforeAll(() => {
-    middlewares = [thunk];
-    mockStore = configureMockStore(middlewares);
+    mockStore = configureMockStore([middleware]);
     initialState = {};
     store = mockStore(initialState);
   });

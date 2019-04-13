@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/App/App should render App 1`] = `
+<BrowserRouter>
+  <div
+    className="App"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:id"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:categoryID/item/:itemID"
+      />
+      <Route
+        exact={true}
+        path="/me/items"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;
+
+exports[`src/components/App/App should render App with Redirect 1`] = `
+<BrowserRouter>
+  <div
+    className="App"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:id"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/category/:categoryID/item/:itemID"
+      />
+      <Route
+        exact={true}
+        path="/me/items"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;

@@ -1,7 +1,7 @@
 import reducer from '../app';
 import * as actions from '../../actions/types';
 
-describe('src/reducers/user', () => {
+describe('src/reducers/User', () => {
   let mockState;
 
   beforeEach(() => {

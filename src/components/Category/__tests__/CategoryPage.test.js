@@ -1,0 +1,30 @@
+import React from 'react';
+import { shallow } from '../../../enzyme';
+import { CategoryPage } from '../CategoryPage';
+
+describe('src/components/Layout/CategoryPage.js', () => {
+  let wrapper;
+  let props;
+
+  const setup = () => {
+    wrapper = shallow(
+      <CategoryPage {...props} />,
+    );
+  };
+
+  beforeEach(() => {
+    props = {
+      match: {
+        params: {
+          id: 1,
+        },
+      },
+    };
+  });
+
+  it('should render Category page', () => {
+    setup();
+    // Expect the wrapper object to be defined
+    expect(wrapper).toMatchSnapshot();
+  });
+});

@@ -12,8 +12,7 @@ const setDefault = () => {
 };
 
 
-export const get = async (dispatch, type, endpoint) => {
-  dispatch({ type: `${type}` });
+export const get = async (endpoint) => {
   setDefault();
   try {
     let response = await fetch(`${defaultHost}${endpoint}`, {
@@ -24,15 +23,14 @@ export const get = async (dispatch, type, endpoint) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
+    }
+    return response;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL` });
     throw Error(err);
   }
 };
 
-export const post = async (dispatch, type, endpoint, data) => {
-  dispatch({ type: `${type}` });
+export const post = async (endpoint, data) => {
   setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -44,16 +42,14 @@ export const post = async (dispatch, type, endpoint, data) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
-    return response.message;
+    }
+    return response;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL` });
     throw Error(err);
   }
 };
 
-export const put = async (dispatch, type, endpoint, data) => {
-  dispatch({ type: `${type}` });
+export const put = async (endpoint, data) => {
   setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -65,16 +61,14 @@ export const put = async (dispatch, type, endpoint, data) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS`, payload: response });
-    return response.message;
+    }
+    return response;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL` });
     throw Error(err);
   }
 };
 
 export const del = async (dispatch, type, endpoint) => {
-  dispatch({ type: `${type}` });
   setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {
@@ -85,10 +79,9 @@ export const del = async (dispatch, type, endpoint) => {
     response = await response.json();
     if (statusCode >= 400 && statusCode < 500) {
       throw response.message;
-    } else await dispatch({ type: `${type}_SUCCESS` });
-    return response.message;
+    }
+    return response;
   } catch (err) {
-    dispatch({ type: `${type}_FAIL` });
     throw Error(err);
   }
 };

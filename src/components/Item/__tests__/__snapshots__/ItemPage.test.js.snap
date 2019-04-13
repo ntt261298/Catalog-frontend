@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/Layout/CategoryPage.js should render Item page 1`] = `
+<div>
+  <Connect(Component) />
+  <div
+    className="item-main"
+  >
+    <Connect(ItemDetail)
+      params={
+        Object {
+          "categoryID": 1,
+          "userID": 2,
+        }
+      }
+    />
+  </div>
+</div>
+`;

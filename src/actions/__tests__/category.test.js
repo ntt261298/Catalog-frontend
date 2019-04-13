@@ -1,19 +1,17 @@
 import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { middleware } from '../../utils/middleware';
 
 import getCategories from '../category';
 
 
-describe('src/actions/item', () => {
-  let middlewares;
+describe('src/actions/Item', () => {
   let mockStore;
   let initialState;
   let store;
   let mockCategories;
 
   beforeAll(() => {
-    middlewares = [thunk];
-    mockStore = configureMockStore(middlewares);
+    mockStore = configureMockStore([middleware]);
     initialState = {};
     store = mockStore(initialState);
     mockCategories = [

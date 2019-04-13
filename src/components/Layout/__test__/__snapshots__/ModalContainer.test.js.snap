@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/Layout/ModalContainer.js should render addItem modal 1`] = `<LoadableComponent />`;
+
+exports[`src/components/Layout/ModalContainer.js should render editItem modal 1`] = `<LoadableComponent />`;
+
+exports[`src/components/Layout/ModalContainer.js should render login modal 1`] = `<LoadableComponent />`;
+
+exports[`src/components/Layout/ModalContainer.js should render signup modal 1`] = `<LoadableComponent />`;

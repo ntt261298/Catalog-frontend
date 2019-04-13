@@ -13,7 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
-// Webpack uses `publicPath` to determine where the app is being served from.
+// Webpack uses `publicPath` to determine where the App is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
 // Some apps do not use client-side routing with pushState.
@@ -21,11 +21,11 @@ const publicPath = paths.servedPath;
 const shouldUseRelativeAssetPaths = publicPath === './';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
-// `publicUrl` is just like `publicPath`, but we will provide it to our app
+// `publicUrl` is just like `publicPath`, but we will provide it to our App
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
 const publicUrl = publicPath.slice(0, -1);
-// Get environment variables to inject into our app.
+// Get environment variables to inject into our App.
 const env = getClientEnvironment(publicUrl);
 
 // Assert this just to be safe.
@@ -55,7 +55,7 @@ module.exports = {
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
-  // In production, we only want to load the polyfills and the app code.
+  // In production, we only want to load the polyfills and the App code.
   entry: [require.resolve('./polyfills'), paths.appIndexJs],
   output: {
     // The build folder.
@@ -325,7 +325,7 @@ module.exports = {
     }),
     // Moment.js is an extremely popular library that bundles large locale files
     // by default due to how Webpack interprets its code. This is a practical
-    // solution that requires the user to opt into importing specific locales.
+    // solution that requires the User to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),

@@ -4,7 +4,7 @@ import item from '../item';
 import user from '../user';
 import app from '../app';
 
-describe('src/reducers/user', () => {
+describe('src/reducers/User', () => {
   it('should run index', () => {
     combineReducers({
       app, category, item, user,

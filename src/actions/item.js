@@ -5,22 +5,37 @@ import {
   get, post, put, del,
 } from '../utils/request';
 
-export const getItems = () => async dispatch => get(dispatch, GET_ITEMS, '/items');
+export const getItems = () => ({
+  type: GET_ITEMS,
+  promise: get('/items'),
+});
 
-export const getItem = (categoryID, itemID) => async dispatch => get(dispatch, GET_ITEM, `/categories/${categoryID}/items/${itemID}`);
+export const getItem = (categoryID, itemID) => ({
+  type: GET_ITEM,
+  promise: get(`/categories/${categoryID}/items/${itemID}`),
+});
 
-export const getCategoryItems = categoryID => async dispatch => get(dispatch, GET_CATEGORY_ITEMS, `/categories/${categoryID}/items`);
+export const getCategoryItems = categoryID => ({
+  type: GET_CATEGORY_ITEMS,
+  promise: get(`/categories/${categoryID}/items`),
+});
 
-export const getUserItems = () => async dispatch => get(dispatch, GET_USER_ITEMS, '/users/items');
+export const getUserItems = () => ({
+  type: GET_USER_ITEMS,
+  promise: get('/users/items'),
+});
 
-export const addItem = (title, description, categoryID) => async (dispatch) => {
+export const addItem = (title, description, categoryID) => {
   const data = {
     title, description,
   };
-  return post(dispatch, ADD_ITEM, `/categories/${categoryID}/items`, data);
+  return {
+    type: ADD_ITEM,
+    promise: post(`/categories/${categoryID}/items`, data),
+  };
 };
 
-export const editItem = item => async (dispatch) => {
+export const editItem = (item) => {
   const {
     title, description, itemID, categoryID,
   } = item;
@@ -28,7 +43,13 @@ export const editItem = item => async (dispatch) => {
     title,
     description,
   };
-  return put(dispatch, EDIT_ITEM, `/categories/${categoryID}/items/${itemID}`, data);
+  return {
+    type: EDIT_ITEM,
+    promise: put(`/categories/${categoryID}/items/${itemID}`, data),
+  };
 };
 
-export const deleteItem = (categoryID, itemID) => async dispatch => del(dispatch, DELETE_ITEM, `/categories/${categoryID}/items/${itemID}`);
+export const deleteItem = (categoryID, itemID) => ({
+  type: DELETE_ITEM,
+  promise: del(`/categories/${categoryID}/items/${itemID}`),
+});
