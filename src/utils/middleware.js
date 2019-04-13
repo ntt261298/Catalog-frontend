@@ -1,4 +1,4 @@
-export const middleware = ({ dispatch, getState }) => next => (action) => {
+export default ({ dispatch, getState }) => next => (action) => {
   if (!action.promise) {
     return next(action);
   }
@@ -25,10 +25,7 @@ export const middleware = ({ dispatch, getState }) => next => (action) => {
       return result.message;
     })
     .catch((error) => {
-      console.log(error);
       next(failureAction(error));
       throw error;
     });
 };
-
-export default middleware;
