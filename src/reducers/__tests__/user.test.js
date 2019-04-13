@@ -1,7 +1,7 @@
-import reducer, { initialState } from '../user';
-import * as actions from '../../actions/types';
+import reducer, { initialState } from 'reducers/user';
+import * as actions from 'actions/types';
 
-describe('src/reducers/User', () => {
+describe('reducers/user', () => {
   let mockItem;
 
   beforeEach(() => {

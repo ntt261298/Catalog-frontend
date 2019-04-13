@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { Category } from '../Category';
+import { shallow } from 'enzymeConfig';
+import { Category } from 'components/Commons/Category';
 
-describe('src/components/Commons/Category', () => {
+describe('components/Commons/Category', () => {
   let wrapper;
   let props;
   let linkCategory;

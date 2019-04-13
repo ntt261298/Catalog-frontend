@@ -1,12 +1,12 @@
 import configureMockStore from 'redux-mock-store';
-import { middleware } from '../../utils/middleware';
+import middleware from 'utils/middleware';
 
 import {
   getItems, getItem, getCategoryItems, getUserItems, addItem, editItem, deleteItem,
-} from '../item';
+} from 'actions/item';
 
 
-describe('src/actions/Item', () => {
+describe('actions/item', () => {
   let mockStore;
   let initialState;
   let store;

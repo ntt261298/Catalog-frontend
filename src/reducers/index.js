@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import app from './app';
-import category from './category';
-import item from './item';
-import user from './user';
+import app from 'reducers/app';
+import category from 'reducers/category';
+import item from 'reducers/item';
+import user from 'reducers/user';
 
 export default combineReducers({
   app,

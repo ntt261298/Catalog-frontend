@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/404.css';
+import 'style/404.css';
 
 export const Page404 = () => (
   <div className="stage">

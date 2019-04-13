@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../../style/home.css';
+import 'style/home.css';
 import { PropTypes } from 'prop-types';
-import ItemDetail from './ItemDetail';
-import Header from '../Layout/Header';
+import ItemDetail from 'components/Item/ItemDetail';
+import Header from 'components/Layout/Header';
 
 export const ItemPage = props => (
   <div>

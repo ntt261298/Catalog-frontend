@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { UserDropdown } from '../UserDropdown';
+import { shallow } from 'enzymeConfig';
+import { UserDropdown } from 'components/Layout/UserDropdown';
 
-describe('src/coponents/Layout/UserDropdown.js', () => {
+describe('coponents/Layout/UserDropdown', () => {
   let wrapper;
   let props;
   let logoutLink;

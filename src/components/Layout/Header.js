@@ -3,10 +3,10 @@ import '../../style/layout.css';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import LoginButton from './LoginButton';
-import SignupButton from './SignupButton';
-import UserDropdown from './UserDropdown';
-import ModalContainer from './ModalContainer';
+import LoginButton from 'components/Layout/LoginButton';
+import SignupButton from 'components/Layout/SignupButton';
+import UserDropdown from 'components/Layout/UserDropdown';
+import ModalContainer from 'components/Layout/ModalContainer';
 
 export const Header = props => (
   <div className="header">

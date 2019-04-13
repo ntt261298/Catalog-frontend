@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { AddItemModal } from '../AddItemModal';
+import { shallow } from 'enzymeConfig';
+import { AddItemModal } from 'components/User/AddItemModal';
 
 describe('src/components/User/AddItemModal', () => {
   let wrapper;

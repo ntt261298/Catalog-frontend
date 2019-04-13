@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Commons/Item should render list-items 1`] = `
+exports[`components/Commons/Item should render list-items 1`] = `
 <div
   className="item"
 >

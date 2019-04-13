@@ -5,8 +5,8 @@ import {
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import { onLogout } from '../../actions/user';
-import userImage from '../../assets/images/baseline-person-24px.svg';
+import { onLogout } from 'actions/user';
+import userImage from 'assets/images/baseline-person-24px.svg';
 
 export const UserDropdown = (props) => {
   const { onLogout } = props;

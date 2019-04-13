@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { ItemDetail } from '../ItemDetail';
+import { shallow } from 'enzymeConfig';
+import { ItemDetail } from 'components/Item/ItemDetail';
 
-describe('src/components/Item/ItemDetail', () => {
+describe('components/Item/ItemDetail', () => {
   let wrapper;
   let props;
 

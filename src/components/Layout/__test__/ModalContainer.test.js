@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { ModalContainer } from '../ModalContainer';
+import { shallow } from 'enzymeConfig';
+import { ModalContainer } from 'components/Layout/ModalContainer';
 
-describe('src/components/Layout/ModalContainer.js', () => {
+describe('components/Layout/ModalContainer', () => {
   let wrapper;
   let props;
 

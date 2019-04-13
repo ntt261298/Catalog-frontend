@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/App/App should render App 1`] = `
+exports[`components/App/App should render App 1`] = `
 <BrowserRouter>
   <div
     className="App"
@@ -34,7 +34,7 @@ exports[`src/components/App/App should render App 1`] = `
 </BrowserRouter>
 `;
 
-exports[`src/components/App/App should render App with Redirect 1`] = `
+exports[`components/App/App should render App with Redirect 1`] = `
 <BrowserRouter>
   <div
     className="App"

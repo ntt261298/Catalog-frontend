@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Commons/Category should render list-categories 1`] = `
+exports[`components/Commons/Category should render list-categories 1`] = `
 <div
   className="category"
 >

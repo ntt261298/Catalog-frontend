@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { UserItems } from '../UserItems';
+import { shallow } from 'enzymeConfig';
+import { UserItems } from 'components/User/UserItems';
 
-describe('src/components/User/UserItems', () => {
+describe('components/User/UserItems', () => {
   let wrapper;
   let props;
   let deleteSpan;

@@ -1,11 +1,11 @@
 import configureMockStore from 'redux-mock-store';
-import { middleware } from '../../utils/middleware';
+import middleware from 'utils/middleware';
 
 import {
   onLogin, onSignup, setCurrentItem,
-} from '../user';
+} from 'actions/user';
 
-describe('src/actions/User', () => {
+describe('actions/User', () => {
   let mockStore;
   let initialState;
   let store;

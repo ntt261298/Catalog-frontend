@@ -116,7 +116,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "moduleDirectories": ["node_modules", "src"]
   },
   "babel": {
     "presets": [

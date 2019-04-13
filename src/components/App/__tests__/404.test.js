@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { Page404 } from '../404';
+import { shallow } from 'enzymeConfig';
+import { Page404 } from 'components/App/404';
 
-describe('src/components/App/404', () => {
+describe('components/App/404', () => {
   let wrapper;
 
   const setup = () => {

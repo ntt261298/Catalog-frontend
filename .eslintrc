@@ -6,7 +6,7 @@
         "node": true,
         "jest": true
     },
-    "extends": "airbnb",
+//    "extends": "airbnb",
     "rules": {
         "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
         "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
@@ -29,5 +29,5 @@
         "no-fallthrough": 0,
         "no-debugger": 0,
         "no-throw-literal": 0
-    }     
+    }
 }

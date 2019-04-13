@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import getCategories from '../../actions/category';
-import { selectAllCategories } from '../../utils/selector';
-import { errMessage } from '../../utils/messages';
+import getCategories from 'actions/category';
+import { selectAllCategories } from 'utils/selector';
+import { errMessage } from 'utils/messages';
 
 const activeStyle = {
   color: 'var(--blue)',

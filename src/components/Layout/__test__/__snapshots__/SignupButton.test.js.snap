@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/Layout/SignupButton.js should render signup button 1`] = `
+exports[`components/Layout/SignupButton should render signup button 1`] = `
 <button
   className="btn-signup"
   onClick={[Function]}

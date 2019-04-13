@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../style/home.css';
-import Category from '../Commons/Category';
-import Item from '../Commons/Item';
-import Header from '../Layout/Header';
+import 'style/home.css';
+import Category from 'components/Commons/Category';
+import Item from 'components/Commons/Item';
+import Header from 'components/Layout/Header';
 
 export const HomePage = () => (
   <div>

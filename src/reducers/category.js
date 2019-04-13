@@ -1,4 +1,4 @@
-import { GET_CATEGORIES_SUCCESS } from '../actions/types';
+import { GET_CATEGORIES_SUCCESS } from 'actions/types';
 
 const initialState = {
   byId: {},

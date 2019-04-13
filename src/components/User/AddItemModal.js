@@ -4,11 +4,11 @@ import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
 import { PropTypes } from 'prop-types';
-import { hideModal } from '../../actions/app';
-import getCategories from '../../actions/category';
-import { addItem, getItems, getUserItems } from '../../actions/item';
-import { selectAllCategories } from '../../utils/selector';
-import { errMessage, successMessage } from '../../utils/messages';
+import { hideModal } from 'actions/app';
+import getCategories from 'actions/category';
+import { addItem, getItems, getUserItems } from 'actions/item';
+import { selectAllCategories } from 'utils/selector';
+import { errMessage, successMessage } from 'utils/messages';
 
 
 export class AddItemModal extends React.Component {

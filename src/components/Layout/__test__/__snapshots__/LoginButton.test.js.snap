@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Layout/LoginButton.js should render login button 1`] = `
+exports[`components/Layout/LoginButton should render login button 1`] = `
 <button
   className="btn-login"
   onClick={[Function]}

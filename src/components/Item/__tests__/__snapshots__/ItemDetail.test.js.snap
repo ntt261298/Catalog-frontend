@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Item/ItemDetail should render detail Item  1`] = `
+exports[`components/Item/ItemDetail should render detail Item  1`] = `
 <div
   className="main"
 >

@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { UserPage } from '../UserPage';
+import { shallow } from 'enzymeConfig';
+import { UserPage } from 'components/User/UserPage';
 
-describe('src/components/User/UserPage.js', () => {
+describe('components/User/UserPage', () => {
   let wrapper;
 
   const setup = () => {

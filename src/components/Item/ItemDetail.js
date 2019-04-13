@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { selectItem } from '../../utils/selector';
-import { getItem } from '../../actions/item';
-import { errMessage } from '../../utils/messages';
+import { selectItem } from 'utils/selector';
+import { getItem } from 'actions/item';
+import { errMessage } from 'utils/messages';
 
 
 export class ItemDetail extends Component {

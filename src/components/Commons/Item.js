@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
-import { getItems, getCategoryItems } from '../../actions/item';
-import { selectCategoryItems, selectAllItems } from '../../utils/selector';
-import { errMessage } from '../../utils/messages';
+import { getItems, getCategoryItems } from 'actions/item';
+import { selectCategoryItems, selectAllItems } from 'utils/selector';
+import { errMessage } from 'utils/messages';
 
 
 export class Item extends Component {

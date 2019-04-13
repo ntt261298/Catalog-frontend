@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/User/EditItemModal should render add edit modal 1`] = `
+exports[`components/User/EditItemModal should render add edit modal 1`] = `
 <div>
   <Modal
     autoFocus={true}

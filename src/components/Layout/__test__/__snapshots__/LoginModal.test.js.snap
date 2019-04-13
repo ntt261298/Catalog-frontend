@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Layout/LoginModal.js should render login modal 1`] = `
+exports[`components/Layout/LoginModal should render login modal 1`] = `
 <div>
   <Modal
     autoFocus={true}

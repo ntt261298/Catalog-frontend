@@ -2,7 +2,7 @@ import {
   SHOW_LOGIN_MODAL, SHOW_SIGNUP_MODAL,
   SHOW_ADD_ITEM_MODAL, SHOW_EDIT_ITEM_MODAL,
   SHOW_DELETE_ITEM_MODAL, HIDE_MODAL,
-} from '../actions/types';
+} from 'actions/types';
 
 const initialState = {
   modal: '',

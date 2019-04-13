@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { EditItemModal } from '../EditItemModal';
+import { shallow } from 'enzymeConfig';
+import { EditItemModal } from 'components/User/EditItemModal';
 
-describe('src/components/User/EditItemModal', () => {
+describe('components/User/EditItemModal', () => {
   let wrapper;
   let props;
   let editButton;

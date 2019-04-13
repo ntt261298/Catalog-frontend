@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { Header } from '../Header';
+import { shallow } from 'enzymeConfig';
+import { Header } from 'components/Layout/Header';
 
-describe('src/components/Layout/Header', () => {
+describe('components/Layout/Header', () => {
   let wrapper;
   let props;
   const setup = () => {

@@ -4,11 +4,11 @@ import {
 } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import HomePage from '../Home/HomePage';
-import CategoryPage from '../Category/CategoryPage';
-import ItemPage from '../Item/ItemPage';
-import UserPage from '../User/UserPage';
-import Page404 from './404';
+import HomePage from 'components/Home/HomePage';
+import CategoryPage from 'components/Category/CategoryPage';
+import ItemPage from 'components/Item/ItemPage';
+import UserPage from 'components/User/UserPage';
+import Page404 from 'components/App/404';
 
 export const App = props => (
   <Router>

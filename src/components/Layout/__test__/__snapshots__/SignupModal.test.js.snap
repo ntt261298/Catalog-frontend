@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Layout/SignupModal.js should render signup modal 1`] = `
+exports[`components/Layout/SignupModal should render signup modal 1`] = `
 <div>
   <Modal
     autoFocus={true}

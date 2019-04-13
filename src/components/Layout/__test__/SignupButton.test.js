@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { SignupButton } from '../SignupButton';
+import { shallow } from 'enzymeConfig';
+import { SignupButton } from 'components/Layout/SignupButton';
 
-describe('src/Layout/SignupButton.js', () => {
+describe('components/Layout/SignupButton', () => {
   let wrapper;
   let props;
   let signupButton;

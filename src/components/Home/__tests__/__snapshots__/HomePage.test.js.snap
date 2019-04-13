@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Home/HomePage.js should render Home page 1`] = `
+exports[`components/Home/HomePage should render Home page 1`] = `
 <div>
   <Connect(Component) />
   <div

@@ -4,9 +4,9 @@ import {
   selectItem,
   selectAllItems,
   selectAllCategories,
-} from '../selector';
+} from 'utils/selector';
 
-describe('src/utils/localStorage', () => {
+describe('utils/localStorage', () => {
   let mockState;
   beforeEach(() => {
     mockState = {

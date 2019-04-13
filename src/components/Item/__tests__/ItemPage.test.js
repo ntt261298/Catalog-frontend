@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { ItemPage } from '../ItemPage';
+import { shallow } from 'enzymeConfig';
+import { ItemPage } from 'components/Item/ItemPage';
 
-describe('src/components/Layout/CategoryPage.js', () => {
+describe('components/Item/ItemPage', () => {
   let wrapper;
   let props;
 

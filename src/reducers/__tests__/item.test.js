@@ -1,7 +1,7 @@
-import reducer from '../item';
-import * as actions from '../../actions/types';
+import reducer from 'reducers/item';
+import * as actions from 'actions/types';
 
-describe('src/reducers/Item', () => {
+describe('reducers/item', () => {
   let mockState;
   let mockItem;
 

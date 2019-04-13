@@ -1,6 +1,6 @@
-import { loadToken, saveToken, removeToken } from '../localStorage';
+import { loadToken, saveToken, removeToken } from 'utils/localStorage';
 
-describe('src/utils/localStorage', () => {
+describe('utils/localStorage', () => {
   it('should call all utils', () => {
     loadToken();
     saveToken();

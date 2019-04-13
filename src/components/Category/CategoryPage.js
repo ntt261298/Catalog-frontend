@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../../style/home.css';
+import 'style/home.css';
 import { PropTypes } from 'prop-types';
-import Category from '../Commons/Category';
-import Item from '../Commons/Item';
-import Header from '../Layout/Header';
+import Category from 'components/Commons/Category';
+import Item from 'components/Commons/Item';
+import Header from 'components/Layout/Header';
 
 export const CategoryPage = props => (
   <div>

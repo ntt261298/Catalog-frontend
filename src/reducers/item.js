@@ -1,10 +1,9 @@
 import {
   GET_ITEMS_SUCCESS,
   GET_ITEM_SUCCESS,
-  // ADD_ITEM_SUCCESS,
   GET_USER_ITEMS_SUCCESS,
   GET_CATEGORY_ITEMS_SUCCESS,
-} from '../actions/types';
+} from 'actions/types';
 
 export const initialState = {
   byId: {},

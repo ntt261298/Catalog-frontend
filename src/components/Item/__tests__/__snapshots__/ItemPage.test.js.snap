@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Layout/CategoryPage.js should render Item page 1`] = `
+exports[`components/Item/ItemPage should render Item page 1`] = `
 <div>
   <Connect(Component) />
   <div

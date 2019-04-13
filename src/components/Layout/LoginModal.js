@@ -4,9 +4,9 @@ import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
 import { PropTypes } from 'prop-types';
-import { showSignup, hideModal } from '../../actions/app';
-import { onLogin } from '../../actions/user';
-import { errMessage, successMessage } from '../../utils/messages';
+import { showSignup, hideModal } from 'actions/app';
+import { onLogin } from 'actions/user';
+import { errMessage, successMessage } from 'utils/messages';
 
 
 export class LoginModal extends React.Component {

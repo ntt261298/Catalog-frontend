@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/Layout/Header should render header 1`] = `
+exports[`components/Layout/Header should render header 1`] = `
 <div
   className="header"
 >
@@ -23,7 +23,7 @@ exports[`src/components/Layout/Header should render header 1`] = `
 </div>
 `;
 
-exports[`src/components/Layout/Header should render header with dropdown User 1`] = `
+exports[`components/Layout/Header should render header with dropdown User 1`] = `
 <div
   className="header"
 >

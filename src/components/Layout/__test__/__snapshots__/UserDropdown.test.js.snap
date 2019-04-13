@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/coponents/Layout/UserDropdown.js should call onLogout when logoutLink is clicked 1`] = `[Function]`;
+exports[`coponents/Layout/UserDropdown should call onLogout when logoutLink is clicked 1`] = `[Function]`;
 
-exports[`src/coponents/Layout/UserDropdown.js should render User dropdown 1`] = `
+exports[`coponents/Layout/UserDropdown should render User dropdown 1`] = `
 <UncontrolledDropdown>
   <DropdownToggle
     aria-haspopup={true}

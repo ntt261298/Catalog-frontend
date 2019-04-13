@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from '../../../enzyme';
-import { Item } from '../Item';
+import { shallow } from 'enzymeConfig';
+import { Item } from 'components/Commons/Item';
 
-describe('src/components/Commons/Item', () => {
+describe('components/Commons/Item', () => {
   let wrapper;
   let props;
   const setup = () => {

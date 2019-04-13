@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import {
   Button, Modal, ModalBody, ModalHeader,
 } from 'reactstrap';
-import { selectUserItems } from '../../utils/selector';
-import { getUserItems, deleteItem } from '../../actions/item';
-import { setCurrentItem } from '../../actions/user';
+import { selectUserItems } from 'utils/selector';
+import { getUserItems, deleteItem } from 'actions/item';
+import { setCurrentItem } from 'actions/user';
 import {
   hideModal, showAddItem, showEditItem, showDeleteItem,
-} from '../../actions/app';
-import plus from '../../assets/images/add-button.svg';
-import { errMessage, successMessage } from '../../utils/messages';
+} from 'actions/app';
+import plus from 'assets/images/add-button.svg';
+import { errMessage, successMessage } from 'utils/messages';
 
 
 export class UserItems extends Component {
