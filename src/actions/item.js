@@ -1,9 +1,9 @@
 import {
   GET_ITEM, GET_ITEMS, ADD_ITEM, EDIT_ITEM, DELETE_ITEM, GET_USER_ITEMS, GET_CATEGORY_ITEMS,
-} from './types';
+} from 'actions/types';
 import {
   get, post, put, del,
-} from '../utils/request';
+} from 'utils/request';
 
 export const getItems = () => ({
   type: GET_ITEMS,

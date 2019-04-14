@@ -1,5 +1,5 @@
-import { GET_CATEGORIES } from './types';
-import { get } from '../utils/request';
+import { GET_CATEGORIES } from 'actions/types';
+import { get } from 'utils/request';
 
 const getCategories = () => ({
   type: GET_CATEGORIES,
