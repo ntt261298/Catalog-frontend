@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzymeConfig';
+import { shallow } from 'configs';
 import { Item } from 'components/Commons/Item';
 
 describe('components/Commons/Item', () => {

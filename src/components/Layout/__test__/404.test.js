@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzymeConfig';
-import { Page404 } from 'components/App/404';
+import { shallow } from 'configs';
+import { Page404 } from 'components/Layout/404';
 
-describe('components/App/404', () => {
+describe('components/Layout/404', () => {
   let wrapper;
 
   const setup = () => {

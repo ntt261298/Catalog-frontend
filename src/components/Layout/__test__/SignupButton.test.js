@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzymeConfig';
+import { shallow } from 'configs';
 import { SignupButton } from 'components/Layout/SignupButton';
 
 describe('components/Layout/SignupButton', () => {

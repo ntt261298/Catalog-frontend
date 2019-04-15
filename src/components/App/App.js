@@ -8,7 +8,7 @@ import HomePage from 'components/Home/HomePage';
 import CategoryPage from 'components/Category/CategoryPage';
 import ItemPage from 'components/Item/ItemPage';
 import UserPage from 'components/User/UserPage';
-import Page404 from 'components/App/404';
+import Page404 from 'components/Layout/404';
 
 export const App = props => (
   <Router>

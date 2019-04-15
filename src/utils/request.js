@@ -1,14 +1,13 @@
-import { loadToken } from './localStorage';
+import { defaultHost } from 'configs';
+import { loadToken } from 'utils/localStorage';
 
 let defaultHeader;
-let defaultHost;
 
 const setDefault = () => {
   defaultHeader = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${loadToken()}`,
   };
-  defaultHost = 'http://127.0.0.1:5000';
 };
 
 
@@ -68,7 +67,7 @@ export const put = async (endpoint, data) => {
   }
 };
 
-export const del = async (dispatch, type, endpoint) => {
+export const del = async (endpoint) => {
   setDefault();
   try {
     let response = await (await fetch(`${defaultHost}${endpoint}`, {

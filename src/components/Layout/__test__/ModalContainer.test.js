@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzymeConfig';
+import { shallow } from 'configs';
 import { ModalContainer } from 'components/Layout/ModalContainer';
 
 describe('components/Layout/ModalContainer', () => {

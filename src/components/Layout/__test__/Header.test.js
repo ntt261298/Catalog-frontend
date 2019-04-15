@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzymeConfig';
+import { shallow } from 'configs';
 import { Header } from 'components/Layout/Header';
 
 describe('components/Layout/Header', () => {
