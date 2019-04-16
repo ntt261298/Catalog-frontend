@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+import ItemCard from 'components/Commons/ItemCard';
 import { getItems, getCategoryItems } from 'actions/item';
 import { selectCategoryItems, selectAllItems } from 'utils/selector';
 import { errMessage } from 'utils/messages';
@@ -40,17 +39,8 @@ export class Item extends Component {
           <Fragment>
             <h2>All Items</h2>
             <ul className="item-list">
-              {allItems.map(({ id, title, category_id }) => (
-                <Card key={id} className="item-card">
-                  <Card.Body>
-                    <Card.Title style={{ borderBottom: '1px solid #f7f7f7' }}>{ title }</Card.Title>
-                    <Link to={`/category/${category_id}/item/${id}`}>
-                      <Button variant="primary">
-                          View Detail
-                      </Button>
-                    </Link>
-                  </Card.Body>
-                </Card>
+              {allItems.map(item => (
+                <ItemCard key={item.id} item={item} />
               ))}
             </ul>
           </Fragment>
@@ -58,17 +48,8 @@ export class Item extends Component {
           <Fragment>
             <h2>Category's Items</h2>
             <ul className="item-list">
-              {categoryItems.map(({ id, title, category_id }) => (
-                <Card key={id} className="item-card">
-                  <Card.Body>
-                    <Card.Title style={{ borderBottom: '1px solid #f7f7f7' }}>{ title }</Card.Title>
-                    <Link to={`/category/${category_id}/item/${id}`}>
-                      <Button variant="primary">
-                        View Detail
-                      </Button>
-                    </Link>
-                  </Card.Body>
-                </Card>
+              {categoryItems.map(item => (
+                <ItemCard key={item.id} item={item} />
               ))}
             </ul>
           </Fragment>

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Commons/ItemCard should render ItemCard 1`] = `
+<Card
+  as="div"
+  body={false}
+  className="item-card"
+  key="1"
+>
+  <CardBody>
+    <CardTitle
+      style={
+        Object {
+          "borderBottom": "1px solid #f7f7f7",
+        }
+      }
+    >
+      title
+    </CardTitle>
+    <Link
+      to="/category/2/item/1"
+    >
+      <Button
+        active={false}
+        disabled={false}
+        type="button"
+        variant="primary"
+      >
+        View Detail
+      </Button>
+    </Link>
+  </CardBody>
+</Card>
+`;

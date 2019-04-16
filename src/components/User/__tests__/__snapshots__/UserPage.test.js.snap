@@ -10,14 +10,3 @@ exports[`components/User/UserPage should render User page 1`] = `
   </div>
 </div>
 `;
-
-exports[`src/components/User/UserPage.js should render User page 1`] = `
-<div>
-  <Connect(Component) />
-  <div
-    className="main"
-  >
-    <Connect(UserItems) />
-  </div>
-</div>
-`;

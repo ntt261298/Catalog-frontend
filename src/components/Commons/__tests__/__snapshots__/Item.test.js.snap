@@ -10,66 +10,32 @@ exports[`components/Commons/Item should render list-items 1`] = `
   <ul
     className="item-list"
   >
-    <Card
-      as="div"
-      body={false}
-      className="item-card"
+    <Component
+      item={
+        Object {
+          "category_id": 2,
+          "created_at": "2019-03-24T03:33:27+00:00",
+          "description": "This is title 3",
+          "id": 6,
+          "title": "Title 3",
+          "user_id": 1,
+        }
+      }
       key="6"
-    >
-      <CardBody>
-        <CardTitle
-          style={
-            Object {
-              "borderBottom": "1px solid #f7f7f7",
-            }
-          }
-        >
-          Title 3
-        </CardTitle>
-        <Link
-          to="/category/2/item/6"
-        >
-          <Button
-            active={false}
-            disabled={false}
-            type="button"
-            variant="primary"
-          >
-            View Detail
-          </Button>
-        </Link>
-      </CardBody>
-    </Card>
-    <Card
-      as="div"
-      body={false}
-      className="item-card"
+    />
+    <Component
+      item={
+        Object {
+          "category_id": 1,
+          "created_at": "2019-03-24T03:33:27+00:00",
+          "description": "This is title 1",
+          "id": 1,
+          "title": "Title 2",
+          "user_id": 1,
+        }
+      }
       key="1"
-    >
-      <CardBody>
-        <CardTitle
-          style={
-            Object {
-              "borderBottom": "1px solid #f7f7f7",
-            }
-          }
-        >
-          Title 2
-        </CardTitle>
-        <Link
-          to="/category/1/item/1"
-        >
-          <Button
-            active={false}
-            disabled={false}
-            type="button"
-            variant="primary"
-          >
-            View Detail
-          </Button>
-        </Link>
-      </CardBody>
-    </Card>
+    />
   </ul>
 </div>
 `;
