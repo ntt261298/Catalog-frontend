@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'configs';
-import { EditItemModal } from 'components/User/EditItemModal';
+import { AddItemModal } from 'components/Layout/AddItemModal';
 
-describe('components/User/EditItemModal', () => {
+describe('components/Layout/AddItemModal', () => {
   let wrapper;
   let props;
-  let editButton;
+  let addButton;
 
   const update = () => {
-    editButton = wrapper.find('Button');
+    addButton = wrapper.find('Button');
   };
 
   const setup = () => {
     wrapper = shallow(
-      <EditItemModal {...props} />,
+      <AddItemModal {...props} />,
     );
     update();
   };
@@ -32,33 +32,27 @@ describe('components/User/EditItemModal', () => {
           name: 'Category 2',
         },
       ],
-      item: {
-        itemID: 1,
-        title: 'one',
-        description: 'one',
-        categoryID: 1,
-      },
-      modal: 'editItem',
-      editItem: jest.fn().mockImplementation(() => Promise.resolve('message')),
+      modal: 'addItem',
+      addItem: jest.fn().mockImplementation(() => Promise.resolve('message')),
       hideModal: jest.fn(),
       getUserItems: jest.fn().mockImplementation(() => Promise.resolve('message')),
       getCategories: jest.fn().mockImplementation(() => Promise.resolve('message')),
     };
   });
 
-  it('should render add edit modal', () => {
+  it('should render add Item modal', () => {
     setup();
     // Expect the wrapper object to be defined
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call editItem when edit button is clicked', () => {
+  it('should call addItem when add button is clicked', () => {
     setup();
     wrapper.setState({
       title: 'test', description: '123456', categoryID: 1,
     }, () => {
-      editButton.simulate('click');
-      expect(props.editItem).toHaveBeenCalled();
+      addButton.simulate('click');
+      expect(props.addItem).toHaveBeenCalled();
     });
   });
 
@@ -67,8 +61,8 @@ describe('components/User/EditItemModal', () => {
     wrapper.setState({
       title: '', description: '123456', categoryID: 1,
     }, () => {
-      editButton.simulate('click');
-      expect(props.editItem).not.toHaveBeenCalled();
+      addButton.simulate('click');
+      expect(props.addItem).not.toHaveBeenCalled();
     });
   });
 
@@ -77,8 +71,8 @@ describe('components/User/EditItemModal', () => {
     wrapper.setState({
       title: 'title', description: '', categoryID: 1,
     }, () => {
-      editButton.simulate('click');
-      expect(props.editItem).not.toHaveBeenCalled();
+      addButton.simulate('click');
+      expect(props.addItem).not.toHaveBeenCalled();
     });
   });
 });

@@ -2,20 +2,23 @@ import {
   configure, shallow, mount, render,
 } from 'enzyme/build';
 import Adapter from 'enzyme-adapter-react-16/build';
+import dev from 'configs/dev';
+import pro from 'configs/pro';
 
 // Enzyme config
 configure({ adapter: new Adapter() });
 
-let apiHost;
+let configs;
 
 if (process.env.ENV === 'dev') {
-  apiHost = 'http://locahost:5000';
+  configs = dev;
 } else if (process.env.ENV === 'pro') {
-  apiHost = 'http://localhost:5000';
+  configs = pro;
 } else {
-  apiHost = 'http://localhost:5000';
+  // Default configs is dev
+  configs = dev;
 }
 
-export {
-  shallow, mount, render, apiHost,
-};
+export { shallow, mount, render };
+
+export default configs;

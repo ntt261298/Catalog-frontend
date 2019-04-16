@@ -13,12 +13,12 @@ export const SignupModal = Loadable({
   delay: 200,
 });
 export const AddItemModal = Loadable({
-  loader: () => import('components/User/AddItemModal'),
+  loader: () => import('components/Layout/AddItemModal'),
   loading: () => <div>Loading...</div>,
   delay: 200,
 });
 export const EditItemModal = Loadable({
-  loader: () => import('components/User/EditItemModal'),
+  loader: () => import('components/Layout/EditItemModal'),
   loading: () => <div>Loading...</div>,
   delay: 200,
 });

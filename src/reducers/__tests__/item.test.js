@@ -68,7 +68,6 @@ describe('reducers/item', () => {
     const action = {
       type: actions.GET_ITEMS,
     };
-    // it's empty on purpose because it's just starting to fetch posts
     expect(reducer(mockState, action)).toEqual(mockState);
   });
 
@@ -92,7 +91,6 @@ describe('reducers/item', () => {
     const action = {
       type: actions.GET_ITEM,
     };
-    // it's empty on purpose because it's just starting to fetch posts
     expect(reducer(mockState, action)).toEqual(mockState);
   });
 
@@ -144,7 +142,6 @@ describe('reducers/item', () => {
     const action = {
       type: actions.ADD_ITEM,
     };
-    // it's empty on purpose because it's just starting to fetch posts
     expect(reducer(mockState, action)).toEqual(mockState);
   });
 

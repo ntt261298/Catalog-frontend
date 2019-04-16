@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'configs';
-import { App } from 'components/App/App';
+import { App } from 'components/App';
 
-describe('components/App/App', () => {
+describe('components/App', () => {
   let wrapper;
   let props;
 

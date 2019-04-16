@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import '../../style/layout.css';
+import 'style/layout.css';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';

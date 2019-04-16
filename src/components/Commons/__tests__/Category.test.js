@@ -15,7 +15,7 @@ describe('components/Commons/Category', () => {
     wrapper = shallow(
       <Category {...props} />,
     );
-    wrapper.instance().changeActive = jest.fn();
+    wrapper.instance().activeCategory = jest.fn();
     update();
   };
 
@@ -49,10 +49,10 @@ describe('components/Commons/Category', () => {
     expect(props.getCategories).toHaveBeenCalled();
   });
 
-  it('should call changeActive when Link is clicked', () => {
+  it('should call activeCategory when Link is clicked', () => {
     setup();
     // Expect the wrapper object to be defined
     linkCategory.at(0).simulate('click');
-    expect(wrapper.instance().changeActive).toHaveBeenCalled();
+    expect(wrapper.instance().activeCatagory).toHaveBeenCalled();
   });
 });

@@ -1,4 +1,4 @@
-import { defaultHost } from 'configs';
+import configs from 'configs';
 import { loadToken } from 'utils/localStorage';
 
 let defaultHeader;
@@ -14,7 +14,7 @@ const setDefault = () => {
 export const get = async (endpoint) => {
   setDefault();
   try {
-    let response = await fetch(`${defaultHost}${endpoint}`, {
+    let response = await fetch(`${configs.apiHost}${endpoint}`, {
       method: 'GET',
       headers: defaultHeader,
     });
@@ -32,7 +32,7 @@ export const get = async (endpoint) => {
 export const post = async (endpoint, data) => {
   setDefault();
   try {
-    let response = await (await fetch(`${defaultHost}${endpoint}`, {
+    let response = await (await fetch(`${configs.apiHost}${endpoint}`, {
       method: 'POST',
       headers: defaultHeader,
       body: JSON.stringify(data),
@@ -51,7 +51,7 @@ export const post = async (endpoint, data) => {
 export const put = async (endpoint, data) => {
   setDefault();
   try {
-    let response = await (await fetch(`${defaultHost}${endpoint}`, {
+    let response = await (await fetch(`${configs.apiHost}${endpoint}`, {
       method: 'PUT',
       headers: defaultHeader,
       body: JSON.stringify(data),
@@ -70,7 +70,7 @@ export const put = async (endpoint, data) => {
 export const del = async (endpoint) => {
   setDefault();
   try {
-    let response = await (await fetch(`${defaultHost}${endpoint}`, {
+    let response = await (await fetch(`${configs.apiHost}${endpoint}`, {
       method: 'DELETE',
       headers: defaultHeader,
     }));

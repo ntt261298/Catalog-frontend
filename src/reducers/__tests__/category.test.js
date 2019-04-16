@@ -53,7 +53,6 @@ describe('reducers/category', () => {
     const action = {
       type: actions.GET_CATEGORIES,
     };
-    // it's empty on purpose because it's just starting to fetch posts
     expect(reducer(mockState, action)).toEqual(mockState);
   });
 
