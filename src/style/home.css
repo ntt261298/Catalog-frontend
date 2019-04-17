@@ -27,23 +27,7 @@
     grid-gap: 20px;
     color: #444;
 }
-/* Numeric Box */
-.numeric span {
-    font-weight: bold;
-    border-radius: 3px;
-    font-size: 15px;
-    width: 24px;
-    text-align: center;
-    border: 2px solid #000;
-    display: inline-block;
-    margin: 0 4px;
-  }
-.numeric span:hover {
-    cursor: pointer;
-  }
-.numeric img:hover {
-    cursor: pointer;
-}
+
 /*Responsive Style*/
 @media screen and (max-width: 1000px) {
     .home-main {

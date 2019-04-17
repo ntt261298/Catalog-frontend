@@ -10,9 +10,10 @@ configure({ adapter: new Adapter() });
 
 let configs;
 
-if (process.env.ENV === 'dev') {
+if (process.env.REACT_APP_ENV === 'dev') {
   configs = dev;
-} else if (process.env.ENV === 'pro') {
+} else if (process.env.REACT_APP_ENV === 'pro') {
+  console.log('pro');
   configs = pro;
 } else {
   // Default configs is dev

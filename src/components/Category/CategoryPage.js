@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import 'style/home.css';
 import { PropTypes } from 'prop-types';
 import Category from 'components/Commons/Category';
 import Item from 'components/Commons/Item';

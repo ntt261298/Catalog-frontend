@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import 'style/home.css';
 import { PropTypes } from 'prop-types';
 import ItemDetail from 'components/Item/ItemDetail';
 import Header from 'components/Layout/Header';
