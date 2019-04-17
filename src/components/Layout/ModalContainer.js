@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import {
   LoginModal, SignupModal, AddItemModal, EditItemModal,
-} from 'components/Layout/ListContainer';
+} from 'components/Layout/Modals';
 
 export const ModalContainer = (props) => {
   switch (props.modal) {

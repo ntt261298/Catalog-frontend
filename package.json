@@ -70,18 +70,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
       "!src/index.js",
-      "!src/components/Layout/ListContainer.js",
+      "!src/components/Layout/Modals.js",
       "!src/store.js"
     ],
     "setupFiles": [
@@ -117,7 +111,10 @@
       "enzyme-to-json/serializer"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   },
   "babel": {
     "presets": [

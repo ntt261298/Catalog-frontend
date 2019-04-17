@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { Category } from 'components/Commons/Category';
 
 describe('components/Commons/Category', () => {
@@ -15,7 +15,7 @@ describe('components/Commons/Category', () => {
     wrapper = shallow(
       <Category {...props} />,
     );
-    wrapper.instance().activeCategory = jest.fn();
+    wrapper.instance().setActiveCategory = jest.fn();
     update();
   };
 
@@ -53,6 +53,6 @@ describe('components/Commons/Category', () => {
     setup();
     // Expect the wrapper object to be defined
     linkCategory.at(0).simulate('click');
-    expect(wrapper.instance().activeCatagory).toHaveBeenCalled();
+    expect(wrapper.instance().setActiveCatagory).toHaveBeenCalled();
   });
 });

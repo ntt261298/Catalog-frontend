@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { SignupModal } from 'components/Layout/SignupModal';
 
 describe('components/Layout/SignupModal', () => {

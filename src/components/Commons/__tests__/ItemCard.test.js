@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { ItemCard } from 'components/Commons/ItemCard';
 
 describe('components/Commons/ItemCard', () => {

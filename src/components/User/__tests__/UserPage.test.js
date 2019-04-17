@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { UserPage } from 'components/User/UserPage';
 
 describe('components/User/UserPage', () => {

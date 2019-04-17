@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { AddItemModal } from 'components/Layout/AddItemModal';
 
 describe('components/Layout/AddItemModal', () => {

@@ -17,7 +17,6 @@ export class EditItemModal extends React.Component {
       description: '',
       categoryID: '',
       itemID: '',
-      message: '',
     }
 
     componentDidMount() {
@@ -25,7 +24,7 @@ export class EditItemModal extends React.Component {
       this.setState(this.props.item);
     }
 
-    onChangeInput = (e) => {
+    changeInput = (e) => {
       this.setState({
         [e.target.name]: e.target.value,
       });
@@ -42,16 +41,12 @@ export class EditItemModal extends React.Component {
         description,
         categoryID,
       };
-      if (!title) {
-        this.setState({
-          message: 'Title must not be blank',
-        });
+      if (title.trim() === '') {
+        errMessage('Title must not be blank');
         return;
       }
-      if (!description) {
-        this.setState({
-          message: 'Description must not be blank',
-        });
+      if (description.trim() === '') {
+        errMessage('Description must not be blank');
         return;
       }
 
@@ -66,7 +61,7 @@ export class EditItemModal extends React.Component {
     render() {
       const { modal, hideModal, categories } = this.props;
       const {
-        title, description, categoryID, message,
+        title, description, categoryID,
       } = this.state;
       const isEditItemModal = modal === 'editItem';
       return (
@@ -77,20 +72,20 @@ export class EditItemModal extends React.Component {
               <div>
                 <label htmlFor="title">
                     Title:
-                  <input type="text" name="title" value={title} onChange={this.onChangeInput} />
+                  <input type="text" name="title" value={title} onChange={this.changeInput} />
                 </label>
               </div>
               <div>
                 <label htmlFor="description">
                     Description:
                   <br />
-                  <textarea name="description" value={description} onChange={this.onChangeInput} />
+                  <textarea name="description" value={description} onChange={this.changeInput} />
                 </label>
               </div>
               <div>
                 <label htmlFor="categoryID">
                     Category:
-                  <select name="categoryID" value={categoryID} onChange={this.onChangeInput}>
+                  <select name="categoryID" value={categoryID} onChange={this.changeInput}>
                     {
                         categories.map(
                           ({ id, name }) => <option key={id} value={id}>{name}</option>,
@@ -99,9 +94,6 @@ export class EditItemModal extends React.Component {
                   </select>
                 </label>
               </div>
-              {message ? (
-                <div className="alert danger">{message}</div>
-              ) : null}
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.editItem}>Edit</Button>

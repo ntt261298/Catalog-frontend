@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { HomePage } from 'components/Home/HomePage';
 
 describe('components/Home/HomePage', () => {

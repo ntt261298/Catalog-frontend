@@ -1,4 +1,4 @@
-export default ({ dispatch, getState }) => next => (action) => {
+export default () => next => (action) => {
   if (!action.promise) {
     return next(action);
   }

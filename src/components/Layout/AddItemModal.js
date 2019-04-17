@@ -10,7 +10,6 @@ import { addItem, getItems, getUserItems } from 'actions/item';
 import { selectAllCategories } from 'utils/selector';
 import { errMessage, successMessage } from 'utils/messages';
 
-
 export class AddItemModal extends React.Component {
   state = {
     title: '',
@@ -22,7 +21,8 @@ export class AddItemModal extends React.Component {
     this.props.getCategories();
   }
 
-  onChangeInput = (e) => {
+
+  changeInput = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -30,16 +30,12 @@ export class AddItemModal extends React.Component {
 
   addItem = async () => {
     const { title, description, categoryID } = this.state;
-    if (!title) {
-      this.setState({
-        message: 'Title must not be blank',
-      });
+    if (title.trim() === '') {
+      errMessage('Title must not be blank');
       return;
     }
-    if (!description) {
-      this.setState({
-        message: 'Description must not be blank',
-      });
+    if (description.trim() === '') {
+      errMessage('Description must not be blank');
       return;
     }
     await this.props.addItem(title, description, categoryID)
@@ -62,20 +58,20 @@ export class AddItemModal extends React.Component {
             <div>
               <label htmlFor="title">
                 Title:
-                <input type="text" name="title" onChange={this.onChangeInput} />
+                <input type="text" name="title" onChange={this.changeInput} />
               </label>
             </div>
             <div>
               <label htmlFor="description">
                 Description:
                 <br />
-                <textarea name="description" onChange={this.onChangeInput} />
+                <textarea name="description" onChange={this.changeInput} />
               </label>
             </div>
             <div>
               <label htmlFor="categoryID">
                 Category:
-                <select name="categoryID" onChange={this.onChangeInput}>
+                <select name="categoryID" onChange={this.changeInput}>
                   {
                         categories.map(({ id, name }) => (
                           <option key={id} value={id}>{name}</option>

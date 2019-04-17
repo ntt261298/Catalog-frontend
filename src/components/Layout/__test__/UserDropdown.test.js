@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'configs';
+import { shallow } from 'enzymeConfig';
 import { UserDropdown } from 'components/Layout/UserDropdown';
 
 describe('coponents/Layout/UserDropdown', () => {

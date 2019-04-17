@@ -16,7 +16,7 @@ export class SignupModal extends React.Component {
     message: '',
   }
 
-  onChangeInput = (e) => {
+  changeInput = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -57,13 +57,13 @@ export class SignupModal extends React.Component {
             <div>
               <label htmlFor="username">
                 Username:
-                <input type="text" name="username" onChange={this.onChangeInput} />
+                <input type="text" name="username" onChange={this.changeInput} />
               </label>
             </div>
             <div>
               <label htmlFor="password">
                 Password:
-                <input type="password" name="password" onChange={this.onChangeInput} />
+                <input type="password" name="password" onChange={this.changeInput} />
               </label>
             </div>
             { message ? (

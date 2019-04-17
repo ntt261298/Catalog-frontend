@@ -20,7 +20,7 @@ export class Category extends Component {
       .catch(err => errMessage(err));
   }
 
-  activeCatagory = (id) => {
+  setActiveCatagory= (id) => {
     this.setState({
       active: id,
     });
@@ -35,7 +35,7 @@ export class Category extends Component {
           {
             categories.map(({ id, name }) => (
               <li key={id}>
-                <Link onClick={() => this.activeCatagory(id)} style={this.state.active === id ? activeStyle : null} to={`/category/${id}`}>{ name }</Link>
+                <Link onClick={() => this.setActiveCatagory(id)} style={this.state.active === id ? activeStyle : null} to={`/category/${id}`}>{ name }</Link>
               </li>
             ))
           }
